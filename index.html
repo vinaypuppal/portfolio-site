@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>AboutMe-SitePrototype</title>
+	<link rel="stylesheet" href="css/normalize.css">
+	<link rel="stylesheet" href="css/font-awesome.css">
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+	<div id="wrapper">
+		<header class="top">
+			<h1><a href="/">Vinay Puppal</a></h1>
+		</header>
+		<nav class="flex-nav">
+			<a id="toggle-nav" href="#"><i class='fa fa-bars'></i>Menu</a>
+			<ul>
+				<li><a href="#">Home</a></li>
+				<li><a href="#">About Me</a></li>
+				<li><a href="#">My Works</a></li>
+				<li><a href="#">My Resume</a></li>
+				<li><a href="#">Blog</a></li>
+				<li><a href="#">Contact Me</a></li>
+				<li class="social">
+					<a href="#"><i class='fa fa-facebook'></i></a>
+				</li>
+				<li class="social">
+					<a href="#"><i class='fa fa-twitter'></i></a>
+				</li>
+				<li class="social">
+					<a href="#">
+						<i class='fa fa-google'></i>
+					</a>
+				</li>
+				<li class="social">
+					<a href="#">
+						<i class='fa fa-instagram'></i>
+					</a>
+				</li>
+			</ul>
+		</nav>
+		<section class='hero'>
+			<img src="http://www.lorempixel.com/1000/600/abstract" alt="">
+		</section>
+		<section class="details">
+			<h1>Site Under Construction</h1>
+			<p>Man long-chain hydrocarbons 8-bit engine dome face forwards rifle disposable physical</p>
+			<p>Bomb shoes youtube pre-wristwatch tank-traps boy sunglasses Tokyo advert RAF papier-mache monofilament.</p>
+		</section>
+		<section class="signup">
+			<form class="signup">
+				<input type="text" placeholder='Your Name'>
+				<input type="email" placeholder='Email Address'>
+				<input type="submit" value="Sign me up!">
+			</form>
+		</section>
+		<footer>
+			<p>2015&copy;VinayPuppal</p>
+		</footer>
+	</div>
+	<script src='js/jquery-1.11.3.min.js'></script>
+	<script>
+		$('#toggle-nav').on('click', function(event) {
+			event.preventDefault();
+			/* Act on the event */
+			$('.flex-nav ul').toggleClass('open');
+		});
+	</script>
+</body>
+</html>
