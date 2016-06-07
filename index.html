@@ -2,68 +2,239 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>AboutMe-SitePrototype</title>
-	<link rel="stylesheet" href="css/normalize.css">
-	<link rel="stylesheet" href="css/font-awesome.css">
-	<link rel="stylesheet" href="css/style.css">
+	<title>VinayPuppal</title>
+	<!-- https://res.cloudinary.com/vinaypuppal/image/upload/v1465257273/fcc/portifolio-ui.png -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0 user-scalable=no">
+
+	<meta description="Portfolio Page: VinayPuppal">
+	<!-- FACEBOOK -->
+	<meta property="og:type" content="website" />
+	<meta property="og:title" content="VinayPuppal">
+	<meta property="og:url" content="https://www.vinaypuppal.com">
+	<meta property="og:image" content="https://res.cloudinary.com/vinaypuppal/image/upload/v1465257273/fcc/portifolio-ui.png">
+	<meta property="og:site_name" content="VinayPuppal">
+	<meta property="og:description" content="Portfolio Page: VinayPuppal">
+	<!-- TWITTER -->
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:site" content="@vinaypuppal">
+	<meta name="twitter:title" content="VinayPuppal">
+	<meta name="twitter:description" content="Portfolio Page: VinayPuppal">
+	<meta name="twitter:image:src" content="https://res.cloudinary.com/vinaypuppal/image/upload/v1465257273/fcc/portifolio-ui.png">
+
+	<link rel="stylesheet" href="https://cdn.rawgit.com/olimsaidov/pixeden-stroke-7-icon/master/pe-icon-7-stroke/dist/pe-icon-7-stroke.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fredericka+the+Great|Dosis:400,700|Raleway:400,700">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/sweetalert2/3.2.3/sweetalert2.min.css">
+	<link rel="stylesheet" href="css/styles.min.css">
+	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+	<link rel="icon" href="favicon.ico" type="image/x-icon">
 </head>
 <body>
-	<div id="wrapper">
-		<header class="top">
-			<h1><a href="/">Vinay Puppal</a></h1>
-		</header>
-		<nav class="flex-nav">
-			<a id="toggle-nav" href="#"><i class='fa fa-bars'></i>Menu</a>
-			<ul>
-				<li><a href="#">Home</a></li>
-				<li><a href="#">About Me</a></li>
-				<li><a href="#">My Works</a></li>
-				<li><a href="#">My Resume</a></li>
-				<li><a href="#">Blog</a></li>
-				<li><a href="#">Contact Me</a></li>
-				<li class="social">
-					<a href="#"><i class='fa fa-facebook'></i></a>
-				</li>
-				<li class="social">
-					<a href="#"><i class='fa fa-twitter'></i></a>
-				</li>
-				<li class="social">
-					<a href="#">
-						<i class='fa fa-google'></i>
-					</a>
-				</li>
-				<li class="social">
-					<a href="#">
-						<i class='fa fa-instagram'></i>
-					</a>
-				</li>
-			</ul>
-		</nav>
-		<section class='hero'>
-			<img src="http://www.lorempixel.com/1000/600/abstract" alt="">
-		</section>
-		<section class="details">
-			<h1>Site Under Construction</h1>
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem consequuntur error facere repellendus ullam magnam deleniti non corrupti tempora, unde, distinctio numquam! Nemo voluptates facere quasi temporibus nisi ab distinctio!</p>
-		</section>
-		<section class="signup">
-			<form class="signup">
-				<input type="text" placeholder='Your Name'>
-				<input type="email" placeholder='Email Address'>
-				<input type="submit" value="Sign me up!">
-			</form>
-		</section>
-		<footer>
-			<p>2015&copy;VinayPuppal</p>
-		</footer>
+	<div class="overlay" id="particles"></div>
+	<div class="home container">
+	  <header>
+	    <div class="left">
+	      <a href="/" class="logo">VinayPuppal</a>
+	    </div>
+	    <div class="center">
+	      <ul>
+	        <li><a class='js-open-about' href="#">About Me</a></li>
+	        <li><a class='js-open-works' href="#">My Works</a></li>
+	        <li><a class='js-open-contact' href="#">Contact Me</a></li>
+	      </ul>
+	    </div>
+	    <div class="right">
+	      <ul>
+	        <li><a class='facebook tooltip' title='Facebook' target="_blank" href="https://www.facebook.com/puppalvinay"><i class='fa fa-facebook'></i></a></li>
+	        <li><a class='twitter tooltip' title='Twitter' target="_blank" href="https://twitter.com/vinaypuppal"><i class='fa fa-twitter'></i></a></li>
+	        <li><a class='linkedin tooltip' title='LinkedIn' target="_blank" href="https://www.linkedin.com/in/vinay-puppal-4514b7104"><i class='fa fa-linkedin'></i></a></li>
+	        <li><a class='codepen tooltip' title='Codepen' target="_blank" href="http://http://codepen.io/vinaypuppal"><i class='fa fa-codepen'></i></a></li>
+	        <li><a class='fcc tooltip' title='FreeCodeCamp' target="_blank" href="https://www.freecodecamp.com/vinaypuppal"><i class='fa fa-fire'></i></a></li>
+	        <li><a class='github tooltip' title='Github' target="_blank" href="https://github.com/vinaypuppal"><i class='fa fa-github'></i></a></li>
+	      </ul>
+	    </div>
+	  </header>
+	  <div class="content">
+	    <div class="title">
+	      <h1>Hello</h1>
+	    </div>
+	    <ul>
+	      <li>
+	        <a class='js-open-about' href="#">
+	          <i class='pe-7s-user'></i>
+	          <span>About Me</span>
+	        </a>
+	      </li>
+	      <li>
+	        <a class='js-open-works' href="#">
+	          <i class='pe-7s-albums'></i>
+	          <span>My Works</span>
+	        </a>
+	      </li>
+	      <li>
+	        <a class='js-open-contact' href="#">
+	          <i class='pe-7s-chat'></i>
+	          <span>Contact Me</span>
+	        </a>
+	      </li>
+	    </ul>
+	  </div>
+	  <footer>
+	    <p> VinayPuppal &copy; 2016</p>
+	  </footer>
 	</div>
-	<script src='js/jquery-1.11.3.min.js'></script>
-	<script>
-		$('#toggle-nav').on('click', function(event) {
-			event.preventDefault();
-			/* Act on the event */
-			$('.flex-nav ul').toggleClass('open');
-		});
-	</script>
+	<div class="about container">
+	  <a class='js-close close-arrow' href="#"><i class='pe-7s-angle-down'></i></a>
+	  <div class="top">
+	    <div class="left">
+	    <div class="avatar">
+	      <img src="https://res.cloudinary.com/vinaypuppal/image/upload/v1464977237/IMG_20160314_094803_1_pmzpct.jpg" alt="avatar" />
+	    </div>
+	    <div class='info'>
+	      <p class='profession'>--Web Developer--</p>
+	      <p class='name'>Vinay Puppal</p>
+	      <p class="email"><strong>Email: </strong><a href="mailto:puppalvinay@gmail.com">puppalvinay@gmail.com</a></p>
+	      <p class="location"><strong>From: </strong>Hyderabad, India</p>
+	    </div>
+	    <!-- <div class="button">
+	      <a href="#">
+	        Get My Resume
+	      </a>
+	    </div> -->
+	  </div>
+	    <div class="intro right">
+	    <h1>A Little About Me</h1>
+	    <p>
+	      I'm a self-taught web developer with an eye for design, UX and UI development and a strong desire to learn and create.I firmly believe in life long learning and I'm constantly exploring new ideas and technologies. A while ago i started learning HTML, CSS, Javascript and after hacking away for a while I realised I wanted to learn coding properly. Since then I read some books ( <a href="http://www.htmlandcssbook.com/">HTML & CSS by Jon Duckett</a> and <a href="https://github.com/getify/You-Dont-Know-JS">YDKJS series by Kyle Simpson</a> ), have taken courses with <a href="http://www.freecodecamp.com">FreeCodeCamp</a>, <a href="https://www.codecademy.com/">Codecademy</a> and built the various projects listed here.
+	    </p>
+	    <p>
+	    	Free Code Camp has been the biggest help and inspiration to me. In working through its curriculum I have met other learners, pair programmed, got help and given help in its chat rooms, and enjoyed becoming part of a large community of people learning coding.
+	    </p>
+	    <p>
+	    	I presently completed my B.tech in Information Technology(As of April,2016) and looking for any jobs in web development. I live in Hyderabad, India.
+	    </p>
+	  </div>
+	  </div>
+	  
+	  <div class="bottom">
+	    <div class="left">
+	      <h1>Some of my skills include</h1>
+	      
+	        <ul class="technologies">
+	          <li>
+	            <a href="#">
+	              <img src="https://res.cloudinary.com/vinaypuppal/image/upload/t_media_lib_thumb/v1465071091/fcc/HTML5_Logo_512.png" alt="html_logo" />
+	            </a>
+	          </li>
+	          <li>
+	            <a href="#">
+	              <img src="https://res.cloudinary.com/vinaypuppal/image/upload/t_media_lib_thumb/v1464982665/css3_bm88qf.jpg" alt="css_logo" />
+	            </a>
+	          </li>
+	          <li>
+	            <a href="#">
+	              <img src="https://res.cloudinary.com/vinaypuppal/image/upload/t_media_lib_thumb/v1464982789/Javascript_vyqxio.png" alt="js_logo" />
+	            </a>
+	          </li>
+	          <li>
+	            <a href="#">
+	              <img src="https://res.cloudinary.com/vinaypuppal/image/upload/t_media_lib_thumb/v1464982865/sticker_220x200-bg_ffffff-pad_220x200_ffffff.u1_bjzoy1.jpg" alt="node_logo" />
+	            </a>
+	          </li>
+	          <li>
+	            <a href="#">
+	              <img src="https://res.cloudinary.com/vinaypuppal/image/upload/t_media_lib_thumb/v1464982967/mongodb_slide_dajvli.png" alt="mongodb_logo" />
+	            </a>
+	          </li>
+	        </ul>
+	      
+	    </div>
+	    <div class="right">
+	      <h1>Currently Focusing on</h1>
+	       <ul class="technologies">
+	        <li>
+	          <a href="#">
+	            <img src="https://res.cloudinary.com/vinaypuppal/image/upload/t_media_lib_thumb/v1464983122/React-JS.sh_ppfn00.png" alt="reactjs_logo" />
+	          </a>
+	         </li>
+	         <li>
+	          <a href="#">
+	            <img src="https://res.cloudinary.com/vinaypuppal/image/upload/t_media_lib_thumb/v1464983229/logo-title-dark_eldvp1.png" alt="redux_logo" />
+	          </a>
+	         </li>
+	         <li>
+	          <a href="#">
+	            <img src="https://res.cloudinary.com/vinaypuppal/image/upload/t_media_lib_thumb/v1464983378/og-image-logo_mvnwib.png" alt="meteorjs_logo" />
+	          </a>
+	         </li>
+	         <li>
+	          <a href="#">
+	            <img src="https://res.cloudinary.com/vinaypuppal/image/upload/t_media_lib_thumb/v1464983486/graphqlhub-logo_bqnex6.png" alt="graphql_logo" />
+	          </a>
+	         </li>
+	      </ul>
+	    </div>
+	  </div>
+	</div>
+	<div class="works container">
+	  <a class='js-close close-arrow' href="#"><i class='pe-7s-angle-down'></i></a>
+	  <div class="header">
+	    <h1>My Works</h1>
+	    <ul class="filter">
+	      <li class="frontend">
+	        <input type="radio" id='frontend-radio' name='filter' value='frontend' checked/>
+	        <label for="frontend-radio">FrontEnd</label>
+	      </li>
+	      <li class="backend">
+	        <input type="radio" id='backend-radio' name='filter' value='backend'/>
+	        <label for="backend-radio">BackEnd</label>
+	      </li>
+	      <li class="react">
+	        <input type="radio" id='react-radio' name='filter' value='react'/>
+	        <label for="react-radio">React</label>
+	      </li>
+	      <li class="meteor">
+	        <input type="radio" id='meteor-radio' name='filter' value='meteor'/>
+	        <label for="meteor-radio">Meteor</label>
+	      </li>
+	    </ul>
+	  </div>
+	  <div class="content">
+	    <ul class="cards js-list">
+	    </ul>
+	  </div>
+	</div>
+	<div class="contact container">
+	  <a class='js-close close-arrow' href="#"><i class='pe-7s-angle-down'></i></a>
+	  <div class="content">
+	    <div class="left">
+	      <h1>Lets Chat</h1>
+	      <p>If you have a question, comment, or an interesting project you'd like to discuss, send me a message and I'll respond promptly.</p>
+	      <ul>
+	        <li><a href="mailto:puppalvinay@gmail.com" target='_blank'>Email</a></li>
+	        <li><a target="_blank" href="https://www.linkedin.com/in/vinay-puppal-4514b7104">LinkedIn</a></li>
+	        <li><a target="_blank" href="https://twitter.com/vinaypuppal">Twitter</a></li>
+	        <li><a target="_blank" href="https://www.facebook.com/puppalvinay">Facebook</a></li>
+	        <li><a target="_blank" href="https://github.com/vinaypuppal">Github</a></li>
+	      </ul>
+	    </div>
+	    <div class="right">
+	      <div class="map">
+	        <iframe width='100%' height='500px' frameBorder='0' src='https://a.tiles.mapbox.com/v4/vinaypuppal.0a7kk78j/attribution,zoompan,zoomwheel,geocoder,share.html?access_token=pk.eyJ1IjoidmluYXlwdXBwYWwiLCJhIjoiMGgxeFhtZyJ9.wEi2lq3qvGs7CAJp-x_KbQ'></iframe>
+	      </div>
+	    </div>
+	  </div>
+	  <footer>
+	    <p> VinayPuppal &copy; 2016</p>
+	  </footer>
+	</div>
+	<div class="backstreach" id="backstreach"></div>
+	<script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-backstretch/2.0.4/jquery.backstretch.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/1.1.1/typed.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/3.2.3/sweetalert2.min.js"></script>
+	<script src='./js/main.min.js'></script>
 </body>
 </html>
