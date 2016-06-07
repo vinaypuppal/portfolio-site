@@ -77,7 +77,7 @@ ul {
   font-size: 60px;
   -webkit-transition: all 0.3s ease-in;
   transition: all 0.3s ease-in;
-  opacity: 0;
+  display: none;
 }
 .container .close-arrow:hover {
   color: #c90;

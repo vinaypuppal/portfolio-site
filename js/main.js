@@ -151,17 +151,13 @@ $(document).ready(function(){
       opacity:'0'
     },100);
     removeOpenClass();
-    $('.close-arrow').animate({
-      opacity:'0'
-    },10);
+    $('.close-arrow').hide();
   });
   $('.js-open-about').on('click',function(e){
     e.preventDefault();
     removeOpenClass();
     $('.about').addClass('open');
-    $('.close-arrow').animate({
-      opacity:'1'
-    },500);
+    $('.close-arrow').show(600);
     $('.center').animate({
       opacity:'1'
     },500);
@@ -174,9 +170,7 @@ $(document).ready(function(){
     removeOpenClass();
     $('.works').addClass('open');
     renderToDom(frontend);
-    $('.close-arrow').animate({
-      opacity:'1'
-    },500);
+    $('.close-arrow').show(600);
     $('.center').animate({
       opacity:'1'
     },500);
@@ -188,9 +182,7 @@ $(document).ready(function(){
     e.preventDefault();
     removeOpenClass();
     $('.contact').addClass('open');
-    $('.close-arrow').animate({
-      opacity:'1'
-    },500);
+    $('.close-arrow').show(600);
     $('.center').animate({
       opacity:'1'
     },500);
