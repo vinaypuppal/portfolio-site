@@ -1,5 +1,5 @@
 $(document).ready(function(){
-    var data = [
+var data = [
   {
     id:0,
     title:"Tribute Page",
