@@ -169,7 +169,6 @@ $(document).ready(function(){
     e.preventDefault();
     removeOpenClass();
     $('.works').addClass('open');
-    renderToDom(frontend);
     $('.close-arrow').show(600);
     $('.center').animate({
       opacity:'1'
@@ -211,6 +210,9 @@ function generateCard(data){
       $('.js-list').append(card);
     });
   }
+  //for intial rendering
+  renderToDom(frontend);
+
   function clearDom(){
     $('.js-list').empty();
   }
