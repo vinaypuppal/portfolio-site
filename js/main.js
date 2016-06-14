@@ -157,7 +157,8 @@ var data = [
     removeActiveClass();
     $('.center').animate({
       opacity:'0'
-    },100);
+    },50);
+    if($(window).width()<=900) $('.container.home header .right').show(100);
     removeOpenClass();
     $('.close-arrow').hide();
   });
@@ -166,6 +167,7 @@ var data = [
     removeOpenClass();
     $('.about').addClass('open');
     $('.close-arrow').show(600);
+    if($(window).width()<=900) $('.container.home header .right').hide(100);
     $('.center').animate({
       opacity:'1'
     },500);
@@ -178,6 +180,7 @@ var data = [
     removeOpenClass();
     $('.works').addClass('open');
     $('.close-arrow').show(600);
+    if($(window).width()<=900) $('.container.home header .right').hide(100);
     $('.center').animate({
       opacity:'1'
     },500);
@@ -190,6 +193,7 @@ var data = [
     removeOpenClass();
     $('.contact').addClass('open');
     $('.close-arrow').show(600);
+    if($(window).width()<=900) $('.container.home header .right').hide(100);
     $('.center').animate({
       opacity:'1'
     },500);
@@ -198,7 +202,7 @@ var data = [
   });
   
   $(".title h1").typed({
-        strings: ["Hello", "Welcome", "I am 22 year old", "Self Taught","Web Developer"],
+        strings: ["Hello", "Welcome", "I Am VinayPuppal", "A Self Taught","Web Developer"],
         typeSpeed: 100,
         loop: true
       });
