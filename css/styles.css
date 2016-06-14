@@ -280,6 +280,7 @@ ul {
   width: 200px;
   height: 200px;
   border-radius: 50%;
+  border: 1px solid #f3f3f3;
 }
 .container.about .info {
   text-align: center;
