@@ -1,4 +1,11 @@
 $(document).ready(function(){
+  $.backstretch([
+          "https://res.cloudinary.com/vinaypuppal/image/upload/c_scale,w_1024/v1464896760/photo-1428223501723-d821c5d00ca3_knl5ki.jpg",
+          "https://res.cloudinary.com/vinaypuppal/image/upload/c_scale,w_1024/v1464896839/photo-1432888498266-38ffec3eaf0a_ukva1r.jpg"
+      ],{
+          duration:30000,
+          fade: 'slow'
+  });
 var data = [
   {
     id:0,
@@ -254,10 +261,3 @@ if(document.createElement("p").style.flex===undefined){
     alert("no flexbox support");
  }
 
-$.backstretch([
-        "https://res.cloudinary.com/vinaypuppal/image/upload/c_scale,w_1024/v1464896760/photo-1428223501723-d821c5d00ca3_knl5ki.jpg",
-        "https://res.cloudinary.com/vinaypuppal/image/upload/c_scale,w_1024/v1464896839/photo-1432888498266-38ffec3eaf0a_ukva1r.jpg"
-    ],{
-        duration:30000,
-        fade: 'slow'
-});
