@@ -279,13 +279,17 @@ function generateCard(data){
          break;
      }
     });
+  if(document.createElement("p").style.flex===undefined){
+      $('.supported').hide();
+      $('.not-supported').show();
+      alert("Please Use Latest Browsers Like Chrome")
+   }
+
+   if(~navigator.userAgent.indexOf('UCBrowser') || ~navigator.userAgent.indexOf('Opera Mini')){
+    $('.supported').hide();
+    $('.not-supported').show();
+    alert("Please Use Latest Browsers Like Chrome")
+   }
 });
 
-if(document.createElement("p").style.flex===undefined){
-    alert("no flexbox support");
- }
-
- if(~navigator.userAgent.indexOf('UCBrowser') || ~navigator.userAgent.indexOf('Opera Mini')){
-  alert("no flexbox support");
- }
 
