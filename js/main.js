@@ -232,11 +232,11 @@ var data = [
     $('.center').find('.js-open-contact').addClass('active');
   });
   
-  $(".title h1").typed({
-        strings: ["Hello", "Welcome", "I Am VinayPuppal", "A Self Taught","Web Developer"],
-        typeSpeed: 100,
-        loop: true
-      });
+  // $(".title h1").typed({
+  //       strings: ["Hello", "Welcome", "I Am VinayPuppal", "A Self Taught","Web Developer"],
+  //       typeSpeed: 100,
+  //       loop: true
+  //     });
  
 function generateCard(data){
     var title = data.title;
