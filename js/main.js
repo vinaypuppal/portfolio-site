@@ -11,7 +11,7 @@ var data = [
     id:0,
     title:"Tribute Page",
     description:"A Tribute Page For Nandamuri Taraka Rama Rao.",
-    demoUrl:"https://codepen.io/vinaypuppal/full/JXJJaL/",
+    demoUrl:"https://www.vinaypuppal.com/fcc-tribute-page",
     previewUrl:"https://res.cloudinary.com/vinaypuppal/image/upload/c_scale,w_300/v1465247988/fcc/tribute-page-ui.png",
     category:"frontend"
   },
@@ -19,7 +19,7 @@ var data = [
     id:1,
     title:"Random Quote Generator",
     description:"A simple quote generator that you can tweet and share.",
-    demoUrl:"http://codepen.io/vinaypuppal/full/dMdxKR/",
+    demoUrl:"https://www.vinaypuppal.com/fcc-random-quotes",
     previewUrl:"https://res.cloudinary.com/vinaypuppal/image/upload/c_scale,w_300/v1465247983/fcc/random-quote-ui.png",
     category:"frontend"
   },
@@ -27,7 +27,7 @@ var data = [
     id:2,
     title:"Wiki Search",
     description:"A useful app to search Wikipedia articles.",
-    demoUrl:"https://codepen.io/vinaypuppal/full/WwzxxR/",
+    demoUrl:"https://www.vinaypuppal.com/fcc-wiki-viewer",
     previewUrl:"https://res.cloudinary.com/vinaypuppal/image/upload/c_scale,w_300/v1465247982/fcc/wiki-search-ui.png",
     category:"frontend"
   },
@@ -35,7 +35,7 @@ var data = [
     id:3,
     title:"Show Local Weather",
     description:"A simple app to locate your current position and tell you the current weather.",
-    demoUrl:"https://codepen.io/vinaypuppal/full/NNLepx/",
+    demoUrl:"https://www.vinaypuppal.com/fcc-show-local-weather",
     previewUrl:"https://res.cloudinary.com/vinaypuppal/image/upload/c_scale,w_300/v1465247982/fcc/local-weather-ui.png",
     category:"frontend"
   },
@@ -43,7 +43,7 @@ var data = [
     id:4,
     title:"Basic JavaScript Calculator",
     description:"A simple calculator with the ability to chain operations.",
-    demoUrl:"https://codepen.io/vinaypuppal/full/mPYbOX/",
+    demoUrl:"https://www.vinaypuppal.com/fcc-basic-calculator",
     previewUrl:"https://res.cloudinary.com/vinaypuppal/image/upload/c_scale,w_300/v1465247982/fcc/js-calculator-ui.png",
     category:"frontend"
   },
@@ -51,7 +51,7 @@ var data = [
     id:5,
     title:"Pomodoro Clock",
     description:"Pomodoro timer featuring notification and audible alarm.",
-    demoUrl:"http://codepen.io/vinaypuppal/full/ZWNWxb/",
+    demoUrl:"https://www.vinaypuppal.com/fcc-pomodoro-clock",
     previewUrl:"https://res.cloudinary.com/vinaypuppal/image/upload/c_scale,w_300/v1465247982/fcc/pomodoro-clock-ui.png",
     category:"frontend"
   },
@@ -59,12 +59,28 @@ var data = [
     id:6,
     title:"Twitch Streamers",
     description:"A simple widget to show online status of Twitch streamers.",
-    demoUrl:"https://codepen.io/vinaypuppal/full/aNrMPK/",
+    demoUrl:"https://www.vinaypuppal.com/fcc-twitch-json-api",
     previewUrl:"https://res.cloudinary.com/vinaypuppal/image/upload/c_scale,w_300/v1465247986/fcc/twitch-streams-ui.png",
     category:"frontend"
   },
   {
     id:7,
+    title:"Tic-Tac-Toe Game",
+    description:"A Tic-Tac-Toe game with unbeatable AI created using Minimax Algorithm.",
+    demoUrl:"https://www.vinaypuppal.com/fcc-tic-tac-toe",
+    previewUrl:"https://res.cloudinary.com/vinaypuppal/image/upload/v1466484035/tic-tac-toe-ui_suoxn1.png",
+    category:"frontend"
+  },
+  {
+    id:8,
+    title:"Simon Says Game",
+    description:"A classic Simon Says Game built for fun.",
+    demoUrl:"https://www.vinaypuppal.com/fcc-simon-game",
+    previewUrl:"https://res.cloudinary.com/vinaypuppal/image/upload/c_scale,h_470/v1466486988/simon-says-game-ui_nyxr6d.png",
+    category:"frontend"
+  },
+  {
+    id:9,
     title:"Timestamp microservice",
     description:"I can pass a string as a parameter, and it will check to see whether that string contains either a unix timestamp or a natural language date",
     demoUrl:"https://vp-timestamp.herokuapp.com",
@@ -72,7 +88,7 @@ var data = [
     category:"backend"
   },
   {
-    id:8,
+    id:10,
     title:"Request Header Parser Microservice",
     description:"I can get the IP address, language and operating system for my browser.",
     demoUrl:"https://vp-header-parser.herokuapp.com",
@@ -80,7 +96,7 @@ var data = [
     category:"backend"
   },
   {
-    id:9,
+    id:11,
     title:"URL Shortener Microservice",
     description:"I can pass a URL as a parameter and I will receive a shortened URL in the JSON response.",
     demoUrl:"http://vp-shorturl.herokuapp.com",
@@ -88,7 +104,7 @@ var data = [
     category:"backend"
   },
   {
-    id:10,
+    id:12,
     title:"Image Search Abstraction Layer",
     description:"I can get the image URLs, alt text and page urls for a set of images relating to a given search string.",
     demoUrl:"https://vp-images.herokuapp.com",
@@ -96,7 +112,7 @@ var data = [
     category:"backend"
   },
   {
-    id:11,
+    id:13,
     title:"File MetaData Microservice",
     description:"I can submit a FormData object that includes a file upload. And get File metadata as response",
     demoUrl:"https://vp-file-metadata.herokuapp.com/",
@@ -104,7 +120,7 @@ var data = [
     category:"backend"
   },
   {
-    id:12,
+    id:14,
     title:"Youtube Search",
     description:"A React App to search youtube videos",
     demoUrl:"https://youtube-api.vinaypuppal.com/",
@@ -112,7 +128,15 @@ var data = [
     category:"react"
   },
   {
-    id:13,
+    id:15,
+    title:"Markdown Editor",
+    description:"A Github flavoured Markdown Editor built using React.js",
+    demoUrl:"https://www.vinaypuppal.com/react-markdown-editor",
+    previewUrl:"https://res.cloudinary.com/vinaypuppal/image/upload/v1466487853/markdown-editor-ui_lpusb2.png",
+    category:"react"
+  },
+  {
+    id:16,
     title:"Mediclco Website",
     description:"A Landing page and Blog for Medicloc Startup Company",
     demoUrl:"https://www.medicloc.com/",
@@ -120,7 +144,7 @@ var data = [
     category:"meteor"
   },
   {
-    id:14,
+    id:17,
     title:"Amplidudes",
     description:"A Landing page and Alumni dashboard for ECE Branch, IT GGV",
     demoUrl:"https://www.amplidudes.in/",
