@@ -285,3 +285,7 @@ if(document.createElement("p").style.flex===undefined){
     alert("no flexbox support");
  }
 
+ if(~navigator.userAgent.indexOf('UCBrowser') || ~navigator.userAgent.indexOf('Opera Mini')){
+  alert("no flexbox support");
+ }
+
