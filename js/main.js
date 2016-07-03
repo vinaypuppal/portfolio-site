@@ -150,7 +150,21 @@ var data = [
     demoUrl:"https://www.amplidudes.in/",
     previewUrl:"https://res.cloudinary.com/vinaypuppal/image/upload/c_scale,w_300/v1465247989/fcc/amplidudes-ui.png",
     category:"meteor"
-  }
+  },
+	{
+		id:18,
+		title: 'FreeCodeCamp Leaderboard',
+		description: 'A list of Free Code Camp campers who\'ve earned the most brownie points in the past 30 days.',   demoUrl:'http://codepen.io/vinaypuppal/full/MeJqzJ/',
+		previewUrl:'https://res.cloudinary.com/vinaypuppal/image/upload/v1467570960/fcc/fcc-leaderboard-ui.png',
+		category: 'react'
+	},
+	{
+		id:19,
+		title: 'Recipe Book',
+		description: 'A list of Recipes that the user can create with name and ingredients.All Recipes are stored in users localstorage',   demoUrl:'http://codepen.io/vinaypuppal/live/pbPabb',
+		previewUrl:'https://res.cloudinary.com/vinaypuppal/image/upload/v1467571176/fcc/recipe-book-ui.png',
+		category: 'react'
+	}
 ];
 
   var frontend = data.filter(function(item){
