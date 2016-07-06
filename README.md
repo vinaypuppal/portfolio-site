@@ -7,17 +7,15 @@ I'm a self-taught web developer with an eye for design, UX and UI development an
 ## Website UI
 !['main page ui'](https://res.cloudinary.com/vinaypuppal/image/upload/v1467571557/fcc/website-ui.png)
 
-![](https://res.cloudinary.com/vinaypuppal/image/upload/v1467842502/fcc/about-page-ui.png)
-
 ![](https://res.cloudinary.com/vinaypuppal/image/upload/v1467842504/fcc/myworks-ui.png)
 
 ![](https://res.cloudinary.com/vinaypuppal/image/upload/v1467842502/fcc/contact-ui.png)
 
 ## Mobile Responsive UI
-![](https://res.cloudinary.com/vinaypuppal/image/upload/v1467842669/fcc/mobile-ui.jpg)
+![](https://res.cloudinary.com/vinaypuppal/image/upload/c_scale,w_370/v1467842669/fcc/mobile-ui.jpg)
 
-![](https://res.cloudinary.com/vinaypuppal/image/upload/v1467842670/fcc/mobile-about-ui.jpg)
+![](https://res.cloudinary.com/vinaypuppal/image/upload/c_scale,w_370/v1467842670/fcc/mobile-about-ui.jpg)
 
-![](https://res.cloudinary.com/vinaypuppal/image/upload/v1467842670/fcc/mobile-works-ui.jpg)
+![](https://res.cloudinary.com/vinaypuppal/image/upload/c_scale,w_370/v1467842670/fcc/mobile-works-ui.jpg)
 
-![](https://res.cloudinary.com/vinaypuppal/image/upload/v1467842669/fcc/mobile-contact-ui.jpg)
+![](https://res.cloudinary.com/vinaypuppal/image/upload/c_scale,w_370/v1467842669/fcc/mobile-contact-ui.jpg)
