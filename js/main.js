@@ -170,24 +170,24 @@ var data = [
   var frontend = data.filter(function(item){
     return item.category === 'frontend';
   });
-  
+
   var backend =  data.filter(function(item){
     return item.category === 'backend';
   });
-  
+
   var react =  data.filter(function(item){
     return item.category === 'react';
   });
-  
+
    var meteor = data.filter(function(item){
     return item.category === 'meteor';
   });
-  
+
   function removeActiveClass(){
     $('.center').find('a').each(function(i,el){    if($(el).hasClass('active')){
       $(el).removeClass('active');
     }
-      
+
     });
   }
   function removeOpenClass(){
@@ -219,7 +219,7 @@ var data = [
         removeActiveClass();
     $('.center').find('.js-open-about').addClass('active');
   });
-  
+
   $('.js-open-works').on('click',function(e){
     e.preventDefault();
     removeOpenClass();
@@ -232,7 +232,7 @@ var data = [
         removeActiveClass();
     $('.center').find('.js-open-works').addClass('active');
   });
-  
+
   $('.js-open-contact').on('click',function(e){
     e.preventDefault();
     removeOpenClass();
@@ -245,13 +245,13 @@ var data = [
     removeActiveClass();
     $('.center').find('.js-open-contact').addClass('active');
   });
-  
+
   // $(".title h1").typed({
   //       strings: ["Hello", "Welcome", "I Am VinayPuppal", "A Self Taught","Web Developer"],
   //       typeSpeed: 100,
   //       loop: true
   //     });
- 
+
 function generateCard(data){
     var title = data.title;
     var desc = data.description;
@@ -293,6 +293,7 @@ function generateCard(data){
          break;
      }
     });
+
   if(document.createElement("p").style.flex===undefined){
       $('.supported').hide();
       $('.not-supported').show();
@@ -305,5 +306,3 @@ function generateCard(data){
     alert("Please Use Latest Browsers Like Chrome")
    }
 });
-
-
