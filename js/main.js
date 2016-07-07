@@ -68,7 +68,7 @@ var data = [
     title:"Tic-Tac-Toe Game",
     description:"A Tic-Tac-Toe game with unbeatable AI created using Minimax Algorithm.",
     demoUrl:"https://www.vinaypuppal.com/fcc-tic-tac-toe",
-    previewUrl:"https://res.cloudinary.com/vinaypuppal/image/upload/v1466484035/tic-tac-toe-ui_suoxn1.png",
+    previewUrl:"https://res.cloudinary.com/vinaypuppal/image/upload/c_scale,w_300/v1466484035/tic-tac-toe-ui_suoxn1.png",
     category:"frontend"
   },
   {
@@ -76,7 +76,7 @@ var data = [
     title:"Simon Says Game",
     description:"A classic Simon Says Game built for fun.",
     demoUrl:"https://www.vinaypuppal.com/fcc-simon-game",
-    previewUrl:"https://res.cloudinary.com/vinaypuppal/image/upload/c_scale,h_470/v1466486988/simon-says-game-ui_nyxr6d.png",
+    previewUrl:"https://res.cloudinary.com/vinaypuppal/image/upload/c_scale,h_300/v1466486988/simon-says-game-ui_nyxr6d.png",
     category:"frontend"
   },
   {
