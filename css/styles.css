@@ -42,7 +42,7 @@ ul {
   z-index: 1;
   -webkit-transition: opacity 0.2s ease-in;
   transition: opacity 0.2s ease-in;
-  background: rgba(96, 125, 139, 0.77);
+  background: rgba(0,127,225,0.77);
   -webkit-transition: all 0.5 ease-in;
   transition: all 0.5 ease-in;
 }
@@ -78,6 +78,15 @@ ul {
   -webkit-transition: all 0.3s ease-in;
   transition: all 0.3s ease-in;
   display: none;
+}
+.container .close-arrow:after{
+    content: "close";
+    color: #888;
+    font-size: 14px;
+    text-transform: capitalize;
+    position: absolute;
+    top: 10px;
+    left: 12px;
 }
 .container .close-arrow:hover {
   color: #c90;
@@ -294,7 +303,7 @@ ul {
   margin-bottom: 10px;
 }
 .container.about .info p.name {
-  color: teal;
+  color: #007fe1;
   font-size: 32px;
   margin-bottom: 10px;
 }
@@ -308,16 +317,16 @@ ul {
 }
 
 .container.about .info p.location{
-  color: teal;
+  color: #007fe1;
 }
 
 .container.about .info p.email a {
-  color: teal;
+  color: #007fe1;
   transition: all 0.25s;
 }
 
 .container.about .info p.email a:hover {
-  color: blue;
+  color: rgba(0, 127, 225,0.7);
 }
 
 .container.about .button {
@@ -326,7 +335,7 @@ ul {
   width: 100%;
 }
 .container.about .button a {
-  color: #c90;
+  color: #007fe1;
   width: 50%;
   margin: 0 auto;
   display: block;
@@ -336,8 +345,8 @@ ul {
   transition: all 0.5s ease-in;
 }
 .container.about .button a:hover {
-  color: rgba(0, 0, 0, 0.77);
-  border-color: rgba(0, 0, 0, 0.77);
+  color: rgba(0, 127, 225,0.7);
+  border-color: rgba(0, 127, 225,0.7);
 }
 .container.about .intro {
   padding: 0 50px;
@@ -353,11 +362,11 @@ ul {
   letter-spacing: 2px;
 }
 .container.about .intro p a{
-  color: teal;
+  color: rgba(0, 127, 225,1);
   transition: all 0.25s;
 }
 .container.about .intro p a:hover{
-  color: blue;
+  color: rgba(0, 127, 225,0.7);
 }
 .container.about .bottom {
   width: 90%;
@@ -449,8 +458,8 @@ ul {
   opacity: 0;
 }
 .container.works .header .filter li input:checked ~ label {
-  border-color: #ff6600;
-  color: #ff6600;
+  border-color: rgba(0, 127, 225,1);
+  color: rgba(0, 127, 225,1);
   font-weight: bold;
 }
 .container.works .content {
@@ -505,16 +514,16 @@ ul {
   display: block;
   width: 60%;
   margin: 0 auto;
-  color: #ff6600;
+  color: rgba(0, 127, 225,1);
   padding: 10px 20px;
-  border: 1px solid #ff6600;
+  border: 1px solid rgba(0, 127, 225,1);
   border-radius: 4px;
   -webkit-transition: all o 0.3s;
   transition: all o 0.3s;
 }
 .container.works .content .cards .card .card-actions .view-demo:hover {
-  color: rgba(0, 0, 0, 0.7);
-  border-color: rgba(0, 0, 0, 0.7);
+  color: rgba(0, 127, 225,0.7);
+  border-color: rgba(0, 127, 225,0.7);
 }
 .container.works.open {
   top: 60px;
@@ -814,7 +823,7 @@ ul {
   background-image: url(../images/browser_not_supported.png);
   background-size: contain;
   background-repeat: no-repeat;
-  background-position: center center;  
+  background-position: center center;
   overflow: hidden;
   display: none;
 }
