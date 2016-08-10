@@ -8,6 +8,14 @@ $(document).ready(function(){
   });
 var data = [
   {
+    id:20,
+    title:"TutorBro",
+    description:"This is my First Freelancing job. A static website to get user queries and forward to sales team",
+    demoUrl:"https://www.tutorbro.com",
+    previewUrl:"https://res.cloudinary.com/vinaypuppal/image/upload/c_scale,w_300/v1470860413/tutorbro-ui_cs2skj.png",
+    category:"frontend"
+  },
+  {
     id:0,
     title:"Tribute Page",
     description:"A Tribute Page For Nandamuri Taraka Rama Rao.",
