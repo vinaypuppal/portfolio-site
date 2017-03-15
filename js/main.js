@@ -305,12 +305,12 @@ function generateCard(data){
   if(document.createElement("p").style.flex===undefined){
       $('.supported').hide();
       $('.not-supported').show();
-      alert("Please Use Latest Browsers Like Chrome")
+      alert("Sorry your browser is not supported. Please Use Latest Browsers Like Chrome")
    }
 
    if(~navigator.userAgent.indexOf('UCBrowser') || ~navigator.userAgent.indexOf('Opera Mini')){
     $('.supported').hide();
     $('.not-supported').show();
-    alert("Please Use Latest Browsers Like Chrome")
+    alert("Sorry your browser is not supported. Please Use Latest Browsers Like Chrome")
    }
 });
