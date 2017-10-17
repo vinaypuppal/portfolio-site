@@ -14,7 +14,7 @@ body {
   width: 100%;
   letter-spacing: 2px;
   line-height: 1.35;
-  font-family: "Dosis", sans-serif;
+  font-family: 'Dosis', sans-serif;
 }
 
 h1,
@@ -23,7 +23,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Raleway", sans-serif;
+  font-family: 'Raleway', sans-serif;
 }
 
 a {
@@ -86,7 +86,7 @@ ul {
   display: none;
 }
 .container .close-arrow:after {
-  content: "close";
+  content: 'close';
   color: #888;
   font-size: 14px;
   text-transform: capitalize;
@@ -120,7 +120,7 @@ ul {
   line-height: 30px;
   font-size: 32px;
   font-weight: bold;
-  font-family: "Fredericka the Great", cursive;
+  font-family: 'Fredericka the Great', cursive;
 }
 .container.home header .center {
   -webkit-box-flex: 2;
@@ -578,6 +578,8 @@ ul {
   padding: 10px;
   font-size: 20px;
   text-align: center;
+  max-width: 600px;
+  margin: 0 auto;
 }
 .container.contact .content ul {
   width: 50%;
