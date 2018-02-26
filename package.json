@@ -1,0 +1,60 @@
+{
+  "name": "vinaypuppal.github.io",
+  "version": "1.0.0",
+  "description": "Vinay Puppal - Front End Web Developer Portfolio Site.",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vinaypuppal/vinaypuppal.github.io.git"
+  },
+  "keywords": [],
+  "author": "Vinay Puppal <me@vinaypuppal.com> (https://www.vinaypuppal.com/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/vinaypuppal/vinaypuppal.github.io/issues"
+  },
+  "homepage": "https://github.com/vinaypuppal/vinaypuppal.github.io#readme",
+  "scripts": {
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "build": "gatsby build",
+    "dev": "gatsby develop",
+    "prettify": "prettier --write '{./,__{tests,mocks}__}/**/*.+(js|jsx|md|json)'"
+  },
+  "dependencies": {
+    "emotion": "^8.0.8",
+    "emotion-server": "^8.0.8",
+    "gatsby": "^1.9.76",
+    "gatsby-link": "^1.6.21",
+    "gatsby-plugin-emotion": "^1.1.8",
+    "gatsby-plugin-google-analytics": "^1.0.19",
+    "gatsby-plugin-manifest": "^1.0.14",
+    "gatsby-plugin-offline": "^1.0.14",
+    "gatsby-plugin-react-helmet": "^2.0.5",
+    "gatsby-plugin-react-next": "^1.0.4",
+    "gatsby-plugin-typography": "^1.7.14",
+    "gatsby-source-filesystem": "^1.5.5",
+    "gatsby-transformer-json": "^1.0.11",
+    "gatsby-transformer-remark": "^1.7.17",
+    "normalize.css": "^7.0.0",
+    "prop-types": "^15.6.0",
+    "react-emotion": "^8.0.8",
+    "react-helmet": "^5.2.0",
+    "styled-system": "^1.0.8",
+    "typography-theme-de-young": "^0.16.9"
+  },
+  "devDependencies": {
+    "eslint": "^4.9.0",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-config-prettier": "^2.6.0",
+    "eslint-loader": "^1.9.0",
+    "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-jsx-a11y": "^6.0.2",
+    "eslint-plugin-prettier": "^2.3.1",
+    "eslint-plugin-react": "^7.4.0",
+    "husky": "^0.14.3",
+    "jest": "^21.2.1",
+    "lint-staged": "^7.0.0",
+    "prettier": "1.7.4"
+  }
+}
