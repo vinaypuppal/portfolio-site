@@ -41,8 +41,7 @@
   {
     "id": 1,
     "title": "Random Quote Generator",
-    "description":
-      "A simple quote generator that you can tweet and share.",
+    "description": "A simple quote generator that you can tweet and share.",
     "demoUrl": "https://www.vinaypuppal.com/fcc-random-quotes",
     "previewUrl":
       "https://res.cloudinary.com/vinaypuppal/image/upload/c_scale,w_300/v1465247983/fcc/random-quote-ui.png",
@@ -60,8 +59,7 @@
   {
     "id": 3,
     "title": "Show Local Weather",
-    "description":
-      "A simple app to locate your current position and tell you the current weather.",
+    "description": "A simple app to locate your current position and tell you the current weather.",
     "demoUrl": "https://www.vinaypuppal.com/fcc-show-local-weather",
     "previewUrl":
       "https://res.cloudinary.com/vinaypuppal/image/upload/c_scale,w_300/v1465247982/fcc/local-weather-ui.png",
@@ -70,8 +68,7 @@
   {
     "id": 4,
     "title": "Basic JavaScript Calculator",
-    "description":
-      "A simple calculator with the ability to chain operations.",
+    "description": "A simple calculator with the ability to chain operations.",
     "demoUrl": "https://www.vinaypuppal.com/fcc-basic-calculator",
     "previewUrl":
       "https://res.cloudinary.com/vinaypuppal/image/upload/c_scale,w_300/v1465247982/fcc/js-calculator-ui.png",
@@ -80,8 +77,7 @@
   {
     "id": 5,
     "title": "Pomodoro Clock",
-    "description":
-      "Pomodoro timer featuring notification and audible alarm.",
+    "description": "Pomodoro timer featuring notification and audible alarm.",
     "demoUrl": "https://www.vinaypuppal.com/fcc-pomodoro-clock",
     "previewUrl":
       "https://res.cloudinary.com/vinaypuppal/image/upload/c_scale,w_300/v1465247982/fcc/pomodoro-clock-ui.png",
@@ -90,8 +86,7 @@
   {
     "id": 6,
     "title": "Twitch Streamers",
-    "description":
-      "A simple widget to show online status of Twitch streamers.",
+    "description": "A simple widget to show online status of Twitch streamers.",
     "demoUrl": "https://www.vinaypuppal.com/fcc-twitch-json-api",
     "previewUrl":
       "https://res.cloudinary.com/vinaypuppal/image/upload/c_scale,w_300/v1465247986/fcc/twitch-streams-ui.png",
@@ -100,8 +95,7 @@
   {
     "id": 7,
     "title": "Tic-Tac-Toe Game",
-    "description":
-      "A Tic-Tac-Toe game with unbeatable AI created using Minimax Algorithm.",
+    "description": "A Tic-Tac-Toe game with unbeatable AI created using Minimax Algorithm.",
     "demoUrl": "https://www.vinaypuppal.com/fcc-tic-tac-toe",
     "previewUrl":
       "https://res.cloudinary.com/vinaypuppal/image/upload/c_scale,w_300/v1466484035/tic-tac-toe-ui_suoxn1.png",
@@ -129,8 +123,7 @@
   {
     "id": 10,
     "title": "Request Header Parser Microservice",
-    "description":
-      "I can get the IP address, language and operating system for my browser.",
+    "description": "I can get the IP address, language and operating system for my browser.",
     "demoUrl": "https://vp-header-parser.herokuapp.com",
     "previewUrl":
       "https://res.cloudinary.com/vinaypuppal/image/upload/c_scale,w_300/v1465067738/fcc/header-parser-ui.png",
@@ -178,8 +171,7 @@
   {
     "id": 15,
     "title": "Markdown Editor",
-    "description":
-      "A Github flavoured Markdown Editor built using React.js",
+    "description": "A Github flavoured Markdown Editor built using React.js",
     "demoUrl": "https://www.vinaypuppal.com/react-markdown-editor",
     "previewUrl":
       "https://res.cloudinary.com/vinaypuppal/image/upload/v1466487853/markdown-editor-ui_lpusb2.png",
@@ -188,8 +180,7 @@
   {
     "id": 16,
     "title": "Mediclco Website",
-    "description":
-      "A Landing page and Blog for Medicloc Startup Company",
+    "description": "A Landing page and Blog for Medicloc Startup Company",
     "demoUrl": "https://www.medicloc.com/",
     "previewUrl":
       "https://res.cloudinary.com/vinaypuppal/image/upload/c_scale,w_300/v1465247992/fcc/medicloc-ui.png",
@@ -198,8 +189,7 @@
   {
     "id": 17,
     "title": "Amplidudes",
-    "description":
-      "A Landing page and Alumni dashboard for ECE Branch, IT GGV",
+    "description": "A Landing page and Alumni dashboard for ECE Branch, IT GGV",
     "demoUrl": "https://www.amplidudes.in/",
     "previewUrl":
       "https://res.cloudinary.com/vinaypuppal/image/upload/c_scale,w_300/v1465247989/fcc/amplidudes-ui.png",
