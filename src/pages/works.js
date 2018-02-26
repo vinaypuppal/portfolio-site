@@ -1,5 +1,6 @@
 import React from 'react';
+import PageContent from '../components/PageContent';
 
-const WorksPage = () => <h1>Works Page</h1>;
+const WorksPage = () => <PageContent>Works Page</PageContent>;
 
 export default WorksPage;

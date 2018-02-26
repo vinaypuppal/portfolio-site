@@ -1,5 +1,8 @@
 import React from 'react';
 import { injectGlobal } from 'react-emotion';
+import { withPrefix } from 'gatsby-link';
+
+import Header from '../components/header';
 
 /* eslint-disable */
 import normalize from 'normalize.css';
@@ -16,9 +19,35 @@ injectGlobal`
              'segoe ui', arial,
              sans-serif;
   };
+  body {
+    width: 100%;
+    min-height: 100vh;
+    position: relative;
+    letter-spacing: 2px;
+    line-height: 1.35;
+    background: rgba(0,127,225,.60);
+    background: linear-gradient(
+      rgba(0,127,225,.60), 
+      rgba(0,127,225,.60)
+    ), url('https://res.cloudinary.com/vinaypuppal/image/upload/c_scale,w_1024/v1464896760/photo-1428223501723-d821c5d00ca3_knl5ki.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: #fff;
+    margin: 0;
+  }
 `;
 /* eslint-enable */
 
-const Layout = ({ children }) => <div>{children()}</div>;
+const Layout = ({ children, location }) => {
+  const isHomepage = location.pathname === withPrefix('/');
+
+  return (
+    <div>
+      <Header isHomepage={isHomepage} />
+      {children()}
+    </div>
+  );
+};
 
 export default Layout;
