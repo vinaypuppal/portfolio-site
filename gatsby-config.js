@@ -18,10 +18,9 @@ module.exports = {
     },
   },
   plugins: [
-    // Adding various source folders to the GraphQL layer.
-    'gatsby-plugin-react-helmet',
-    'gatsby-plugin-react-next',
     'gatsby-plugin-emotion',
+    'gatsby-plugin-react-helmet',
+    // Adding various source folders to the GraphQL layer.
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -37,6 +36,15 @@ module.exports = {
       },
     },
     `gatsby-plugin-catch-links`,
+    {
+      resolve: `gatsby-plugin-nprogress`,
+      options: {
+        // Setting a color is optional.
+        color: `tomato`,
+        // Disable the loading spinner.
+        showSpinner: false,
+      },
+    },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
