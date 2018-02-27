@@ -152,7 +152,7 @@ const HeaderComponent = ({ isHomepage, socialLinks, navigationLinks }) => (
       {isHomepage ? null : (
         <Navigation>
           {Object.keys(navigationLinks).map(name => (
-            <li>
+            <li key={name}>
               <Link activeClassName="active" to={navigationLinks[name]}>
                 {toCapitalizedWords(name)}
               </Link>

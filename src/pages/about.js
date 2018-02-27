@@ -1,14 +1,16 @@
 import React from 'react';
 import styled from 'react-emotion';
-import IconHtml5 from 'react-devicon/html5/plain-wordmark';
-import IconCss3 from 'react-devicon/css3/plain-wordmark';
-import IconJavascript from 'react-devicon/javascript/plain';
-import IconNodejs from 'react-devicon/nodejs/original';
-import IconVuejs from 'react-devicon/vuejs/plain-wordmark';
-import IconReact from 'react-devicon/react/original-wordmark';
-import IconMongodb from 'react-devicon/mongodb/original';
 
-import { IconGraphQL } from '../components/icons';
+import {
+  IconHtml5,
+  IconCss3,
+  IconJavascript,
+  IconReact,
+  IconVueJs,
+  IconNodeJs,
+  IconMongoDb,
+  IconGraphQL,
+} from '../components/icons';
 import PageContent, { PageTitle } from '../components/PageContent';
 
 const About = styled.section`
@@ -229,19 +231,19 @@ const Focusing = styled.section`
 
 const skills = {
   include: [
-    { name: 'Html5', icon: <IconHtml5 width={100} height={100} />, url: 'https://en.wikipedia.org/wiki/HTML5' },
+    { name: 'Html5', icon: <IconHtml5 size={90} />, url: 'https://en.wikipedia.org/wiki/HTML5' },
     {
       name: 'Css3',
-      icon: <IconCss3 width={100} height={100} />,
+      icon: <IconCss3 size={90} />,
       url: 'https://en.wikipedia.org/wiki/Cascading_Style_Sheets',
     },
-    { name: 'Js', icon: <IconJavascript width={100} height={100} />, url: 'https://en.wikipedia.org/wiki/JavaScript' },
-    { name: 'ReactJs', icon: <IconReact width={100} height={100} />, url: 'https://reactjs.org' },
-    { name: 'VueJs', icon: <IconVuejs width={100} height={100} />, url: 'https://vuejs.org' },
+    { name: 'Js', icon: <IconJavascript size={90} />, url: 'https://en.wikipedia.org/wiki/JavaScript' },
+    { name: 'ReactJs', icon: <IconReact size={90} />, url: 'https://reactjs.org' },
+    { name: 'VueJs', icon: <IconVueJs size={90} />, url: 'https://vuejs.org' },
   ],
   focusing: [
-    { name: 'NodeJs', icon: <IconNodejs width={80} height={80} />, url: 'https://nodejs.org' },
-    { name: 'MongoDB', icon: <IconMongodb width={80} height={80} />, url: 'https://mongodb.com' },
+    { name: 'NodeJs', icon: <IconNodeJs size={80} />, url: 'https://nodejs.org' },
+    { name: 'MongoDB', icon: <IconMongoDb size={80} />, url: 'https://mongodb.com' },
     { name: 'GraphQL', icon: <IconGraphQL size={80} />, url: 'https://graphql.com' },
   ],
 };
@@ -295,7 +297,7 @@ const AboutPage = ({ transition }) => (
         <PageTitle>Some of my skills include</PageTitle>
         <Technologies>
           {skills.include.map(skill => (
-            <li>
+            <li key={skill.name.toLowerCase()}>
               <a className={skill.name.toLowerCase()} rel="noopener noreferrer" target="_blank" href={skill.url}>
                 {skill.icon}
               </a>
@@ -307,7 +309,7 @@ const AboutPage = ({ transition }) => (
         <PageTitle>Currently focusng on</PageTitle>
         <Technologies>
           {skills.focusing.map(skill => (
-            <li>
+            <li key={skill.name.toLowerCase()}>
               <a className={skill.name.toLowerCase()} rel="noopener noreferrer" target="_blank" href={skill.url}>
                 {skill.icon}
                 <small>{skill.name}</small>
