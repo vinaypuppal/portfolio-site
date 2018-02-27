@@ -146,7 +146,10 @@ const HeaderComponent = ({ isHomepage, socialLinks, navigationLinks }) => (
     <Header>
       <Logo isHomepage={isHomepage}>
         <Link to="/">
-          <img src="https://res.cloudinary.com/vinaypuppal/image/upload/v1519710524/vinaypuppal_ichgm0.png" alt="" />
+          <img
+            src="https://res.cloudinary.com/vinaypuppal/image/upload/v1519710524/vinaypuppal_ichgm0.png"
+            alt="VinayPuppal"
+          />
         </Link>
       </Logo>
       {isHomepage ? null : (

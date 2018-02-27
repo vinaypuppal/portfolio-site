@@ -30,7 +30,7 @@ injectGlobal`
     background: linear-gradient(
       rgba(0,127,225,.60), 
       rgba(0,127,225,.60)
-    ), url('https://res.cloudinary.com/vinaypuppal/image/upload/c_scale,w_1024/v1464896760/photo-1428223501723-d821c5d00ca3_knl5ki.jpg');
+    ), url('https://res.cloudinary.com/vinaypuppal/image/upload/c_scale,w_1024/v1464896760/photo-1428223501723-d821c5d00ca3_knl5ki.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
