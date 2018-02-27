@@ -19,6 +19,9 @@ module.exports = {
   },
   plugins: [
     // Adding various source folders to the GraphQL layer.
+    'gatsby-plugin-react-helmet',
+    'gatsby-plugin-react-next',
+    'gatsby-plugin-emotion',
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -33,6 +36,7 @@ module.exports = {
         path: `${__dirname}/src/content/`,
       },
     },
+    `gatsby-plugin-catch-links`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
@@ -44,12 +48,12 @@ module.exports = {
         display: 'minimal-ui',
         icons: [
           {
-            src: `/favicons/android-icon-192x192.png`,
+            src: `/favicons/android-chrome-192x192.png`,
             sizes: `192x192`,
             type: `image/png`,
           },
           {
-            src: `/favicons/android-icon-512x512.png`,
+            src: `/favicons/android-chrome-512x512.png`,
             sizes: `512x512`,
             type: `image/png`,
           },
@@ -64,10 +68,21 @@ module.exports = {
     },
     'gatsby-transformer-remark',
     'gatsby-transformer-json',
-    'gatsby-plugin-emotion',
-    'gatsby-plugin-react-next',
     'gatsby-plugin-offline',
-    'gatsby-plugin-react-helmet',
-    'gatsby-plugin-netlify',
+    {
+      resolve: `gatsby-plugin-netlify`,
+      options: {
+        headers: {
+          '/*': ['Cache-Control: public, max-age=3600, no-cache', 'Access-Control-Max-Age: 600'],
+          '/sw.js': ['Cache-Control: private, no-cache'],
+        }, // option to add more headers. `Link` headers are transformed by the below criteria
+        allPageHeaders: [], // option to add headers for all pages. `Link` headers are transformed by the below criteria
+        mergeSecurityHeaders: true, // boolean to turn off the default security headers
+        mergeLinkHeaders: true, // boolean to turn off the default gatsby js headers
+        mergeCachingHeaders: true, // boolean to turn off the default caching headers
+        transformHeaders: headers => headers, // optional transform for manipulating headers under each path (e.g.sorting), etc.
+        generateMatchPathRewrites: true, // boolean to turn off automatic creation of redirect rules for client only paths
+      },
+    },
   ],
 };

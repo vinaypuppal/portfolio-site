@@ -9,5 +9,9 @@ exports.modifyWebpackConfig = ({ config, stage }) => {
     default:
       break;
   }
+  if (stage === 'build-javascript') {
+    // turn off source-maps
+    config.merge({ devtool: false });
+  }
   return config;
 };
