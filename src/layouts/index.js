@@ -55,7 +55,10 @@ const LayoutComponent = ({ children, location, data: { site: { siteMetadata } } 
         <meta charSet="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0 user-scalable=no" />
         <title>VinayPuppal | Front End Developer</title>
-        <meta description="Hi, I'm VinayPuppal. I focus on creating interactive websites that empower real people and simplifies their lives. Check out some of my recent projects or learn more about me." />
+        <meta
+          name="description"
+          content="Hi, I'm VinayPuppal. I focus on creating interactive websites that empower real people and simplifies their lives. Check out some of my recent projects or learn more about me."
+        />
         <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png" />
         <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png" />
