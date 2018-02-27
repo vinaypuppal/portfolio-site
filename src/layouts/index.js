@@ -1,6 +1,7 @@
 import React from 'react';
 import styled, { injectGlobal } from 'react-emotion';
 import { withPrefix } from 'gatsby-link';
+import { Helmet } from 'react-helmet';
 
 import Header from '../components/header';
 
@@ -49,6 +50,44 @@ const LayoutComponent = ({ children, location, data: { site: { siteMetadata } } 
 
   return (
     <Layout>
+      <Helmet>
+        <meta charSet="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0 user-scalable=no" />
+        <title>VinayPuppal | Front End Developer</title>
+        <meta description="Hi, I'm VinayPuppal. I focus on creating interactive websites that empower real people and simplifies their lives. Check out some of my recent projects or learn more about me." />
+        <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png" />
+        <link rel="manifest" href="/favicons/manifest.json" />
+        <link rel="mask-icon" href="/favicons/safari-pinned-tab.svg" color="#65c9ff" />
+        <link rel="shortcut icon" href="/favicons/favicon.ico" />
+        <meta name="msapplication-config" content="/favicons/browserconfig.xml" />
+        <meta name="theme-color" content="#65c9ff" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="VinayPuppal" />
+        <meta property="og:url" content="https://www.vinaypuppal.com" />
+        <meta
+          property="og:image"
+          content="https://res.cloudinary.com/vinaypuppal/image/upload/v1511183636/my_avatar.png"
+        />
+        <meta property="og:site_name" content="VinayPuppal" />
+        <meta
+          property="og:description"
+          content="Hi, I'm VinayPuppal. I focus on creating interactive websites that empower real people and simplifies their lives. Check out some of my recent projects or learn more about me."
+        />
+        <meta property="fb:app_id" content="1110213405717341" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:site" content="@vinaypuppal" />
+        <meta name="twitter:title" content="VinayPuppal" />
+        <meta
+          name="twitter:description"
+          content="Hi, I'm VinayPuppal. I focus on creating interactive websites that empower real people and simplifies their lives. Check out some of my recent projects or learn more about me."
+        />
+        <meta
+          name="twitter:image:src"
+          content="https://res.cloudinary.com/vinaypuppal/image/upload/v1511183636/my_avatar.png"
+        />
+      </Helmet>
       <Header isHomepage={isHomepage} {...siteMetadata} />
       {children()}
     </Layout>

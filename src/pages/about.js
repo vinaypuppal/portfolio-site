@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'react-emotion';
+import { Helmet } from 'react-helmet';
 
 import {
   IconHtml5,
@@ -250,6 +251,9 @@ const skills = {
 
 const AboutPage = ({ transition }) => (
   <PageContent style={transition && transition.style}>
+    <Helmet>
+      <title>About Me | VinayPuppal.com</title>
+    </Helmet>
     <About>
       <Avatar>
         <img src="https://res.cloudinary.com/vinaypuppal/image/upload/v1511183636/my_avatar.png" alt="avatar" />
