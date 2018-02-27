@@ -310,7 +310,7 @@ const AboutPage = ({ transition }) => (
         </Technologies>
       </Include>
       <Focusing>
-        <PageTitle>Currently focusng on</PageTitle>
+        <PageTitle>Currently focusing on</PageTitle>
         <Technologies>
           {skills.focusing.map(skill => (
             <li key={skill.name.toLowerCase()}>
