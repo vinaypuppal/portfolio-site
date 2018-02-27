@@ -9,10 +9,20 @@ import FaFcc from 'react-icons/lib/fa/fire';
 import FaGithub from 'react-icons/lib/fa/github';
 import FaMedium from 'react-icons/lib/fa/medium';
 
+import { toCapitalizedWords, capitalize } from '../../utils';
+
 const Header = styled.header`
   padding: 20px 50px;
-  padding-bottom: 12px;
+  padding-bottom: 15px;
   display: flex;
+  @media (max-width: 1080px) {
+    padding: 20px;
+    padding-bottom: 15px;
+  }
+  @media (max-width: 600px) {
+    flex-direction: column;
+    align-items: center;
+  }
 `;
 
 const Logo = styled.h3`
@@ -23,7 +33,6 @@ const Logo = styled.h3`
   justify-content: flex-start;
   text-align: center;
   & a {
-    line-height: 30px;
     font-weight: 300;
     text-decoration: none;
     color: #fff;
@@ -54,6 +63,9 @@ const Navigation = styled.ul`
       color: #ccc;
     }
   }
+  @media (max-width: 600px) {
+    display: none;
+  }
 `;
 
 const SocialLinks = styled.ul`
@@ -63,6 +75,7 @@ const SocialLinks = styled.ul`
   list-style: none;
   display: flex;
   justify-content: flex-end;
+  align-items: center;
   text-align: center;
   & li {
     margin: 0 10px;
@@ -103,103 +116,60 @@ const SocialLinks = styled.ul`
       }
     }
   }
+  @media (max-width: 1000px) {
+    display: ${props => (props.isHomepage ? 'flex' : 'none')};
+  }
+  @media (max-width: 600px) {
+    margin: 30px;
+    justify-content: center;
+  }
+  @media (max-width: 350px) {
+    flex-wrap: wrap;
+    & li {
+      margin: 10px;
+    }
+  }
 `;
 
-const HeaderComponent = ({ isHomepage }) => (
+const IconMap = {
+  facebook: <FaFacebook />,
+  twitter: <FaTwitter />,
+  linkedin: <FaLinkedin />,
+  codepen: <FaCodepen />,
+  github: <FaGithub />,
+  fcc: <FaFcc />,
+  medium: <FaMedium />,
+};
+
+const HeaderComponent = ({ isHomepage, title, socialLinks, navigationLinks }) => (
   <Header>
-    <Logo isHomepage>
-      <Link to="/">Vinay Puppal</Link>
+    <Logo isHomepage={isHomepage}>
+      <Link to="/">{title}</Link>
     </Logo>
     {isHomepage ? null : (
       <Navigation>
-        <li>
-          <Link activeClassName="active" to="/about">
-            About Me
-          </Link>
-        </li>
-        <li>
-          <Link activeClassName="active" to="/works">
-            My Works
-          </Link>
-        </li>
-        <li>
-          <Link activeClassName="active" to="/blog">
-            Blog
-          </Link>
-        </li>
+        {Object.keys(navigationLinks).map(name => (
+          <li>
+            <Link activeClassName="active" to={navigationLinks[name]}>
+              {toCapitalizedWords(name)}
+            </Link>
+          </li>
+        ))}
       </Navigation>
     )}
-    <SocialLinks>
-      <li>
-        <a
-          className="facebook"
-          title="Facebook"
-          target="_blank"
-          rel="noopener noreferrer"
-          href="https://www.facebook.com/puppalvinay">
-          <FaFacebook />
-        </a>
-      </li>
-      <li>
-        <a
-          className="twitter"
-          title="Twitter"
-          target="_blank"
-          rel="noopener noreferrer"
-          href="https://twitter.com/vinaypuppal">
-          <FaTwitter />
-        </a>
-      </li>
-      <li>
-        <a
-          className="linkedin"
-          title="LinkedIn"
-          target="_blank"
-          rel="noopener noreferrer"
-          href="https://www.linkedin.com/in/vinay-puppal-4514b7104">
-          <FaLinkedin />
-        </a>
-      </li>
-      <li>
-        <a
-          className="codepen"
-          title="Codepen"
-          target="_blank"
-          rel="noopener noreferrer"
-          href="http://codepen.io/vinaypuppal">
-          <FaCodepen />
-        </a>
-      </li>
-      <li>
-        <a
-          className="fcc"
-          title="FreeCodeCamp"
-          target="_blank"
-          rel="noopener noreferrer"
-          href="https://www.freecodecamp.com/vinaypuppal">
-          <FaFcc />
-        </a>
-      </li>
-      <li>
-        <a
-          className="github"
-          title="Github"
-          target="_blank"
-          rel="noopener noreferrer"
-          href="https://github.com/vinaypuppal">
-          <FaGithub />
-        </a>
-      </li>
-      <li>
-        <a
-          className="medium"
-          title="Github"
-          target="_blank"
-          rel="noopener noreferrer"
-          href="https://medium.com/vinaypuppal">
-          <FaMedium />
-        </a>
-      </li>
+    <SocialLinks isHomepage={isHomepage}>
+      {Object.keys(socialLinks).map(linkName => (
+        <li key={linkName}>
+          <a
+            className={linkName}
+            title={capitalize(linkName)}
+            target="_blank"
+            rel="noopener noreferrer"
+            href={socialLinks[linkName]}>
+            {IconMap[linkName]}
+          </a>
+        </li>
+      ))}
     </SocialLinks>
   </Header>
 );

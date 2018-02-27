@@ -19,5 +19,6 @@
     "react/prop-types": "off",
     "jsx-a11y/anchor-is-valid": "off",
     "react/jsx-closing-bracket-location": "off"
-  }
+  },
+  "globals": { "graphql": true }
 }

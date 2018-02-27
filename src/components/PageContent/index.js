@@ -6,7 +6,8 @@ const Content = styled.div`
   color: #888;
   background: #fff;
   width: 100%;
-  height: calc(100vh - 62px);
+  height: calc(100vh - 65px);
+  overflow-y: auto;
 `;
 
-export default ({ children }) => <Content>{children}</Content>;
+export default props => <Content {...props}>{props.children}</Content>;

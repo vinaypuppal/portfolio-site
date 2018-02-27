@@ -35,19 +35,44 @@ injectGlobal`
     background-repeat: no-repeat;
     color: #fff;
     margin: 0;
+    overflow: hidden;
   }
 `;
 /* eslint-enable */
 
-const Layout = ({ children, location }) => {
+const Layout = ({ children, location, data: { site: { siteMetadata } } }) => {
   const isHomepage = location.pathname === withPrefix('/');
 
   return (
     <div>
-      <Header isHomepage={isHomepage} />
+      <Header isHomepage={isHomepage} {...siteMetadata} />
       {children()}
     </div>
   );
 };
+
+export const query = graphql`
+  query LayoutQuery {
+    site {
+      siteMetadata {
+        title
+        socialLinks {
+          facebook
+          twitter
+          linkedin
+          codepen
+          fcc
+          github
+          medium
+        }
+        navigationLinks {
+          aboutMe
+          myWorks
+          myBlog
+        }
+      }
+    }
+  }
+`;
 
 export default Layout;

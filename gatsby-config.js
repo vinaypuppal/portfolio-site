@@ -2,6 +2,20 @@ module.exports = {
   siteMetadata: {
     title: 'Vinay Puppal',
     subtitle: `Front End Developer`,
+    socialLinks: {
+      facebook: 'https://www.facebook.com/puppalvinay',
+      twitter: 'https://twitter.com/vinaypuppal',
+      linkedin: 'https://www.linkedin.com/in/vinay-puppal-4514b7104',
+      codepen: 'http://codepen.io/vinaypuppal',
+      fcc: 'https://www.freecodecamp.org/vinaypuppal',
+      github: 'https://github.com/vinaypuppal',
+      medium: 'https://medium.com/@vinaypuppal',
+    },
+    navigationLinks: {
+      aboutMe: '/about',
+      myWorks: '/works',
+      myBlog: '/blog',
+    },
   },
   plugins: [
     // Adding various source folders to the GraphQL layer.
