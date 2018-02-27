@@ -45,7 +45,8 @@ module.exports = {
         start_url: '/',
         background_color: '#65c9ff',
         theme_color: '#65c9ff',
-        display: 'minimal-ui',
+        display: 'standalone',
+        orientation: 'portrait-primary',
         icons: [
           {
             src: `/favicons/android-chrome-192x192.png`,
@@ -53,9 +54,9 @@ module.exports = {
             type: `image/png`,
           },
           {
-            src: `/favicons/android-chrome-512x512.png`,
-            sizes: `512x512`,
-            type: `image/png`,
+            src: '/favicons/android-chrome-256x256.png',
+            sizes: '256x256',
+            type: 'image/png',
           },
         ],
       },
