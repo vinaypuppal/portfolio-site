@@ -148,7 +148,7 @@ const Technologies = styled.ul`
   padding: 30px 0;
   list-style: none;
   & li {
-    margin: 5px 10px;
+    margin: 5px 20px;
     & a {
       display: block;
       text-decoration: none;
@@ -163,6 +163,9 @@ const Technologies = styled.ul`
         font-size: 20px;
         line-height: 1;
       }
+      &.vuejs {
+        color: #35495e;
+      }
       &.nodejs {
         color: #83ce2a;
       }
@@ -174,7 +177,7 @@ const Technologies = styled.ul`
       }
     }
     @media (max-width: 1200px) {
-      margin: 20px 10px;
+      margin: 20px;
     }
   }
   @media (max-width: 800px) {
@@ -240,9 +243,9 @@ const skills = {
     },
     { name: 'Js', icon: <IconJavascript size={90} />, url: 'https://en.wikipedia.org/wiki/JavaScript' },
     { name: 'ReactJs', icon: <IconReact size={90} />, url: 'https://reactjs.org' },
-    { name: 'VueJs', icon: <IconVueJs size={90} />, url: 'https://vuejs.org' },
   ],
   focusing: [
+    { name: 'VueJs', icon: <IconVueJs size={80} />, url: 'https://vuejs.org' },
     { name: 'NodeJs', icon: <IconNodeJs size={80} />, url: 'https://nodejs.org' },
     { name: 'MongoDB', icon: <IconMongoDb size={80} />, url: 'https://mongodb.com' },
     { name: 'GraphQL', icon: <IconGraphQL size={80} />, url: 'https://graphql.com' },
