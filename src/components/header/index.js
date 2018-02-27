@@ -10,14 +10,15 @@ import FaGithub from 'react-icons/lib/fa/github';
 import FaMedium from 'react-icons/lib/fa/medium';
 
 import { toCapitalizedWords, capitalize } from '../../utils';
+import { Container } from '../PageContent';
 
 const Header = styled.header`
-  padding: 20px 50px;
-  padding-bottom: 15px;
+  padding: 20px;
+  padding-bottom: 5px;
   display: flex;
+  align-items: center;
   @media (max-width: 1080px) {
-    padding: 20px;
-    padding-bottom: 15px;
+    padding-bottom: 5px;
   }
   @media (max-width: 600px) {
     flex-direction: column;
@@ -26,8 +27,7 @@ const Header = styled.header`
 `;
 
 const Logo = styled.h3`
-  font-size: 2rem;
-  line-height: 30px;
+  line-height: 0px;
   margin: 0;
   display: flex;
   justify-content: flex-start;
@@ -141,37 +141,41 @@ const IconMap = {
   medium: <FaMedium />,
 };
 
-const HeaderComponent = ({ isHomepage, title, socialLinks, navigationLinks }) => (
-  <Header>
-    <Logo isHomepage={isHomepage}>
-      <Link to="/">{title}</Link>
-    </Logo>
-    {isHomepage ? null : (
-      <Navigation>
-        {Object.keys(navigationLinks).map(name => (
-          <li>
-            <Link activeClassName="active" to={navigationLinks[name]}>
-              {toCapitalizedWords(name)}
-            </Link>
+const HeaderComponent = ({ isHomepage, socialLinks, navigationLinks }) => (
+  <Container>
+    <Header>
+      <Logo isHomepage={isHomepage}>
+        <Link to="/">
+          <img src="https://res.cloudinary.com/vinaypuppal/image/upload/v1519710524/vinaypuppal_ichgm0.png" alt="" />
+        </Link>
+      </Logo>
+      {isHomepage ? null : (
+        <Navigation>
+          {Object.keys(navigationLinks).map(name => (
+            <li>
+              <Link activeClassName="active" to={navigationLinks[name]}>
+                {toCapitalizedWords(name)}
+              </Link>
+            </li>
+          ))}
+        </Navigation>
+      )}
+      <SocialLinks isHomepage={isHomepage}>
+        {Object.keys(socialLinks).map(linkName => (
+          <li key={linkName}>
+            <a
+              className={linkName}
+              title={capitalize(linkName)}
+              target="_blank"
+              rel="noopener noreferrer"
+              href={socialLinks[linkName]}>
+              {IconMap[linkName]}
+            </a>
           </li>
         ))}
-      </Navigation>
-    )}
-    <SocialLinks isHomepage={isHomepage}>
-      {Object.keys(socialLinks).map(linkName => (
-        <li key={linkName}>
-          <a
-            className={linkName}
-            title={capitalize(linkName)}
-            target="_blank"
-            rel="noopener noreferrer"
-            href={socialLinks[linkName]}>
-            {IconMap[linkName]}
-          </a>
-        </li>
-      ))}
-    </SocialLinks>
-  </Header>
+      </SocialLinks>
+    </Header>
+  </Container>
 );
 
 export default HeaderComponent;

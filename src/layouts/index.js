@@ -1,5 +1,5 @@
 import React from 'react';
-import { injectGlobal } from 'react-emotion';
+import styled, { injectGlobal } from 'react-emotion';
 import { withPrefix } from 'gatsby-link';
 
 import Header from '../components/header';
@@ -40,14 +40,18 @@ injectGlobal`
 `;
 /* eslint-enable */
 
-const Layout = ({ children, location, data: { site: { siteMetadata } } }) => {
+const Layout = styled.div`
+  width: 100%;
+`;
+
+const LayoutComponent = ({ children, location, data: { site: { siteMetadata } } }) => {
   const isHomepage = location.pathname === withPrefix('/');
 
   return (
-    <div>
+    <Layout>
       <Header isHomepage={isHomepage} {...siteMetadata} />
       {children()}
-    </div>
+    </Layout>
   );
 };
 
@@ -75,4 +79,4 @@ export const query = graphql`
   }
 `;
 
-export default Layout;
+export default LayoutComponent;

@@ -8,7 +8,7 @@ import { toCapitalizedWords } from '../utils';
 
 const Content = styled.div`
   width: 100%;
-  height: calc(100vh - 65px);
+  height: calc(100vh - 71px);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -105,10 +105,10 @@ const Content = styled.div`
     }
   }
   @media (max-width: 600px) {
-    height: calc(100vh - 155px);
+    height: calc(100vh - 161px);
   }
   @media (max-width: 350px) {
-    height: calc(100vh - 230px);
+    height: calc(100vh - 231px);
   }
 `;
 
