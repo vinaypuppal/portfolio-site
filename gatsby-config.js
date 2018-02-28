@@ -20,6 +20,7 @@ module.exports = {
   plugins: [
     'gatsby-plugin-emotion',
     'gatsby-plugin-react-helmet',
+    'gatsby-plugin-netlify-cms',
     // Adding various source folders to the GraphQL layer.
     {
       resolve: `gatsby-source-filesystem`,
@@ -33,6 +34,13 @@ module.exports = {
       options: {
         name: `content`,
         path: `${__dirname}/src/content/`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `posts`,
+        path: `${__dirname}/src/content/posts`,
       },
     },
     `gatsby-plugin-catch-links`,

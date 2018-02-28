@@ -1,0 +1,40 @@
+backend:
+  name: github
+  repo: vinaypuppal/vinaypuppal.github.io
+  branch: gatsbyjs
+
+publish_mode: editorial_workflow
+
+media_folder: "static/assets"
+
+collections:
+  - label: "Blog"
+    name: "blog"
+    folder: "src/content/posts"
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    create: true
+    fields:
+      - { label: Path, name: "path" }
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Publish Date", name: "date", widget: "datetime"}
+      - {label: "Featured Image", name: "thumbnail", widget: "image"}
+      - {label: "Body", name: "body", widget: "markdown"}
+  - label: "Pages"
+    name: "pages"
+    files:
+      - label: "Works Page Content"
+        name: "works"
+        file: "src/content/works.json"
+        description: "My Works"
+        editor:
+          preview: false
+        fields:
+          - name: "allWorks"
+            label: "All Works"
+            widget: list
+            fields:
+              - {label: Title, name: title, widget: string}
+              - {label: Description, name: description, widget: string}
+              - {label: DemoUrl, name: demoUrl, widget: string}
+              - {label: previewUrl, name: previewUrl, widget: string}
+              - {label: category, name: category, widget: select, options: ['frontend', 'backend']}
