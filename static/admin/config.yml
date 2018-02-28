@@ -36,5 +36,5 @@ collections:
               - {label: Title, name: title, widget: string}
               - {label: Description, name: description, widget: string}
               - {label: DemoUrl, name: demoUrl, widget: string}
-              - {label: previewUrl, name: previewUrl, widget: string}
-              - {label: category, name: category, widget: select, options: ['frontend', 'backend']}
+              - {label: PreviewUrl, name: previewUrl, widget: string}
+              - {label: Category, name: category, widget: select, options: ['frontend', 'backend']}
