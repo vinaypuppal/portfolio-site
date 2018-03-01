@@ -1,6 +1,6 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
-import { navigateTo } from 'gatsby-link';
+import Link from 'gatsby-link';
 import styled from 'react-emotion';
 import PageContent, { PageTitle } from '../components/PageContent';
 
@@ -84,7 +84,8 @@ const Filters = styled.ul`
 
 const Filter = styled.li`
   margin: 15px;
-  & button {
+  & a {
+    text-decoration: none;
     padding: 10px 20px;
     color: #888;
     border: 2px solid;
@@ -113,19 +114,19 @@ const WorksPage = ({ transition, location, data: { allContentJson: { edges: [edg
       <Title>My Works</Title>
       <Filters>
         <Filter>
-          <button onClick={() => navigateTo('/works?filter=vanilla')} className={filter === 'vanilla' ? 'active' : ''}>
+          <Link to="/works?filter=vanilla" className={filter === 'vanilla' ? 'active' : ''}>
             Vanilla.js
-          </button>
+          </Link>
         </Filter>
         <Filter>
-          <button onClick={() => navigateTo('/works?filter=react')} className={filter === 'react' ? 'active' : ''}>
+          <Link to="/works?filter=react" className={filter === 'react' ? 'active' : ''}>
             React.js
-          </button>
+          </Link>
         </Filter>
         <Filter>
-          <button onClick={() => navigateTo('/works?filter=node')} className={filter === 'node' ? 'active' : ''}>
+          <Link to="/works?filter=node" className={filter === 'node' ? 'active' : ''}>
             Node.js
-          </button>
+          </Link>
         </Filter>
       </Filters>
       <Works>
