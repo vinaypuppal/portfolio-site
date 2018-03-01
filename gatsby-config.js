@@ -86,20 +86,5 @@ module.exports = {
     },
     'gatsby-transformer-remark',
     'gatsby-transformer-json',
-    {
-      resolve: `gatsby-plugin-netlify`,
-      options: {
-        headers: {
-          '/*': ['Cache-Control: public, max-age=3600, no-cache', 'Access-Control-Max-Age: 600'],
-          '/sw.js': ['Cache-Control: private, no-cache'],
-        }, // option to add more headers. `Link` headers are transformed by the below criteria
-        allPageHeaders: [], // option to add headers for all pages. `Link` headers are transformed by the below criteria
-        mergeSecurityHeaders: true, // boolean to turn off the default security headers
-        mergeLinkHeaders: true, // boolean to turn off the default gatsby js headers
-        mergeCachingHeaders: true, // boolean to turn off the default caching headers
-        transformHeaders: headers => headers, // optional transform for manipulating headers under each path (e.g.sorting), etc.
-        generateMatchPathRewrites: true, // boolean to turn off automatic creation of redirect rules for client only paths
-      },
-    },
   ],
 };
