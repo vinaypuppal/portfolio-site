@@ -12,7 +12,14 @@ import {
   IconMongoDb,
   IconGraphQL,
 } from '../components/icons';
-import PageContent, { PageTitle } from '../components/PageContent';
+import Content, { PageTitle } from '../components/PageContent';
+
+const PageContent = styled(Content)`
+  @media (min-width: 1441px) {
+    display: flex;
+    align-items: center;
+  }
+`;
 
 const About = styled.section`
   width: 100%;

@@ -10,12 +10,11 @@ const Content = styled.div`
   padding: 20px;
   position: relative;
   display: block;
-  @media (min-width: 1440px) {
-    display: flex;
-    align-items: center;
-  }
   @media (max-width: 800px) {
     padding: 30px;
+  }
+  @media (max-width: 480px) {
+    padding: 30px 15px;
   }
 `;
 

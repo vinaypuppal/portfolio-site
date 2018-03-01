@@ -22,6 +22,7 @@
     "prettify": "prettier --write '{./,__{tests,mocks}__}/**/*.+(js|jsx|md|json)'"
   },
   "dependencies": {
+    "babel-plugin-transform-react-remove-prop-types": "^0.4.13",
     "emotion": "^9.0.2",
     "emotion-server": "^9.0.2",
     "gatsby": "^1.9.76",
@@ -40,6 +41,7 @@
     "gatsby-transformer-json": "^1.0.11",
     "gatsby-transformer-remark": "^1.7.17",
     "normalize.css": "^7.0.0",
+    "query-string": "^5.1.0",
     "react-emotion": "^9.0.2",
     "react-helmet": "^5.2.0",
     "react-icon-base": "^2.1.2",

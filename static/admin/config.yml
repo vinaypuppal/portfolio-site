@@ -37,4 +37,4 @@ collections:
               - {label: Description, name: description, widget: string}
               - {label: DemoUrl, name: demoUrl, widget: string}
               - {label: PreviewUrl, name: previewUrl, widget: string}
-              - {label: Category, name: category, widget: select, options: ['frontend', 'backend']}
+              - {label: Category, name: category, widget: select, options: ['vanilla', 'node', 'react', 'vue']}

@@ -32,10 +32,21 @@ const Logo = styled.h3`
   display: flex;
   justify-content: flex-start;
   text-align: center;
+  width: 232px;
+  height: 46px;
   & a {
     font-weight: 300;
     text-decoration: none;
     color: #fff;
+    font-size: 32px;
+    position: relative;
+    & span {
+      position: absolute;
+      top: 50%;
+      transfrom: translateY(-50%);
+      left: 0;
+      opacity: 0;
+    }
   }
 `;
 
@@ -150,6 +161,7 @@ const HeaderComponent = ({ isHomepage, socialLinks, navigationLinks }) => (
             src="https://res.cloudinary.com/vinaypuppal/image/upload/v1519710524/vinaypuppal_ichgm0.png"
             alt="VinayPuppal"
           />
+          <span>VinayPuppal</span>
         </Link>
       </Logo>
       {isHomepage ? null : (
