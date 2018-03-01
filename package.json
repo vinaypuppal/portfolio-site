@@ -24,8 +24,8 @@
   "dependencies": {
     "emotion": "^9.0.2",
     "emotion-server": "^9.0.2",
-    "gatsby": "^1.9.76",
-    "gatsby-link": "^1.6.21",
+    "gatsby": "^1.9.221",
+    "gatsby-link": "^1.6.38",
     "gatsby-plugin-catch-links": "^1.0.17",
     "gatsby-plugin-emotion": "^1.1.13",
     "gatsby-plugin-google-analytics": "^1.0.19",

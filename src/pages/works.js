@@ -4,8 +4,6 @@ import Link from 'gatsby-link';
 import styled from 'react-emotion';
 import PageContent, { PageTitle } from '../components/PageContent';
 
-const queryString = require('query-string');
-
 const Title = styled(PageTitle)`
   font-size: 32px;
   &:before {
@@ -103,9 +101,7 @@ const Filter = styled.li`
 `;
 
 const WorksPage = ({ transition, location, data: { allContentJson: { edges: [edge] } } }) => {
-  const query = queryString.parse(location.search);
-  const filter = query.filter || 'vanilla';
-
+  const filter = location.hash || '#vanilla';
   return (
     <PageContent style={transition && transition.style}>
       <Helmet>
@@ -114,23 +110,23 @@ const WorksPage = ({ transition, location, data: { allContentJson: { edges: [edg
       <Title>My Works</Title>
       <Filters>
         <Filter>
-          <Link to="/works?filter=vanilla" className={filter === 'vanilla' ? 'active' : ''}>
+          <Link to={{ pathname: '/works', hash: '#vanilla' }} className={filter === '#vanilla' ? 'active' : ''}>
             Vanilla.js
           </Link>
         </Filter>
         <Filter>
-          <Link to="/works?filter=react" className={filter === 'react' ? 'active' : ''}>
+          <Link to={{ pathname: '/works', hash: '#react' }} className={filter === '#react' ? 'active' : ''}>
             React.js
           </Link>
         </Filter>
         <Filter>
-          <Link to="/works?filter=node" className={filter === 'node' ? 'active' : ''}>
+          <Link to={{ pathname: '/works', hash: '#node' }} className={filter === '#node' ? 'active' : ''}>
             Node.js
           </Link>
         </Filter>
       </Filters>
       <Works>
-        {edge.node.allWorks.filter(work => work.category === filter).map(work => (
+        {edge.node.allWorks.filter(work => work.category === filter.replace('#', '')).map(work => (
           <Work key={work.demoUrl}>
             <img src={work.previewUrl} alt={work.title} />
             <h4>{work.title}</h4>
