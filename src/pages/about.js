@@ -278,10 +278,7 @@ const AboutPage = ({ transition }) => (
           </p>
         </Info>
         <Resume>
-          <a
-            rel="noopener noreferrer"
-            target="_blank"
-            href="https://res.cloudinary.com/vinaypuppal/image/upload/v1519216944/Vinay_Puppal_-_Resume_-_Front_End_Software_Developer_ew5ya9.pdf">
+          <a rel="noopener noreferrer" target="_blank" href="https://resume.io/r/EenQb">
             View My Resume
           </a>
         </Resume>
