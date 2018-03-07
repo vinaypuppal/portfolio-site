@@ -98,7 +98,7 @@ const Filter = styled.li`
     }
   }
   @media (max-width: 480px) {
-    margin: 10px;
+    margin: 20px 10px;
   }
 `;
 
@@ -112,8 +112,8 @@ const WorksPage = ({ transition, pathContext, data: { allWorksJson: { edges: [ed
       <Title>My Works</Title>
       <Filters>
         {categories.map(item => (
-          <Filter>
-            <Link to={`/works/${item}`} className={item === 'vanilla' ? 'active' : ''}>
+          <Filter key={item}>
+            <Link to={`/works/${item}`} className={item === category ? 'active' : ''}>
               {capitalize(item)}.js
             </Link>
           </Filter>
