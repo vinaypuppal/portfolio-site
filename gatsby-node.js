@@ -20,7 +20,7 @@ exports.modifyWebpackConfig = ({ config, stage }) => {
 
 exports.createPages = ({ boundActionCreators, graphql }) => {
   const { createPage, createRedirect } = boundActionCreators;
-  createRedirect({ fromPath: '/works', toPath: '/works/vanilla', isPermanent: true });
+  createRedirect({ fromPath: '/works', toPath: '/works/react', isPermanent: true });
   const worksTemplate = path.resolve('src/templates/works.js');
   return graphql(`
     {
@@ -49,7 +49,6 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
      * Finally convert Set into Array
      */
     const categories = Array.from(new Set(works.map(work => work.category)));
-    console.log(categories);
     categories.forEach(category => {
       createPage({
         path: `/works/${category}`,

@@ -13,7 +13,7 @@ module.exports = {
     },
     navigationLinks: {
       aboutMe: '/about',
-      myWorks: '/works/vanilla',
+      myWorks: '/works/react',
       myBlog: '/blog',
     },
   },
