@@ -7,7 +7,8 @@ const BlogPage = ({ transition }) => (
   <PageContent style={transition && transition.style}>
     <Helmet>
       <title>My Blog | VinayPuppal.com</title>
-    </Helmet>Blog Page
+    </Helmet>
+    <h1>Coming Soon!...</h1>
   </PageContent>
 );
 
