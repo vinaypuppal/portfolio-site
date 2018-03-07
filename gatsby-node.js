@@ -56,6 +56,7 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
         component: worksTemplate,
         context: {
           category,
+          categories,
         },
       });
     });
