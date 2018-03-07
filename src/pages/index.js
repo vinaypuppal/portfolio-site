@@ -79,6 +79,10 @@ const Content = styled.div`
     }
     @media (max-width: 480px) {
       width: 100%;
+      & a span {
+        font-size: 16px;
+        font-weight: 400;
+      }
     }
     @media (max-width: 400px) {
       width: 100%;
@@ -107,10 +111,10 @@ const Content = styled.div`
     }
   }
   @media (max-width: 600px) {
-    height: calc(100vh - 161px);
+    height: calc(100vh - 156px);
   }
   @media (max-width: 350px) {
-    height: calc(100vh - 231px);
+    height: calc(100vh - 226px);
   }
 `;
 

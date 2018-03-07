@@ -36,7 +36,6 @@ injectGlobal`
     background-repeat: no-repeat;
     color: #fff;
     margin: 0;
-    overflow: hidden;
   }
 `;
 /* eslint-enable */

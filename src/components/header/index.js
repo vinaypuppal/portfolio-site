@@ -25,6 +25,7 @@ const Header = styled.header`
   @media (max-width: 600px) {
     flex-direction: column;
     align-items: center;
+    padding: 10px;
   }
 `;
 
@@ -148,8 +149,8 @@ const BackArrow = styled(Link)`
   position: absolute;
   color: #fff;
   text-decoration: none;
-  top: 24px;
-  left: 15px;
+  top: 20px;
+  left: 10px;
   display: ${props => (props.isHomepage ? 'none' : 'block')};
   @media (min-width: 600px) {
     display: none;
@@ -168,9 +169,9 @@ const IconMap = {
 
 const HeaderComponent = ({ isHomepage, socialLinks, navigationLinks }) => (
   <Container>
-    <Header>
+    <Header isHomepage={isHomepage}>
       <BackArrow to="/" isHomepage={isHomepage}>
-        <MdBackArrow size={40} />
+        <MdBackArrow size={30} />
       </BackArrow>
       <Logo isHomepage={isHomepage}>
         <Link to="/">
