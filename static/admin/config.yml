@@ -30,7 +30,7 @@ collections:
           preview: false
         fields:
           - name: "allWorks"
-            label: "All Works"
+            label: "Works"
             widget: list
             fields:
               - {label: Title, name: title, widget: string}
@@ -38,3 +38,16 @@ collections:
               - {label: DemoUrl, name: demoUrl, widget: string}
               - {label: PreviewUrl, name: previewUrl, widget: string}
               - {label: Category, name: category, widget: select, options: ['vanilla', 'node', 'react', 'vue']}
+      - label: "Site Meta Data"
+        name: "metadata"
+        file: "src/content/meta-data.yml"
+        description: "Meta data of my site"
+        fields:
+          - {label: Title, name: title, widget: string}
+          - {label: SubTitle, name: subtitle, widget: string}
+          - label: SocialLinks
+            name: socialLinks
+            widget: list
+            fields:
+              - {label: Name, name: name, widget: string}
+              - {label: Url, name: url, widget: string}

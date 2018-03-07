@@ -18,7 +18,7 @@
     "test": "jest",
     "test:watch": "jest --watch",
     "build": "cross-env NODE_ENV=production gatsby build",
-    "dev": "cross-env NODE_ENV=development gatsby develop",
+    "dev": "cross-env NODE_ENV=development gatsby develop --host 0.0.0.0",
     "prettify": "prettier --write '{./,__{tests,mocks}__}/**/*.+(js|jsx|md|json)'"
   },
   "dependencies": {
@@ -38,6 +38,7 @@
     "gatsby-source-filesystem": "^1.5.5",
     "gatsby-transformer-json": "^1.0.11",
     "gatsby-transformer-remark": "^1.7.17",
+    "gatsby-transformer-yaml": "^1.5.16",
     "normalize.css": "^8.0.0",
     "query-string": "^5.1.0",
     "react-emotion": "^9.0.2",

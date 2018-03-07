@@ -34,6 +34,13 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `works`,
+        path: `${__dirname}/src/content`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `works`,
         path: `${__dirname}/src/content/works`,
       },
     },
@@ -46,6 +53,7 @@ module.exports = {
     },
     'gatsby-transformer-json',
     'gatsby-transformer-remark',
+    `gatsby-transformer-yaml`,
     `gatsby-plugin-catch-links`,
     {
       resolve: `gatsby-plugin-nprogress`,
