@@ -4,8 +4,6 @@ import Link from 'gatsby-link';
 import styled from 'react-emotion';
 import PageContent, { PageTitle } from '../components/PageContent';
 
-const queryString = require('query-string');
-
 const Title = styled(PageTitle)`
   font-size: 32px;
   &:before {
@@ -102,9 +100,8 @@ const Filter = styled.li`
   }
 `;
 
-const WorksPage = ({ transition, location, data: { allContentJson: { edges: [edge] } } }) => {
-  const query = queryString.parse(location.search);
-  const filter = query.filter || 'vanilla';
+const WorksPage = ({ transition, pathContext: { category }, data: { allWorksJson: { edges: [edge] } } }) => {
+  console.log(category);
   return (
     <PageContent style={transition && transition.style}>
       <Helmet>
@@ -113,23 +110,23 @@ const WorksPage = ({ transition, location, data: { allContentJson: { edges: [edg
       <Title>My Works</Title>
       <Filters>
         <Filter>
-          <Link to="/works?filter=vanilla" className={filter === 'vanilla' ? 'active' : ''}>
+          <Link to="/works/vanilla" className={category === 'vanilla' ? 'active' : ''}>
             Vanilla.js
           </Link>
         </Filter>
         <Filter>
-          <Link to="/works?filter=react" className={filter === 'react' ? 'active' : ''}>
+          <Link to="/works/react" className={category === 'react' ? 'active' : ''}>
             React.js
           </Link>
         </Filter>
         <Filter>
-          <Link to="/works?filter=node" className={filter === 'node' ? 'active' : ''}>
+          <Link to="/works/node" className={category === 'node' ? 'active' : ''}>
             Node.js
           </Link>
         </Filter>
       </Filters>
       <Works>
-        {edge.node.allWorks.filter(work => work.category === filter.replace('#', '')).map(work => (
+        {edge.node.allWorks.filter(work => work.category === category).map(work => (
           <Work key={work.demoUrl}>
             <img src={work.previewUrl} alt={work.title} />
             <h4>{work.title}</h4>
@@ -150,7 +147,7 @@ export default WorksPage;
 
 export const query = graphql`
   query WorksQuery {
-    allContentJson {
+    allWorksJson {
       edges {
         node {
           allWorks {

@@ -13,7 +13,7 @@ module.exports = {
     },
     navigationLinks: {
       aboutMe: '/about',
-      myWorks: '/works',
+      myWorks: '/works/vanilla',
       myBlog: '/blog',
     },
   },
@@ -33,8 +33,8 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `content`,
-        path: `${__dirname}/src/content/`,
+        name: `works`,
+        path: `${__dirname}/src/content/works`,
       },
     },
     {
@@ -44,6 +44,8 @@ module.exports = {
         path: `${__dirname}/src/content/posts`,
       },
     },
+    'gatsby-transformer-json',
+    'gatsby-transformer-remark',
     `gatsby-plugin-catch-links`,
     {
       resolve: `gatsby-plugin-nprogress`,
@@ -84,7 +86,5 @@ module.exports = {
         trackingId: 'UA-78963903-1',
       },
     },
-    'gatsby-transformer-remark',
-    'gatsby-transformer-json',
   ],
 };

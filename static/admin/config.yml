@@ -24,7 +24,7 @@ collections:
     files:
       - label: "Works Page Content"
         name: "works"
-        file: "src/content/works.json"
+        file: "src/content/works/works.json"
         description: "My Works"
         editor:
           preview: false
