@@ -8,6 +8,7 @@ import FaLinkedin from 'react-icons/lib/fa/linkedin';
 import FaFcc from 'react-icons/lib/fa/fire';
 import FaGithub from 'react-icons/lib/fa/github';
 import FaMedium from 'react-icons/lib/fa/medium';
+import MdBackArrow from 'react-icons/lib/md/arrow-back';
 
 import { toCapitalizedWords, capitalize } from '../../utils';
 import { Container } from '../PageContent';
@@ -17,6 +18,7 @@ const Header = styled.header`
   padding-bottom: 5px;
   display: flex;
   align-items: center;
+  position: relative;
   @media (max-width: 1080px) {
     padding-bottom: 5px;
   }
@@ -142,6 +144,18 @@ const SocialLinks = styled.ul`
   }
 `;
 
+const BackArrow = styled(Link)`
+  position: absolute;
+  color: #fff;
+  text-decoration: none;
+  top: 24px;
+  left: 15px;
+  display: ${props => (props.isHomepage ? 'none' : 'block')};
+  @media (min-width: 600px) {
+    display: none;
+  }
+`;
+
 const IconMap = {
   facebook: <FaFacebook />,
   twitter: <FaTwitter />,
@@ -155,6 +169,9 @@ const IconMap = {
 const HeaderComponent = ({ isHomepage, socialLinks, navigationLinks }) => (
   <Container>
     <Header>
+      <BackArrow to="/" isHomepage={isHomepage}>
+        <MdBackArrow size={40} />
+      </BackArrow>
       <Logo isHomepage={isHomepage}>
         <Link to="/">
           <img
