@@ -1,0 +1,54 @@
+{
+  "name": "vinaypuppal.github.io",
+  "version": "1.0.0",
+  "description": "Vinay Puppal - Porfolio Site",
+  "private": true,
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "cross-env NODE_ENV=production gatsby build",
+    "dev": "cross-env NODE_ENV=development gatsby develop --host 0.0.0.0",
+    "format": "prettier --write './**/*.+(js|jsx|json|md)'",
+    "lint": "eslint ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vinaypuppal/vinaypuppal.github.io.git"
+  },
+  "keywords": [],
+  "author": "Vinay Puppal <me@vinaypuppal.com> (https://www.vinaypuppal.com/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/vinaypuppal/vinaypuppal.github.io/issues"
+  },
+  "homepage": "https://github.com/vinaypuppal/vinaypuppal.github.io#readme",
+  "dependencies": {
+    "emotion": "^9.1.0",
+    "emotion-server": "^9.1.0",
+    "gatsby": "^1.9.243",
+    "gatsby-image": "^1.0.42",
+    "gatsby-link": "^1.6.40",
+    "gatsby-plugin-emotion": "^1.1.16",
+    "gatsby-plugin-react-helmet": "^2.0.8",
+    "gatsby-plugin-react-next": "^1.0.11",
+    "react-emotion": "^9.1.0",
+    "react-helmet": "^5.2.0",
+    "react-icon-base": "^2.1.2",
+    "react-icons": "^2.2.7"
+  },
+  "devDependencies": {
+    "babel-plugin-emotion": "^9.1.0",
+    "cross-env": "^5.1.4",
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-config-prettier": "^2.9.0",
+    "eslint-loader": "^2.0.0",
+    "eslint-plugin-import": "^2.10.0",
+    "eslint-plugin-jsx-a11y": "^6.0.3",
+    "eslint-plugin-prettier": "^2.6.0",
+    "eslint-plugin-react": "^7.7.0",
+    "husky": "^0.14.3",
+    "lint-staged": "^7.0.1",
+    "prettier": "^1.11.1"
+  }
+}
