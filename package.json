@@ -1,15 +1,17 @@
 {
   "name": "vinaypuppal.github.io",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "Vinay Puppal - Porfolio Site",
   "private": true,
-  "main": "index.js",
+  "main": "n/a",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "cross-env NODE_ENV=production gatsby build",
     "dev": "cross-env NODE_ENV=development gatsby develop --host 0.0.0.0",
     "format": "prettier --write './**/*.+(js|jsx|json|md)'",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "storybook": "start-storybook -p 4000 -c .storybook",
+    "build-storybook": "build-storybook -c .storybook -o public/docs"
   },
   "repository": {
     "type": "git",
@@ -31,12 +33,18 @@
     "gatsby-plugin-emotion": "^1.1.16",
     "gatsby-plugin-react-helmet": "^2.0.8",
     "gatsby-plugin-react-next": "^1.0.11",
+    "prop-types": "^15.6.1",
     "react-emotion": "^9.1.0",
     "react-helmet": "^5.2.0",
     "react-icon-base": "^2.1.2",
     "react-icons": "^2.2.7"
   },
   "devDependencies": {
+    "@storybook/addon-actions": "^3.3.15",
+    "@storybook/addon-info": "^3.4.0",
+    "@storybook/addon-knobs": "^3.3.15",
+    "@storybook/addon-options": "^3.4.0",
+    "@storybook/react": "^3.3.15",
     "babel-plugin-emotion": "^9.1.0",
     "cross-env": "^5.1.4",
     "eslint": "^4.19.1",
