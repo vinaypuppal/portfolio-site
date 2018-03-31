@@ -9,9 +9,9 @@ import {
 } from '@storybook/addon-knobs';
 import { withInfo } from '@storybook/addon-info';
 
-import SocialLink from './index';
+import SocialLink from './social';
 
-const stories = storiesOf('Social Links', module);
+const stories = storiesOf('Link', module);
 
 // Add the `withKnobs` decorator to add knobs support to your stories.
 // You can also configure `withKnobs` as a global decorator.
@@ -28,7 +28,7 @@ const networks = [
 ];
 
 stories.add(
-  'Link with icon',
+  'Social link with icon',
   withInfo(`
     This is the basic usage of social link with icon
   `)(() => (
@@ -43,7 +43,7 @@ stories.add(
 );
 
 stories.add(
-  'Circular link with icon',
+  'Circular social link with icon',
   withInfo(`
     This is the basic usage of circular social link with icon
   `)(() => (
