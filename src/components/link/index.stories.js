@@ -9,7 +9,7 @@ import {
 } from '@storybook/addon-knobs';
 import { withInfo } from '@storybook/addon-info';
 
-import SocialLink from './social';
+import Link from './index';
 
 const stories = storiesOf('Link', module);
 
@@ -28,32 +28,45 @@ const networks = [
 ];
 
 stories.add(
-  'Social link with icon',
+  'Text',
   withInfo(`
-    This is the basic usage of social link with icon
+    This is the basic usage of text link
+  `)(() => <Link href="https://freecodecamp.org">freeCodeCamp</Link>)
+);
+
+stories.add(
+  'Button',
+  withInfo(`
+    This is the basic usage of button link
   `)(() => (
-    <SocialLink
-      width={number('Width', 30)}
-      height={number('Height', 30)}
+    <Link.Button href="https://resume.io/r/EenQb">View My Resume</Link.Button>
+  ))
+);
+
+stories.add(
+  'Social with icon',
+  withInfo(`
+    This is the basic usage of social link with icon and just required props
+  `)(() => (
+    <Link.Social
       network={select('Network', networks, 'facebook')}
-      iconSize={number('Icon Size', 20)}
-      url={text('Profile URL', 'https://facebook.com/puppalvinay')}
+      href={text('Profile URL', 'https://facebook.com/puppalvinay')}
     />
   ))
 );
 
 stories.add(
-  'Circular social link with icon',
+  'Circular social with icon',
   withInfo(`
-    This is the basic usage of circular social link with icon
+    This is the basic usage of circular social link with icon and all props
   `)(() => (
-    <SocialLink
+    <Link.Social
       width={number('Width', 30)}
       height={number('Height', 30)}
       network={select('Network', networks, 'facebook')}
       circular={boolean('Circular', true)}
       iconSize={number('IconSize', 20)}
-      url={text('Profile URL', 'https://facebook.com/puppalvinay')}
+      href={text('Profile URL', 'https://facebook.com/puppalvinay')}
     />
   ))
 );

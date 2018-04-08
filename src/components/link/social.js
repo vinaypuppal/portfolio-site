@@ -4,25 +4,29 @@ import styled, { css } from 'react-emotion';
 
 import colors from '../../colors';
 import Icon from '../icon';
+import Tooltip from '../tooltip';
 
-const SocialLink = ({ network, url, iconSize, ...restProps }) => (
-  <StyledSocialLink
-    network={network}
-    href={url}
-    title={network}
-    {...restProps}
-    target="_blank"
-    rel="noopener noreferrer"
-    aria-label={`Follow me on ${network}`}>
-    <Icon name={network} size={iconSize} />
-  </StyledSocialLink>
+const SocialLink = ({ network, href, iconSize, ...restProps }) => (
+  <Tooltip title={`Follow on ${network}`} arrow>
+    <StyledSocialLink
+      network={network}
+      href={href}
+      title={`Follow on ${network}`}
+      {...restProps}
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label={`Follow me on ${network}`}
+    >
+      <Icon name={network} size={iconSize} />
+    </StyledSocialLink>
+  </Tooltip>
 );
 
 export default SocialLink;
 
 SocialLink.propTypes = {
   /** Social network profile URL */
-  url: PropTypes.string,
+  href: PropTypes.string,
   /** Container width */
   width: PropTypes.number,
   /** Container height */
@@ -36,7 +40,7 @@ SocialLink.propTypes = {
 };
 
 SocialLink.defaultProps = {
-  url: '#',
+  href: '#',
   width: 30,
   height: 30,
   circular: false,
@@ -46,6 +50,7 @@ SocialLink.defaultProps = {
 const iconBg = network => css`
   background: ${colors.social[network]};
   color: #fff;
+  border-color: #fbfbfb;
 `;
 
 const StyledSocialLink = styled('a')`
@@ -57,6 +62,7 @@ const StyledSocialLink = styled('a')`
   background: transparent;
   color: inherit;
   border: 1px solid;
+  margin: 0 10px;
   transition: all 0.25s ease-in-out;
   border-radius: ${props => (props.circular ? '50%' : 0)};
   &:hover {

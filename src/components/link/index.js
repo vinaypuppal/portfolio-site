@@ -1,10 +1,8 @@
-import componentTypes from '../../hocs/component-types';
 import SocialLink from './social';
+import Link from './text';
+import ButtonLink from './button';
 
-export default componentTypes(
-  {
-    social: SocialLink,
-    default: SocialLink,
-  },
-  { displayName: 'Link' }
-);
+Link.Social = SocialLink;
+Link.Button = ButtonLink;
+
+export default Link;
