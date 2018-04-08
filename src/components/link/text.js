@@ -1,8 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import NativeLink from 'gatsby-link';
-import styled, { css } from 'react-emotion';
+import styled from 'react-emotion';
 import FaExternal from 'react-icons/lib/fa/external-link';
+
+import { textLink } from './css';
 
 export const InternalLink = ({ href, children, ...restProps }) => (
   <StyledNativeLink to={href} {...restProps}>
@@ -77,25 +79,8 @@ GenericLink.defaultProps = {
 
 export default GenericLink;
 
-export const link = css`
-  color: inherit;
-  font-size: inherit;
-  font-weight: 600;
-  text-decoration: none;
-  transition: all 100ms cubic-bezier(0.4, 0, 0.2, 1);
-  border-bottom: 1px solid #ccc;
-  box-shadow: inset 0 -2px 0px 0px #ccc;
-  &.gatsby-resp-image-link {
-    box-shadow: none;
-    border-bottom: transparent;
-  }
-  &:hover {
-    background: #ccc;
-  }
-`;
-
 const StyledNativeLink = styled(NativeLink)`
-  ${link};
+  ${textLink};
 `;
 
 const StyledAnchorLink = styled('a')`
@@ -108,7 +93,7 @@ const StyledAnchorLink = styled('a')`
 `;
 
 const StyledExternalLink = styled('a')`
-  ${link};
+  ${textLink};
   & span {
     display: inline-block;
     margin-right: 4px;

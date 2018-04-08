@@ -1,40 +1,21 @@
-import styled, { css } from 'react-emotion';
+import styled from 'react-emotion';
 
-export const h1 = css`
-  font-weight: 200;
-  font-size: 32px;
-  color: inherit;
-`;
-
-export const h2 = css`
-  font-weight: normal;
-  font-size: 24px;
-  color: inherit;
-`;
-
-export const h3 = css`
-  font-weight: bold;
-  font-size: 18px;
-  color: inherit;
-`;
-
-export const p = css`
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 24px;
-  color: inherit;
-`;
-
-export const blockquote = css`
-  padding: 10px 20px;
-  line-height: 24px;
-  border-left: 5px solid #000;
-  margin: 20px 0;
-  color: #888;
-`;
+import { inlineCode, code, pre, h1, h2, h3, p, blockquote } from './css';
 
 export const Bold = styled('span')`
   font-weight: 600;
+`;
+
+export const InlineCode = styled('code')`
+  ${inlineCode};
+`;
+
+export const Pre = styled('pre')`
+  ${pre};
+`;
+
+export const Code = styled('code')`
+  ${code};
 `;
 
 export const H1 = styled('h1')`
@@ -56,6 +37,7 @@ export const P = styled('p')`
 `;
 
 P.B = Bold;
+P.Code = InlineCode;
 
 export const HR = styled('div')`
   border: 0;
