@@ -37,7 +37,8 @@
     "react-emotion": "^9.1.0",
     "react-helmet": "^5.2.0",
     "react-icon-base": "^2.1.2",
-    "react-icons": "^2.2.7"
+    "react-icons": "^2.2.7",
+    "react-tippy": "^1.2.2"
   },
   "devDependencies": {
     "@storybook/addon-actions": "^3.3.15",
