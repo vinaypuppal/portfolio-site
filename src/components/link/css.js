@@ -27,6 +27,34 @@ export const buttonLink = css`
   }
 `;
 
+export const outlineButtonLink = css`
+  text-decoration: none;
+  display: inline-block;
+  padding: 10px 20px;
+  color: #929eaa;
+  border: 2px solid #d4d9dd;
+  border-radius: 4px;
+  user-slect: none;
+  transition: all 0.25s ease-in;
+  cursor: pointer;
+  &:hover {
+    background: #f8f8f8;
+  }
+  &.active {
+    pointer-events: none;
+    border-color: #47525d;
+    color: #47525d;
+  }
+  @media (max-width: 540px) {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+  }
+  @media (max-width: 440px) {
+    padding: 0.5rem;
+    font-size: 0.9rem;
+  }
+`;
+
 export const textLink = css`
   color: inherit;
   font-size: inherit;

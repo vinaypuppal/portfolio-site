@@ -4,7 +4,7 @@ import NativeLink from 'gatsby-link';
 import styled from 'react-emotion';
 import FaExternal from 'react-icons/lib/fa/external-link';
 
-import { buttonLink } from './css';
+import { buttonLink, outlineButtonLink } from './css';
 
 export const InternalButtonLink = ({ href, children, ...restProps }) => (
   <StyledNativeButtonLink to={href} {...restProps}>
@@ -15,10 +15,12 @@ export const InternalButtonLink = ({ href, children, ...restProps }) => (
 InternalButtonLink.propTypes = {
   /** Specify the URL of the page the link goes to */
   href: PropTypes.string,
+  outline: PropTypes.bool,
 };
 
 InternalButtonLink.defaultProps = {
   href: '#',
+  outline: false,
 };
 
 export const ExternalButtonLink = ({ href, children, ...restProps }) => (
@@ -36,10 +38,12 @@ export const ExternalButtonLink = ({ href, children, ...restProps }) => (
 ExternalButtonLink.propTypes = {
   /** Specify the URL of the page the link goes to */
   href: PropTypes.string,
+  outline: PropTypes.bool,
 };
 
 ExternalButtonLink.defaultProps = {
   href: '#',
+  outline: false,
 };
 
 const GenericButtonLink = props => {
@@ -55,18 +59,20 @@ export default GenericButtonLink;
 GenericButtonLink.propTypes = {
   /** Specify the URL of the page the link goes to */
   href: PropTypes.string,
+  outline: PropTypes.bool,
 };
 
 GenericButtonLink.defaultProps = {
   href: '#',
+  outline: false,
 };
 
 const StyledNativeButtonLink = styled(NativeLink)`
-  ${buttonLink};
+  ${props => (props.outline ? outlineButtonLink : buttonLink)};
 `;
 
 const StyledExternalButtonLink = styled('a')`
-  ${buttonLink};
+  ${props => (props.outline ? outlineButtonLink : buttonLink)};
   & span {
     display: inline-block;
     margin-right: 10px;
