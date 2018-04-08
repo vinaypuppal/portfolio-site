@@ -44,6 +44,17 @@ stories.add(
 );
 
 stories.add(
+  'Outlined Button',
+  withInfo(`
+    This is the basic usage of button link
+  `)(() => (
+    <Link.Button outline href="https://resume.io/r/EenQb">
+      View My Resume
+    </Link.Button>
+  ))
+);
+
+stories.add(
   'Social with icon',
   withInfo(`
     This is the basic usage of social link with icon and just required props
