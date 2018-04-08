@@ -42,9 +42,36 @@ P.Code = InlineCode;
 export const HR = styled('div')`
   border: 0;
   border-bottom: 1px solid #ccc;
-  margin: 50px 30px;
+  margin: 50px 0;
 `;
 
 export const Quote = styled('blockquote')`
   ${blockquote};
+`;
+
+export const HeroTitle = styled('h1')`
+  margin-top: -100px;
+  font-size: 70px;
+  text-align: center;
+  text-transform: uppercase;
+  line-height: 70px;
+  min-height: 150px;
+  font-weight: 300;
+  @media (max-width: 780px) {
+    font-size: 60px;
+    line-height: 60px;
+    min-height: 90px;
+  }
+  @media (max-width: 400px) {
+    font-size: 50px;
+    line-height: 50px;
+    min-height: 90px;
+  }
+  @media (max-width: 667px) and (max-height: 375px) {
+    margin: 0;
+    margin-top: -50px;
+  }
+  @media (max-width: 568px) and (max-height: 320px) {
+    display: none;
+  }
 `;
