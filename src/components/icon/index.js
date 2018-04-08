@@ -1,21 +1,48 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import FaFacebook from 'react-icons/lib/fa/facebook';
-import FaTwitter from 'react-icons/lib/fa/twitter';
-import FaCodepen from 'react-icons/lib/fa/codepen';
-import FaLinkedin from 'react-icons/lib/fa/linkedin';
 import FaFcc from 'react-icons/lib/fa/fire';
-import FaGithub from 'react-icons/lib/fa/github';
 import FaMedium from 'react-icons/lib/fa/medium';
+import FaGithub from 'react-icons/lib/fa/github';
+import FaCodepen from 'react-icons/lib/fa/codepen';
+import FaTwitter from 'react-icons/lib/fa/twitter';
+import FaFacebook from 'react-icons/lib/fa/facebook';
+import FaLinkedin from 'react-icons/lib/fa/linkedin';
+
+import Logo from './logo';
+import {
+  IconBlog,
+  IconCss3,
+  IconUser,
+  IconWorks,
+  IconHtml5,
+  IconReact,
+  IconVueJs,
+  IconNodeJs,
+  IconMongoDb,
+  IconGraphQL,
+  IconJavascript,
+} from './custom';
 
 const iconMap = {
-  facebook: <FaFacebook />,
-  twitter: <FaTwitter />,
-  linkedin: <FaLinkedin />,
-  codepen: <FaCodepen />,
-  github: <FaGithub />,
   fcc: <FaFcc />,
+  vue: <IconVueJs />,
+  logo: <Logo />,
+  css3: <IconCss3 />,
+  blog: <IconBlog />,
+  user: <IconUser />,
+  react: <IconReact />,
+  html5: <IconHtml5 />,
+  works: <IconWorks />,
+  github: <FaGithub />,
+  nodejs: <IconNodeJs />,
   medium: <FaMedium />,
+  mongodb: <IconMongoDb />,
+  graphql: <IconGraphQL />,
+  twitter: <FaTwitter />,
+  codepen: <FaCodepen />,
+  facebook: <FaFacebook />,
+  linkedin: <FaLinkedin />,
+  javascript: <IconJavascript />,
 };
 
 const Icon = ({ name, size }) => React.cloneElement(iconMap[name], { size });
