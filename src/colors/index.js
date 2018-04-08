@@ -8,4 +8,7 @@ export default {
     medium: '#00ab6c',
     fcc: '#006400',
   },
+  text: '#203d5d',
+  bg: '#fff',
+  gradient: 'linear-gradient(to top, #000000, #434343)',
 };
