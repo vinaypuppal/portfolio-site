@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'react-emotion';
-import { Link } from 'gatsby-link';
+import Link from 'gatsby-link';
 
 import { toCapitalizedWords } from '../../utils';
 
@@ -9,7 +9,7 @@ const MainNav = ({ pages, ...restProps }) => (
   <Nav {...restProps}>
     <NavList>
       {pages.map(page => (
-        <NavItem>
+        <NavItem key={page.name}>
           <NavLink to={page.path}>{toCapitalizedWords(page.name)}</NavLink>
         </NavItem>
       ))}
@@ -20,10 +20,12 @@ const MainNav = ({ pages, ...restProps }) => (
 export default MainNav;
 
 MainNav.propTypes = {
-  pages: PropTypes.shape({
-    name: PropTypes.string,
-    path: PropTypes.string,
-  }).isRequired,
+  pages: PropTypes.arrayOf(
+    PropTypes.shape({
+      name: PropTypes.string,
+      path: PropTypes.string,
+    })
+  ).isRequired,
 };
 
 const Nav = styled('nav')`

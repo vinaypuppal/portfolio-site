@@ -1,3 +1,41 @@
 import React from 'react';
 
-export default () => <h1>VinayPuppal</h1>;
+import { Container, IndexContent } from 'components/layout';
+import { HeroTitle } from 'components/text';
+import Nav from 'components/nav';
+import Footer from 'components/footer';
+
+const IndexPage = ({
+  data: {
+    allContentYaml: {
+      edges: [edge],
+    },
+  },
+}) => (
+  <Container>
+    <IndexContent>
+      <HeroTitle>&lt;Hello! /&gt;</HeroTitle>
+      <Nav.Hero pages={edge.node.pages} />
+    </IndexContent>
+    <Footer title={edge.node.title} />
+  </Container>
+);
+
+export default IndexPage;
+
+export const query = graphql`
+  query IndexQuery {
+    allContentYaml {
+      edges {
+        node {
+          title
+          pages {
+            name
+            path
+            icon
+          }
+        }
+      }
+    }
+  }
+`;

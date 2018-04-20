@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'react-emotion';
-import { Link } from 'gatsby-link';
+import Link from 'gatsby-link';
 
 import { toCapitalizedWords } from '../../utils';
 import Icon from '../icon';
@@ -10,7 +10,7 @@ const HeroNav = ({ pages, ...restProps }) => (
   <Nav {...restProps}>
     <NavList>
       {pages.map(page => (
-        <NavItem>
+        <NavItem key={page.name}>
           <NavLink to={page.path}>
             <Icon name={page.icon} size={70} />
             <span>{toCapitalizedWords(page.name)}</span>
@@ -34,8 +34,7 @@ HeroNav.propTypes = {
 const Nav = styled('nav')`
   width: 50%;
   margin: 0 auto;
-  margin-top: -100px;
-   @media (max-width: 900px) {
+  @media (max-width: 900px) {
       width: 70%;
     }
     @media (max-width: 780px) {

@@ -11,4 +11,5 @@ export default {
   text: '#203d5d',
   bg: '#fff',
   gradient: 'linear-gradient(to top, #000000, #434343)',
+  select: 'lightgreen',
 };

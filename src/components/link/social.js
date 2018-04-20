@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled, { css } from 'react-emotion';
 
-import colors from '../../colors';
+import colors from 'styles/colors';
 import Icon from '../icon';
 import Tooltip from '../tooltip';
 
@@ -62,7 +62,6 @@ const StyledSocialLink = styled('a')`
   background: transparent;
   color: inherit;
   border: 1px solid;
-  margin: 0 10px;
   transition: all 0.25s ease-in-out;
   border-radius: ${props => (props.circular ? '50%' : 0)};
   &:hover {

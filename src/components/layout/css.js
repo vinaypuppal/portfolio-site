@@ -1,10 +1,20 @@
 import { css } from 'react-emotion';
 
-import colors from '../../colors';
+import colors from 'styles/colors';
 
 export const container = css`
   max-width: 1440px;
   margin: 0 auto;
+`;
+
+export const indexContent = css`
+  width: 100%;
+  height: calc(100vh - 71px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: '#fff';
 `;
 
 export const content = css`

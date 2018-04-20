@@ -1,9 +1,12 @@
 title: VinayPuppal
 subtitle: Web Developer
 description: Hi, I'm VinayPuppal. I focus on creating interactive websites that empower real people and simplifies their lives. Check out some of my recent projects or learn more about me.
+siteUrl: 'https://vinaypuppal.com'
 themeColor: '#000000'
 logo: 'images/my_name_logo.png'
 avatar: 'images/my_avatar.png'
+twitter: '@vinaypuppal'
+fbAppId: '1110213405717341'
 resumeLink: 'https://resume.io/r/EenQb'
 email: 'hello@vinaypuppal.com'
 city: Hyderabad
@@ -30,14 +33,17 @@ socialLinks:
 pages:
   - name: aboutMe
     path: '/about'
+    icon: user
     title: About Me | VinayPuppal.com
     description:
   - name: myWorks
     path: '/works/react'
+    icon: works
     title: My Works | VinayPuppal.com
     description:
   - name: myBlog
     path: '/blog'
+    icon: blog
     title: My Blog | VinayPuppal.com
     description:
 skills:
