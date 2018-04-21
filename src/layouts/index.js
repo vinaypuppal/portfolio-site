@@ -5,7 +5,7 @@ import 'styles'; // global styles
 import Head from 'components/head';
 import Header from 'components/header';
 
-const LayoutComponent = ({ children, data }) => {
+const LayoutComponent = ({ data, history, children, location }) => {
   const {
     allContentYaml: {
       edges: [edge],
@@ -41,6 +41,8 @@ const LayoutComponent = ({ children, data }) => {
         logo={{ resolutions: logo.childImageSharp.resolutions, title }}
         pages={pages}
         socialLinks={socialLinks}
+        location={location}
+        history={history}
       />
       {children()}
     </Layout>

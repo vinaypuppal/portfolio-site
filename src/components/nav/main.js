@@ -10,7 +10,16 @@ const MainNav = ({ pages, ...restProps }) => (
     <NavList>
       {pages.map(page => (
         <NavItem key={page.name}>
-          <NavLink to={page.path}>{toCapitalizedWords(page.name)}</NavLink>
+          <NavLink
+            to={page.path}
+            aria-label={`open ${page.name} page`}
+            isActive={(match, location) =>
+              location.pathname.includes(page.path.split('/')[1])
+            }
+            activeClassName="active"
+          >
+            {toCapitalizedWords(page.name)}
+          </NavLink>
         </NavItem>
       ))}
     </NavList>

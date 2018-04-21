@@ -1,21 +1,30 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'react-emotion';
+import { withPrefix } from 'gatsby-link';
 
 import { Container } from 'components/layout';
 import Logo from 'components/logo';
 import Nav from 'components/nav';
 import SocialNetworks from 'components/social-networks';
 
-const HeaderComponent = ({ logo, pages, socialLinks }) => (
-  <Container>
-    <Header>
-      <Logo logo={logo} />
-      <Nav pages={pages} />
-      <SocialNetworks networks={socialLinks} />
-    </Header>
-  </Container>
-);
+const HeaderComponent = ({
+  logo,
+  pages,
+  location: { pathname },
+  socialLinks,
+}) => {
+  const isHomePage = pathname === withPrefix('/');
+  return (
+    <Container>
+      <Header>
+        <Logo logo={logo} />
+        <Nav pages={pages} />
+        <SocialNetworks isHomePage={isHomePage} networks={socialLinks} />
+      </Header>
+    </Container>
+  );
+};
 
 export default HeaderComponent;
 
@@ -28,6 +37,9 @@ HeaderComponent.propTypes = {
   pages: PropTypes.arrayOf(
     PropTypes.shape({ name: PropTypes.string, path: PropTypes.string })
   ).isRequired,
+  location: PropTypes.shape({
+    pathname: PropTypes.string.isRequired,
+  }).isRequired,
   socialLinks: PropTypes.arrayOf(
     PropTypes.shape({ name: PropTypes.string, url: PropTypes.string })
   ).isRequired,
