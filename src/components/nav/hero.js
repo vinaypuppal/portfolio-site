@@ -76,12 +76,6 @@ const Nav = styled('nav')`
       margin-top: -80px;
     }
   }
-  @media (max-width: 600px) {
-    height: calc(100vh - 156px);
-  }
-  @media (max-width: 350px) {
-    height: calc(100vh - 226px);
-  }
 `;
 
 const NavList = styled('ul')`

@@ -60,13 +60,13 @@ export const HeroTitle = styled('h1')`
   line-height: 70px;
   min-height: 150px;
   font-weight: 300;
-  @media (max-height: 500px) {
-    margin-top: -50px;
-  }
   @media (max-width: 800px) {
     font-size: 60px;
     line-height: 60px;
     min-height: 90px;
+  }
+  @media (max-height: 500px) {
+    margin-top: -50px;
   }
   @media (max-width: 400px) {
     font-size: 50px;

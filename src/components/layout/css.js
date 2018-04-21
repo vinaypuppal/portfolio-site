@@ -15,6 +15,12 @@ export const indexContent = css`
   align-items: center;
   flex-direction: column;
   color: '#fff';
+  @media (max-width: 600px) {
+    height: calc(100vh - 156px);
+  }
+  @media (max-width: 350px) {
+    height: calc(100vh - 226px);
+  }
 `;
 
 export const content = css`

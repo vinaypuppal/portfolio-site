@@ -39,4 +39,9 @@ const Header = styled('header')`
   display: flex;
   align-items: center;
   position: relative;
+  @media (max-width: 600px) {
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+  }
 `;

@@ -31,8 +31,18 @@ const SocialNetworks = styled('ul')`
   justify-content: flex-end;
   align-items: center;
   text-align: center;
+  @media (max-width: 600px) {
+    margin: 30px;
+    justify-content: center;
+  }
+  @media (max-width: 350px) {
+    flex-wrap: wrap;
+  }
 `;
 
 const SocialNetwork = styled('li')`
   margin: 0 10px;
+  @media (max-width: 350px) {
+    margin: 10px;
+  }
 `;
