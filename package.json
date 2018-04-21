@@ -9,7 +9,8 @@
     "build": "cross-env NODE_ENV=production gatsby build",
     "dev": "cross-env NODE_ENV=development gatsby develop --host 0.0.0.0",
     "format": "prettier --write './**/*.+(js|jsx|json|md)'",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "precommit": "lint-staged"
   },
   "repository": {
     "type": "git",
@@ -57,6 +58,12 @@
     "eslint-plugin-react": "^7.7.0",
     "husky": "^0.14.3",
     "lint-staged": "^7.0.4",
+    "markdownlint-cli": "^0.8.1",
     "prettier": "^1.12.1"
+  },
+  "lint-staged": {
+    "*.js": ["prettier --write", "eslint --fix", "git add"],
+    "*.json": ["prettier --write", "git add"],
+    "**/*.md": ["prettier --write", "markdownlint", "git add"]
   }
 }
