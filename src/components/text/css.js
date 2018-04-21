@@ -20,14 +20,15 @@ export const h3 = css`
 
 export const p = css`
   font-weight: 400;
-  font-size: 16px;
-  line-height: 24px;
+  font-size: 1.1rem;
+  line-height: 1.7;
   color: inherit;
+  margin-bottom: 1.5rem;
 `;
 
 export const blockquote = css`
   padding: 10px 20px;
-  line-height: 24px;
+  line-height: 1.7;
   border-left: 5px solid #000;
   margin: 20px 0;
   color: #888;

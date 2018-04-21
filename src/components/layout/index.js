@@ -17,3 +17,7 @@ export const Content = styled.div`
 export const PlaceHolder = styled.div`
   ${placeHolder};
 `;
+
+export const Flex = styled.div`
+  display: flex;
+`;

@@ -33,7 +33,7 @@ export const content = css`
     height: calc(100vh - 66px);
   }
   @media (max-width: 480px) {
-    padding: 30px 10px 30px;
+    padding: 30px 15px 30px;
   }
 `;
 

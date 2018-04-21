@@ -1,5 +1,6 @@
 import styled from 'react-emotion';
 
+import Link from 'components/link';
 import { inlineCode, code, pre, h1, h2, h3, p, blockquote } from './css';
 
 export const Bold = styled('span')`
@@ -20,6 +21,7 @@ export const Code = styled('code')`
 
 export const H1 = styled('h1')`
   ${h1};
+  text-align: ${props => (props.center ? 'center' : 'left')};
 `;
 
 H1.B = Bold;
@@ -38,11 +40,12 @@ export const P = styled('p')`
 
 P.B = Bold;
 P.Code = InlineCode;
+P.Link = Link;
 
 export const HR = styled('div')`
   border: 0;
   border-bottom: 1px solid #ccc;
-  margin: 50px 0;
+  margin: 20px 0;
 `;
 
 export const Quote = styled('blockquote')`
@@ -57,7 +60,10 @@ export const HeroTitle = styled('h1')`
   line-height: 70px;
   min-height: 150px;
   font-weight: 300;
-  @media (max-width: 780px) {
+  @media (max-height: 500px) {
+    margin-top: -50px;
+  }
+  @media (max-width: 800px) {
     font-size: 60px;
     line-height: 60px;
     min-height: 90px;

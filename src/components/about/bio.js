@@ -6,7 +6,7 @@ import { H1, P } from 'components/text';
 
 const BioComponent = ({ company, city, country }) => (
   <Bio>
-    <H1>A Little About Me</H1>
+    <H1 center>A Little About Me</H1>
     <P>
       I am a <P.B>self-taught</P.B> web developer with an eye for design, UX and
       UI development and a strong desire to learn and create.I firmly believe in

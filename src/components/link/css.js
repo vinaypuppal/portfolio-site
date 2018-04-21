@@ -63,6 +63,7 @@ export const textLink = css`
   transition: all 100ms cubic-bezier(0.4, 0, 0.2, 1);
   border-bottom: 1px solid #ccc;
   box-shadow: inset 0 -2px 0px 0px #ccc;
+  margin-right: 8px;
   &.gatsby-resp-image-link {
     box-shadow: none;
     border-bottom: transparent;

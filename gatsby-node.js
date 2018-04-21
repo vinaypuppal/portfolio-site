@@ -6,5 +6,12 @@ exports.modifyWebpackConfig = ({ config, stage }) => {
       exclude: /node_modules/,
     });
   }
+  config.merge({
+    resolve: {
+      alias: {
+        'styled-components': 'react-emotion',
+      },
+    },
+  });
   return config;
 };

@@ -34,36 +34,38 @@ pages:
   - name: aboutMe
     path: '/about'
     icon: user
-    title: About Me | VinayPuppal.com
-    description:
   - name: myWorks
     path: '/works/react'
     icon: works
-    title: My Works | VinayPuppal.com
-    description:
   - name: myBlog
     path: '/blog'
     icon: blog
-    title: My Blog | VinayPuppal.com
-    description:
 skills:
   include:
-    - name: html5
+    - name: HTML5
+      color: '#e54d2d'
       url: 'https://en.wikipedia.org/wiki/HTML5'
-    - name: css3
+    - name: CSS3
+      color: '#1f71b6'
       url: 'https://en.wikipedia.org/wiki/Cascading_Style_Sheets'
-    - name: js
+    - name: javaScript
+      color: '#333430'
       url: 'https://en.wikipedia.org/wiki/JavaScript'
     - name: reactJs
+      color: '#61dafb'
       url: 'https://reactjs.org'
   focusing:
     - name: vueJs
+      color: '#54b882'
       url: 'https://vuejs.org'
     - name: nodeJs
+      color: '#83ce2a'
       url: 'https://nodejs.org'
     - name: mongoDB
+      color: '#439934'
       url: 'https://mongodb.com'
     - name: graphQL
+      color: '#e10098'
       url: 'https://graphql.com'
 works:
   - title: Linklet
