@@ -44,14 +44,11 @@ const Filters = styled.ul`
 
 const Filter = styled.li`
   margin: 15px;
-  @media (max-width: 540px) {
-    margin: 20px 10px;
+  @media (max-width: 600px) {
+    margin: 6px 4px;
   }
-  @media (max-width: 480px) {
-    margin: 10px 4px;
-  }
-  @media (max-width: 400px) {
-    margin: 10px;
+  @media (max-width: 440px) {
+    margin: 6px 3px;
   }
 `;
 
@@ -75,12 +72,11 @@ const FilterLink = styled(Link)`
   & span {
     margin-left: 5px;
   }
-  @media (max-width: 540px) {
-    padding: 0.5rem 1rem;
-    font-size: 1rem;
+  @media (max-width: 600px) {
+    padding: 0.5rem;
+    font-size: 14px;
   }
   @media (max-width: 440px) {
-    padding: 0.5rem;
-    font-size: 0.9rem;
+    padding: 0.5rem 2px;
   }
 `;

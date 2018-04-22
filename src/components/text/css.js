@@ -4,6 +4,9 @@ export const h1 = css`
   font-weight: 200;
   font-size: 32px;
   color: inherit;
+  @media (max-width: 800px) {
+    font-weight: normal;
+  }
 `;
 
 export const h2 = css`

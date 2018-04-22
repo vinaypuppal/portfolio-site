@@ -108,12 +108,16 @@ const Work = styled.li`
 
 const Title = styled(H3)`
   margin-bottom: 10px;
+  text-align: center;
 `;
 
 const WorkDate = styled.div`
   color: #999;
   font-size: 14px;
   text-align: ${props => (props.center ? 'center' : 'left')};
+  @media (max-width: 600px) {
+    font-size: 12px;
+  }
 `;
 
 const Description = styled(P)`
@@ -125,6 +129,9 @@ const Description = styled(P)`
   min-height: 100px;
   align-items: center;
   justify-content: center;
+  @media (max-width: 600px) {
+    min-height: auto;
+  }
 `;
 
 const Cta = styled.div`

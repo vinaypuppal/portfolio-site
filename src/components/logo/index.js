@@ -31,6 +31,9 @@ const Logo = styled('h3')`
   text-align: center;
   width: 232px;
   height: 46px;
+  @media (max-width: 600px) {
+    height: 36px;
+  }
   & a {
     font-weight: 300;
     text-decoration: none;

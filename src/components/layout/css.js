@@ -39,7 +39,7 @@ export const content = css`
     padding: 30px;
   }
   @media (max-width: 600px) {
-    height: calc(100vh - 66px);
+    height: calc(100vh - 56px);
   }
   @media (max-width: 480px) {
     padding: 30px 15px 30px;
