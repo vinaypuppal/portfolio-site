@@ -12,8 +12,8 @@ const AboutPage = ({
     allContentYaml: {
       edges: [edge],
     },
-    location: { pathname },
   },
+  location: { pathname },
 }) => {
   const {
     city,
@@ -32,7 +32,7 @@ const AboutPage = ({
       <ShareButton
         title={pageTitle}
         text="Checkout:"
-        url={window ? window.location.href : `${siteUrl}${pathname}`}
+        url={`${siteUrl}${pathname}`}
       >
         <Icon name="share" />
       </ShareButton>

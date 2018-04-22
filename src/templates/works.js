@@ -22,11 +22,7 @@ const WorksPage = ({
       <ShareButton
         title={pageTitle}
         text="Checkout:"
-        url={
-          window
-            ? window.location.href
-            : `${edge.node.siteUrl}/works/${category}`
-        }
+        url={`${edge.node.siteUrl}/works/${category}`}
       >
         <Icon name="share" />
       </ShareButton>

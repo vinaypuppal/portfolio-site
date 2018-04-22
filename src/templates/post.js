@@ -25,7 +25,7 @@ const BlogPost = ({
     <ShareButton
       title={frontmatter.title}
       text="Checkout:"
-      url={window ? window.location.href : `${edge.node.siteUrl}/blog${slug}`}
+      url={`${edge.node.siteUrl}${slug}`}
     >
       <Icon name="share" />
     </ShareButton>

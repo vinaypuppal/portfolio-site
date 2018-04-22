@@ -20,7 +20,7 @@ const BlogPage = ({
     <ShareButton
       title="My Blog | VinayPuppal.com"
       text="Checkout:"
-      url={window ? window.location.href : `${edge.node.siteUrl}${pathname}`}
+      url={`${edge.node.siteUrl}${pathname}`}
     >
       <Icon name="share" />
     </ShareButton>
@@ -32,7 +32,7 @@ const BlogPage = ({
       ) : (
         <PlaceHolder>
           <Icon name="cubes" size={100} />
-          <P>Sorry no posts are present, check back later.</P>
+          <P center>Sorry no posts are present, check back later.</P>
         </PlaceHolder>
       )}
     </Content>
