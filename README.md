@@ -2,15 +2,25 @@
 
 ## About Me
 
-I'm a self-taught web developer with an eye for design, UX and UI development and a strong desire to learn and create.I firmly believe in life long learning and I'm constantly exploring new ideas and technologies. A while ago i started learning HTML, CSS, Javascript and after hacking away for a while I realised I wanted to learn coding properly. Since then I read some books ( <a target="_blank" href="http://www.htmlandcssbook.com/" title="http://www.htmlandcssbook.com/">HTML & CSS by Jon Duckett</a> and <a href="https://github.com/getify/You-Dont-Know-JS" target="_blank" title="https://github.com/getify/You-Dont-Know-JS">YDKJS series by Kyle Simpson</a> ), have taken courses with <a href="http://www.freecodecamp.com" target="_blank" title="http://www.freecodecamp.com">FreeCodeCamp</a>, <a href="https://www.codecademy.com/" target="_blank" title="https://www.codecademy.com/" >Codecademy</a> and built the various projects listed here.
+Hi, I'm VinayPuppal. I focus on creating interactive websites that empower real people and simplifies their lives. Check out some of my recent projects or learn more about me.
 
-## Todo
+## Tech Stack Used
 
-* [x] Meta tags for all pages
-* [x] Add footer to other pages + Add credits and source to footer
-* [x] Back Button Mobile
-* [x] Share Button in header on Mobile
-* [x] RSS feed
-* [ ] Microdata for all pages
-* [ ] Write actual blog post
-* [ ] Deploy to production
+* [GatsbyJs](https://gatsbyjs.org): Blazing-fast static site generator for React
+* [emotion](https://emotion.sh/): The Next Generation of CSS-in-JS
+* Deployed to [Netlify](https://netlify.com)
+
+## More Details
+
+> Read this blog post https://www.vinaypuppal.com/blog/rebuilding-my-website-with-gatsbyjs/
+
+## Credits
+
+* To all maintainers of open source packages used in this project
+* Icons
+  * https://www.flaticon.com/
+  * https://gorangajic.github.io/react-icons/fa.html
+
+## License
+
+[MIT](/LICENSE.md) © [VinayPuppal](https://www.vinaypuppal.com)
