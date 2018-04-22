@@ -45,8 +45,8 @@ const Head = ({ meta }) => (
     <meta property="og:url" content={meta.siteUrl} />
     <meta itemProp="name" content={`${meta.title} | ${meta.subtitle}`} />
     <meta itemProp="description" content={meta.description} />
-    <meta itemProp="image" content={meta.image} />
-    <meta property="og:image" content={meta.image} />
+    <meta itemProp="image" content={`${meta.siteUrl}${meta.image}`} />
+    <meta property="og:image" content={`${meta.siteUrl}${meta.image}`} />
     <meta
       property="og:site_name"
       content={`${meta.title} | ${meta.subtitle}`}
@@ -58,7 +58,7 @@ const Head = ({ meta }) => (
     <meta name="twitter:site" content={meta.twitter} />
     <meta name="twitter:title" content={`${meta.title} | ${meta.subtitle}`} />
     <meta name="twitter:description" content={meta.description} />
-    <meta name="twitter:image:src" content={meta.image} />
+    <meta name="twitter:image:src" content={`${meta.siteUrl}${meta.image}`} />
   </Helmet>
 );
 

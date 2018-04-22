@@ -3,13 +3,17 @@ import React from 'react';
 import { Container, Content } from 'components/layout';
 import { H1, HR } from 'components/text';
 import { PostDate, PostDetail } from 'components/blog';
+import PageTitle from 'components/head/page-title';
+import PageDescription from 'components/head/page-description';
 
 const BlogPost = ({
   data: {
-    markdownRemark: { frontmatter, html },
+    markdownRemark: { frontmatter, html, excerpt },
   },
 }) => (
   <Content>
+    <PageTitle title={frontmatter.title} />
+    <PageDescription description={excerpt} />
     <Container>
       <H1 center>{frontmatter.title}</H1>
       <PostDate date={frontmatter.date} center />
@@ -32,7 +36,7 @@ export const postQuery = graphql`
       id
       html
       timeToRead
-      excerpt(pruneLength: 150)
+      excerpt(pruneLength: 100)
       frontmatter {
         date(formatString: "MMMM DD, YYYY")
         title

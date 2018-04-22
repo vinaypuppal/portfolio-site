@@ -3,6 +3,7 @@ import React from 'react';
 import { Container, Content } from 'components/layout';
 import { About, Technologies, Avatar, Bio, Skills } from 'components/about';
 import { HR } from 'components/text';
+import PageTitle from 'components/head/page-title';
 
 const AboutPage = ({
   data: {
@@ -21,8 +22,10 @@ const AboutPage = ({
     country,
     resumeLink,
   } = edge.node;
+  const pageTitle = `About Me | ${title}.com`;
   return (
     <Content>
+      <PageTitle title={pageTitle} />
       <Container>
         <About>
           <Avatar

@@ -3,6 +3,7 @@ import React from 'react';
 import { Container, Content } from 'components/layout';
 import { Works, Filters } from 'components/works';
 import { H1 } from 'components/text';
+import PageTitle from 'components/head/page-title';
 
 const WorksPage = ({
   data: {
@@ -13,6 +14,7 @@ const WorksPage = ({
   pathContext: { category, categories },
 }) => (
   <Content>
+    <PageTitle title={`My ${category}.js Works | VinayPuppal.com`} />
     <Container>
       <H1 center>My Works</H1>
       <Filters categories={categories} currentCategory={category} />
