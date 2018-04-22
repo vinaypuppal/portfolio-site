@@ -159,7 +159,8 @@ works:
     thumbnail: 'images/pomodoro_clock.png'
     date: 1463496840
     category: vanilla
-  - title: 📺 Twitch Streamers
+  - title: Twitch Streamers
+    icon: 📺
     description: A simple widget to show online status of Twitch streamers.
     demoUrl: 'https://codepen.io/vinaypuppal/full/aNrMPK'
     thumbnail: 'images/twitchtv.png'

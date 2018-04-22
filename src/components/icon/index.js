@@ -7,6 +7,8 @@ import FaCodepen from 'react-icons/lib/fa/codepen';
 import FaTwitter from 'react-icons/lib/fa/twitter';
 import FaFacebook from 'react-icons/lib/fa/facebook';
 import FaLinkedin from 'react-icons/lib/fa/linkedin';
+import FaCircleO from 'react-icons/lib/fa/circle-o';
+import FaCicleCheck from 'react-icons/lib/fa/check-circle';
 
 import Logo from './logo';
 import {
@@ -43,6 +45,8 @@ const iconMap = {
   facebook: <FaFacebook />,
   linkedin: <FaLinkedin />,
   javascript: <IconJavascript />,
+  'circle-o': <FaCircleO />,
+  'circle-check': <FaCicleCheck />,
 };
 
 const Icon = ({ name, size }) => React.cloneElement(iconMap[name], { size });
