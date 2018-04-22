@@ -5,6 +5,9 @@ import colors from 'styles/colors';
 export const container = css`
   max-width: 1440px;
   margin: 0 auto;
+  @media (max-width: 600px) {
+    width: 100%;
+  }
 `;
 
 export const indexContent = css`
