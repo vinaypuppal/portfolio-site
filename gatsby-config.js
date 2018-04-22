@@ -22,5 +22,12 @@ module.exports = {
         respectDNT: true,
       },
     },
+    {
+      resolve: `gatsby-plugin-nprogress`,
+      options: {
+        color: `#fff`,
+        showSpinner: false,
+      },
+    },
   ],
 };
