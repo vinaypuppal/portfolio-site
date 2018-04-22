@@ -85,7 +85,7 @@ const StyledNativeLink = styled(NativeLink)`
 
 const StyledAnchorLink = styled('a')`
   text-decoration: none;
-  color: #067df7;
+  color: #0054ab;
   font-size: inherit;
   &:hover {
     text-decoration: underline;

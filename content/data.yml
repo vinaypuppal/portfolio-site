@@ -43,7 +43,7 @@ pages:
 skills:
   include:
     - name: HTML5
-      color: '#e54d2d'
+      color: '#9d2b13'
       url: 'https://en.wikipedia.org/wiki/HTML5'
     - name: CSS3
       color: '#1f71b6'
@@ -56,13 +56,13 @@ skills:
       url: 'https://reactjs.org'
   focusing:
     - name: vueJs
-      color: '#54b882'
+      color: '#18653b'
       url: 'https://vuejs.org'
     - name: nodeJs
-      color: '#83ce2a'
+      color: '#518216'
       url: 'https://nodejs.org'
     - name: mongoDB
-      color: '#439934'
+      color: '#3b862e'
       url: 'https://mongodb.com'
     - name: graphQL
       color: '#e10098'
