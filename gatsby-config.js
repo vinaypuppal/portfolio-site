@@ -1,4 +1,7 @@
 module.exports = {
+  siteMetadata: {
+    siteUrl: `https://www.vinaypuppal.com`,
+  },
   plugins: [
     `gatsby-plugin-resolve-src`,
     `gatsby-plugin-react-next`,
@@ -53,5 +56,6 @@ module.exports = {
         ],
       },
     },
+    `gatsby-plugin-sitemap`,
   ],
 };
