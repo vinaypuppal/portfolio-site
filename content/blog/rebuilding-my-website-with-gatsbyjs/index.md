@@ -2,7 +2,7 @@
 title: Rebuilding my website with GatsbyJS
 date: "2018-04-22"
 thumbnail: ''
-publish: true
+publish: false
 ---
 
 For the past couple of weeks, I have been rebuilding my personal website from scratch. In this article, I will tell you how I built this site using [GatsbyJs](https://www.gatsbyjs.org/) and why I have choosen this static site generator.
