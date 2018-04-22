@@ -5,6 +5,7 @@ import Img from 'gatsby-image';
 
 import { H3, P } from 'components/text';
 import Link from 'components/link';
+import { formatDate } from '../../utils';
 
 const WorksComponent = ({ works, category }) => (
   <Works>
@@ -24,6 +25,7 @@ const WorksComponent = ({ works, category }) => (
             </span>{' '}
             {work.title}
           </Title>
+          <WorkDate>{formatDate(work.date * 1000, 'MMM Do YYYY')}</WorkDate>
           <Description>{work.description}</Description>
           <Cta>
             <Link.Button href={work.demoUrl}>View Demo</Link.Button>
@@ -105,7 +107,13 @@ const Work = styled.li`
 `;
 
 const Title = styled(H3)`
-  margin-bottom: 0;
+  margin-bottom: 10px;
+`;
+
+const WorkDate = styled.div`
+  color: #999;
+  font-size: 14px;
+  text-align: ${props => (props.center ? 'center' : 'left')};
 `;
 
 const Description = styled(P)`

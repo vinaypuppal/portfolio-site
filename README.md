@@ -12,3 +12,4 @@ I'm a self-taught web developer with an eye for design, UX and UI development an
 * [ ] Share in Blog
 * [ ] Write actual blog post
 * [ ] Deploy to production
+* [ ] RSS feed

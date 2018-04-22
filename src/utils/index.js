@@ -9,9 +9,8 @@ export function toCapitalizedWords(name) {
   return words.map(capitalize).join(' ');
 }
 
-export function formatDate(date) {
-  return `${format(
-    new Date(date),
-    'dddd, MMM Do YYYY'
-  )} (${distanceInWordsToNow(new Date(date))} ago)`;
+export function formatDate(date, formatStr = 'dddd, MMM Do YYYY') {
+  return `${format(new Date(date), formatStr)} (${distanceInWordsToNow(
+    new Date(date)
+  )} ago)`;
 }
