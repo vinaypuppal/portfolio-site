@@ -4180,6 +4180,21 @@ gatsby-plugin-google-analytics@^1.0.31:
   dependencies:
     babel-runtime "^6.26.0"
 
+gatsby-plugin-manifest@^1.0.20:
+  version "1.0.20"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-manifest/-/gatsby-plugin-manifest-1.0.20.tgz#7e6bd6abded4a02662db9e246d982acc5bdf1323"
+  dependencies:
+    babel-runtime "^6.26.0"
+    bluebird "^3.5.0"
+    sharp "^0.20.1"
+
+gatsby-plugin-nprogress@^1.0.14:
+  version "1.0.14"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-nprogress/-/gatsby-plugin-nprogress-1.0.14.tgz#576f92e0658f1dc66e511b99ff4efe7389bfcc57"
+  dependencies:
+    babel-runtime "^6.26.0"
+    nprogress "^0.2.0"
+
 gatsby-plugin-react-helmet@^2.0.11:
   version "2.0.11"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-react-helmet/-/gatsby-plugin-react-helmet-2.0.11.tgz#a2db81755f5b41d54e0e535ca1d9a008d3ccff0a"
@@ -7096,6 +7111,10 @@ npmlog@^4.0.1, npmlog@^4.0.2, npmlog@^4.1.2:
     gauge "~2.7.3"
     set-blocking "~2.0.0"
 
+nprogress@^0.2.0:
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/nprogress/-/nprogress-0.2.0.tgz#cb8f34c53213d895723fcbab907e9422adbcafb1"
+
 nth-check@^1.0.1, nth-check@~1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/nth-check/-/nth-check-1.0.1.tgz#9929acdf628fc2c41098deab82ac580cf149aae4"
@@ -9348,7 +9367,7 @@ shallowequal@^1.0.1:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/shallowequal/-/shallowequal-1.0.2.tgz#1561dbdefb8c01408100319085764da3fcf83f8f"
 
-sharp@^0.20.0:
+sharp@^0.20.0, sharp@^0.20.1:
   version "0.20.1"
   resolved "https://registry.yarnpkg.com/sharp/-/sharp-0.20.1.tgz#13adde896bc9ec0372b0907554e0329f35a7bce6"
   dependencies:

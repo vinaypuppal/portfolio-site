@@ -29,5 +29,29 @@ module.exports = {
         showSpinner: false,
       },
     },
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: 'Vinay Puppal - Web Developer',
+        short_name: 'Vinay Puppal',
+        start_url: '/?utm_source=homescreen',
+        background_color: '#000000',
+        theme_color: '#000000',
+        display: 'standalone',
+        orientation: 'portrait-primary',
+        icons: [
+          {
+            src: `/favicons/android-chrome-192x192.png`,
+            sizes: `192x192`,
+            type: `image/png`,
+          },
+          {
+            src: '/favicons/android-chrome-512x512.png',
+            sizes: '512x512',
+            type: 'image/png',
+          },
+        ],
+      },
+    },
   ],
 };
