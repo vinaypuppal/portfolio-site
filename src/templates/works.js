@@ -4,6 +4,7 @@ import { Container, Content } from 'components/layout';
 import { Works, Filters } from 'components/works';
 import { H1 } from 'components/text';
 import PageTitle from 'components/head/page-title';
+import Footer from 'components/footer';
 
 const WorksPage = ({
   data: {
@@ -19,6 +20,7 @@ const WorksPage = ({
       <H1 center>My Works</H1>
       <Filters categories={categories} currentCategory={category} />
       <Works works={edge.node.works} category={category} />
+      <Footer title={edge.node.title} inverted />
     </Container>
   </Content>
 );
@@ -30,6 +32,7 @@ export const query = graphql`
     allContentYaml {
       edges {
         node {
+          title
           works {
             icon
             date

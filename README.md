@@ -7,6 +7,7 @@ I'm a self-taught web developer with an eye for design, UX and UI development an
 ## Todo
 
 * [x] Meta tags for all pages
+* [x] Add footer to other pages + Add credits and source to footer
 * [ ] Back Button Mobile
 * [ ] Microdata for all pages
 * [ ] Share in Blog

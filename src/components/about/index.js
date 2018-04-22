@@ -22,4 +22,5 @@ export const About = styled.div`
 
 export const Technologies = styled.div`
   ${flex};
+  padding-bottom: 22px;
 `;
