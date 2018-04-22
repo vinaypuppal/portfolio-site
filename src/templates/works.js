@@ -12,13 +12,13 @@ const WorksPage = ({
   },
   pathContext: { category, categories },
 }) => (
-  <Container>
-    <Content>
+  <Content>
+    <Container>
       <H1 center>My Works</H1>
       <Filters categories={categories} currentCategory={category} />
       <Works works={edge.node.works} category={category} />
-    </Content>
-  </Container>
+    </Container>
+  </Content>
 );
 
 export default WorksPage;

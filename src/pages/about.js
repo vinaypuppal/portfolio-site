@@ -22,8 +22,8 @@ const AboutPage = ({
     resumeLink,
   } = edge.node;
   return (
-    <Container>
-      <Content>
+    <Content>
+      <Container>
         <About>
           <Avatar
             email={email}
@@ -37,8 +37,8 @@ const AboutPage = ({
           <Skills skills={skills.include} title="Some of my skills include" />
           <Skills skills={skills.focusing} title="Currently focusing on" />
         </Technologies>
-      </Content>
-    </Container>
+      </Container>
+    </Content>
   );
 };
 

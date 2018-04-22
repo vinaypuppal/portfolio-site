@@ -12,13 +12,13 @@ const IndexPage = ({
     },
   },
 }) => (
-  <Container>
-    <IndexContent>
+  <IndexContent>
+    <Container>
       <HeroTitle>&lt;Hello! /&gt;</HeroTitle>
       <Nav.Hero pages={edge.node.pages} />
-    </IndexContent>
-    <Footer title={edge.node.title} />
-  </Container>
+      <Footer title={edge.node.title} />
+    </Container>
+  </IndexContent>
 );
 
 export default IndexPage;
