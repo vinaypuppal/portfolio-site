@@ -11,6 +11,7 @@ import FaCircleO from 'react-icons/lib/fa/circle-o';
 import FaTwitter from 'react-icons/lib/fa/twitter';
 import FaFacebook from 'react-icons/lib/fa/facebook';
 import FaLinkedin from 'react-icons/lib/fa/linkedin';
+import FaWhatsapp from 'react-icons/lib/fa/whatsapp';
 import MdBackArrow from 'react-icons/lib/md/arrow-back';
 import FaCicleCheck from 'react-icons/lib/fa/check-circle';
 
@@ -50,6 +51,7 @@ const iconMap = {
   graphql: <IconGraphQL />,
   twitter: <FaTwitter />,
   codepen: <FaCodepen />,
+  whatsapp: <FaWhatsapp />,
   facebook: <FaFacebook />,
   linkedin: <FaLinkedin />,
   javascript: <IconJavascript />,

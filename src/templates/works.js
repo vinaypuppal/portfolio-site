@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 
 import { Container, Content } from 'components/layout';
 import { Works, Filters } from 'components/works';
 import { H1 } from 'components/text';
 import PageTitle from 'components/head/page-title';
 import Footer from 'components/footer';
+import Icon from 'components/icon';
+import ShareButton from 'components/share-button';
 
 const WorksPage = ({
   data: {
@@ -13,17 +15,29 @@ const WorksPage = ({
     },
   },
   pathContext: { category, categories },
-}) => (
-  <Content>
-    <PageTitle title={`My ${category}.js Works | VinayPuppal.com`} />
-    <Container>
-      <H1 center>My Works</H1>
-      <Filters categories={categories} currentCategory={category} />
-      <Works works={edge.node.works} category={category} />
-      <Footer title={edge.node.title} inverted />
-    </Container>
-  </Content>
-);
+}) => {
+  const pageTitle = `My ${category}.js Works | VinayPuppal.com`;
+  return (
+    <Fragment>
+      <ShareButton
+        title={pageTitle}
+        text="Checkout:"
+        url={window.location.href}
+      >
+        <Icon name="share" />
+      </ShareButton>
+      <Content>
+        <PageTitle title={pageTitle} />
+        <Container>
+          <H1 center>My Works</H1>
+          <Filters categories={categories} currentCategory={category} />
+          <Works works={edge.node.works} category={category} />
+          <Footer title={edge.node.title} inverted />
+        </Container>
+      </Content>
+    </Fragment>
+  );
+};
 
 export default WorksPage;
 

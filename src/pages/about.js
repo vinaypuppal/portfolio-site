@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 
 import { Container, Content } from 'components/layout';
 import { About, Technologies, Avatar, Bio, Skills } from 'components/about';
 import { HR } from 'components/text';
 import PageTitle from 'components/head/page-title';
+import ShareButton from 'components/share-button';
+import Icon from 'components/icon';
 
 const AboutPage = ({
   data: {
@@ -24,24 +26,36 @@ const AboutPage = ({
   } = edge.node;
   const pageTitle = `About Me | ${title}.com`;
   return (
-    <Content>
-      <PageTitle title={pageTitle} />
-      <Container>
-        <About>
-          <Avatar
-            email={email}
-            avatar={{ resolutions: avatar.childImageSharp.resolutions, title }}
-            resumeLink={resumeLink}
-          />
-          <Bio city={city} company={company} country={country} />
-        </About>
-        <HR />
-        <Technologies>
-          <Skills skills={skills.include} title="Some of my skills include" />
-          <Skills skills={skills.focusing} title="Currently focusing on" />
-        </Technologies>
-      </Container>
-    </Content>
+    <Fragment>
+      <ShareButton
+        title={pageTitle}
+        text="Checkout:"
+        url={window.location.href}
+      >
+        <Icon name="share" />
+      </ShareButton>
+      <Content>
+        <PageTitle title={pageTitle} />
+        <Container>
+          <About>
+            <Avatar
+              email={email}
+              avatar={{
+                resolutions: avatar.childImageSharp.resolutions,
+                title,
+              }}
+              resumeLink={resumeLink}
+            />
+            <Bio city={city} company={company} country={country} />
+          </About>
+          <HR />
+          <Technologies>
+            <Skills skills={skills.include} title="Some of my skills include" />
+            <Skills skills={skills.focusing} title="Currently focusing on" />
+          </Technologies>
+        </Container>
+      </Content>
+    </Fragment>
   );
 };
 
