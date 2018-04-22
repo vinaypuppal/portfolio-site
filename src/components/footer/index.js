@@ -36,6 +36,6 @@ const Text = styled('p')`
   color: #999;
   font-weight: 300;
   @media (max-width: 480px) {
-    font-size: 0.9rem;
+    font-size: 1rem;
   }
 `;
