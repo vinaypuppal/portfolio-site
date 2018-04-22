@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Container, IndexContent } from 'components/layout';
+import { IndexContent } from 'components/layout';
 import { HeroTitle } from 'components/text';
 import Nav from 'components/nav';
 import Footer from 'components/footer';
@@ -13,11 +13,9 @@ const IndexPage = ({
   },
 }) => (
   <IndexContent>
-    <Container>
-      <HeroTitle>&lt;Hello! /&gt;</HeroTitle>
-      <Nav.Hero pages={edge.node.pages} />
-      <Footer title={edge.node.title} />
-    </Container>
+    <HeroTitle>&lt;Hello! /&gt;</HeroTitle>
+    <Nav.Hero pages={edge.node.pages} />
+    <Footer title={edge.node.title} />
   </IndexContent>
 );
 
