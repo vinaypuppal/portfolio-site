@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Container, Content } from 'components/layout';
+import { Content } from 'components/layout';
 import { H1, HR } from 'components/text';
 import { PostDate, PostDetail } from 'components/blog';
 import PageTitle from 'components/head/page-title';
@@ -14,12 +14,10 @@ const BlogPost = ({
   <Content>
     <PageTitle title={frontmatter.title} />
     <PageDescription description={excerpt} />
-    <Container>
-      <H1 center>{frontmatter.title}</H1>
-      <PostDate date={frontmatter.date} center />
-      <HR />
-      <PostDetail dangerouslySetInnerHTML={{ __html: html }} />
-    </Container>
+    <H1 center>{frontmatter.title}</H1>
+    <PostDate date={frontmatter.date} center />
+    <HR />
+    <PostDetail dangerouslySetInnerHTML={{ __html: html }} />
   </Content>
 );
 

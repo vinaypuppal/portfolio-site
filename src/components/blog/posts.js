@@ -23,7 +23,10 @@ PostsComponent.propTypes = {
 };
 
 const Posts = styled.ul`
-  margin: 0;
+  margin: 0 -20px;
   padding: 0;
   list-style: none;
+  @media (max-width: 480px) {
+    margin: 0 -15px;
+  }
 `;

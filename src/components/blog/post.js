@@ -50,8 +50,12 @@ const PostContainer = styled.li`
 `;
 
 const Post = styled.div`
-  max-width: 650px;
+  max-width: 700px;
   margin: auto;
+  padding: 0 20px;
+  @media (max-width: 480px) {
+    padding: 0 15px;
+  }
 `;
 
 const PostTitle = styled(H2)`
