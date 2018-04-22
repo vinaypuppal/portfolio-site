@@ -1,5 +1,7 @@
 module.exports = {
   siteMetadata: {
+    title: `VinayPuppal.com`,
+    description: `Hi, I'm VinayPuppal. I focus on creating interactive websites that empower real people and simplifies their lives. Check out some of my recent projects or learn more about me.`,
     siteUrl: `https://www.vinaypuppal.com`,
   },
   plugins: [
@@ -86,5 +88,6 @@ module.exports = {
       },
     },
     `gatsby-plugin-sitemap`,
+    `gatsby-plugin-feed`,
   ],
 };

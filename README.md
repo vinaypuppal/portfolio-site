@@ -9,8 +9,8 @@ I'm a self-taught web developer with an eye for design, UX and UI development an
 * [x] Meta tags for all pages
 * [x] Add footer to other pages + Add credits and source to footer
 * [x] Back Button Mobile
-* [ ] Share Button in header on Mobile
+* [x] Share Button in header on Mobile
+* [x] RSS feed
 * [ ] Microdata for all pages
-* [ ] RSS feed
 * [ ] Write actual blog post
 * [ ] Deploy to production

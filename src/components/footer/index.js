@@ -53,7 +53,7 @@ const Footer = styled('footer')`
   display: flex;
   justify-content: center;
   align-items: center;
-  color: ${props => (props.inverted ? '#999' : '#444')};
+  color: ${props => (props.inverted ? '#999' : '#888')};
   @media (max-width: 440px) {
     flex-direction: column;
     height: 60px;
