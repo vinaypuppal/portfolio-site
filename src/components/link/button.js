@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import NativeLink from 'gatsby-link';
 import styled from 'react-emotion';
 import FaExternal from 'react-icons/lib/fa/external-link';
+import { OutboundLink } from 'gatsby-plugin-google-analytics';
 
 import { buttonLink, outlineButtonLink } from './css';
 
@@ -71,7 +72,7 @@ const StyledNativeButtonLink = styled(NativeLink)`
   ${props => (props.outline ? outlineButtonLink : buttonLink)};
 `;
 
-const StyledExternalButtonLink = styled('a')`
+const StyledExternalButtonLink = styled(OutboundLink)`
   ${props => (props.outline ? outlineButtonLink : buttonLink)};
   & span {
     display: inline-block;

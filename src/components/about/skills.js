@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'react-emotion';
+import { OutboundLink } from 'gatsby-plugin-google-analytics';
 
 import { H1 } from 'components/text';
 import Icon from 'components/icon';
@@ -61,7 +62,7 @@ const Skill = styled.li`
   margin: 10px 20px;
 `;
 
-const SkillLink = styled.a`
+const SkillLink = styled(OutboundLink)`
   display: inline-block;
   text-decoration: none;
   text-align: center;

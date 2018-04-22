@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled, { css } from 'react-emotion';
+import { OutboundLink } from 'gatsby-plugin-google-analytics';
 
 import colors from 'styles/colors';
 import Icon from '../icon';
@@ -53,7 +54,7 @@ const iconBg = network => css`
   border-color: #fbfbfb;
 `;
 
-const StyledSocialLink = styled('a')`
+const StyledSocialLink = styled(OutboundLink)`
   display: flex;
   width: ${props => `${props.width}px`};
   height: ${props => `${props.height}px`};

@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import NativeLink from 'gatsby-link';
 import styled from 'react-emotion';
 import FaExternal from 'react-icons/lib/fa/external-link';
+import { OutboundLink } from 'gatsby-plugin-google-analytics';
 
 import { textLink } from './css';
 
@@ -83,7 +84,7 @@ const StyledNativeLink = styled(NativeLink)`
   ${textLink};
 `;
 
-const StyledAnchorLink = styled('a')`
+const StyledAnchorLink = styled(OutboundLink)`
   text-decoration: none;
   color: #0054ab;
   font-size: inherit;
@@ -92,7 +93,7 @@ const StyledAnchorLink = styled('a')`
   }
 `;
 
-const StyledExternalLink = styled('a')`
+const StyledExternalLink = styled(OutboundLink)`
   ${textLink};
   & span {
     display: inline-block;
