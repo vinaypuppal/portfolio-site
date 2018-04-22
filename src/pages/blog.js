@@ -1,10 +1,10 @@
 import React from 'react';
-import MdInfo from 'react-icons/lib/fa/cubes';
 
 import { Content, PlaceHolder } from 'components/layout';
 import { H1, P } from 'components/text';
 import { Posts } from 'components/blog';
 import PageTitle from 'components/head/page-title';
+import Icon from 'components/icon';
 
 const BlogPage = ({ data: { allMarkdownRemark } }) => (
   <Content>
@@ -14,7 +14,7 @@ const BlogPage = ({ data: { allMarkdownRemark } }) => (
       <Posts posts={allMarkdownRemark.edges} />
     ) : (
       <PlaceHolder>
-        <MdInfo size={100} />
+        <Icon name="cubes" size={100} />
         <P>Sorry no posts are present, check back later.</P>
       </PlaceHolder>
     )}

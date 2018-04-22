@@ -1,13 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import FaFcc from 'react-icons/lib/fa/fire';
+import FaHorn from 'react-icons/lib/fa/bullhorn';
+import FaCubes from 'react-icons/lib/fa/cubes';
+import MdShare from 'react-icons/lib/md/share';
 import FaMedium from 'react-icons/lib/fa/medium';
 import FaGithub from 'react-icons/lib/fa/github';
 import FaCodepen from 'react-icons/lib/fa/codepen';
+import FaCircleO from 'react-icons/lib/fa/circle-o';
 import FaTwitter from 'react-icons/lib/fa/twitter';
 import FaFacebook from 'react-icons/lib/fa/facebook';
 import FaLinkedin from 'react-icons/lib/fa/linkedin';
-import FaCircleO from 'react-icons/lib/fa/circle-o';
+import MdBackArrow from 'react-icons/lib/md/arrow-back';
 import FaCicleCheck from 'react-icons/lib/fa/check-circle';
 
 import Logo from './logo';
@@ -28,10 +32,14 @@ import {
 const iconMap = {
   fcc: <FaFcc />,
   logo: <Logo />,
+  back: <MdBackArrow />,
+  horn: <FaHorn />,
   css3: <IconCss3 />,
   blog: <IconBlog />,
   user: <IconUser />,
   vuejs: <IconVueJs />,
+  share: <MdShare />,
+  cubes: <FaCubes />,
   html5: <IconHtml5 />,
   works: <IconWorks />,
   github: <FaGithub />,
