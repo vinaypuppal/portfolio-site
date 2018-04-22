@@ -72,3 +72,12 @@ export const textLink = css`
     background: #ccc;
   }
 `;
+
+export const anchorLink = css`
+  text-decoration: none;
+  color: #0054ab;
+  font-size: inherit;
+  &:hover {
+    text-decoration: underline;
+  }
+`;

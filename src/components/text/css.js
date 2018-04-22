@@ -14,7 +14,7 @@ export const h2 = css`
 
 export const h3 = css`
   font-weight: bold;
-  font-size: 18px;
+  font-size: 20px;
   color: inherit;
 `;
 
@@ -28,10 +28,16 @@ export const p = css`
 
 export const blockquote = css`
   padding: 10px 20px;
-  line-height: 1.7;
   border-left: 5px solid #000;
   margin: 20px 0;
   color: #888;
+  & p {
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 24px;
+    color: #888;
+    margin: 0;
+  }
 `;
 
 export const ul = css`
@@ -53,17 +59,18 @@ export const ol = css`
 `;
 
 export const li = css`
-  font-size: 14px;
+  font-size: 16px;
   line-height: 24px;
   margin-bottom: 10px;
 `;
 
 export const inlineCode = css`
-  color: '#bd10e0';
+  color: #ff9800;
   font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
     Bitstream Vera Sans Mono, Courier New, monospace, serif;
-  font-size: 0.9em;
+  font-size: 1rem;
   white-space: pre-wrap;
+  font-weight: 400;
   &::before {
     content: '\`';
   }
@@ -82,9 +89,10 @@ export const pre = css`
 `;
 
 export const code = css`
-  color: #bd10e0;
+  color: #ff9800;
   font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
     Bitstream Vera Sans Mono, Courier New, monospace, serif;
-  font-size: 13px;
+  font-size: 14px;
   line-height: 20px;
+  font-weight: 400;
 `;

@@ -5,7 +5,7 @@ import styled from 'react-emotion';
 import FaExternal from 'react-icons/lib/fa/external-link';
 import { OutboundLink } from 'gatsby-plugin-google-analytics';
 
-import { textLink } from './css';
+import { textLink, anchorLink } from './css';
 
 export const InternalLink = ({ href, children, ...restProps }) => (
   <StyledNativeLink to={href} {...restProps}>
@@ -85,12 +85,7 @@ const StyledNativeLink = styled(NativeLink)`
 `;
 
 const StyledAnchorLink = styled(OutboundLink)`
-  text-decoration: none;
-  color: #0054ab;
-  font-size: inherit;
-  &:hover {
-    text-decoration: underline;
-  }
+  ${anchorLink};
 `;
 
 const StyledExternalLink = styled(OutboundLink)`
