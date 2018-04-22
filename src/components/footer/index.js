@@ -24,7 +24,7 @@ const FooterComponent = ({ title, inverted }) => (
         inverted={inverted}
         rel="noopener noreferrer"
         target="_blank"
-        href="https://github.com/vinaypuppal/vinaypuppal.github.io"
+        href="https://github.com/vinaypuppal/vinaypuppal.github.io#credits"
       >
         Credits
       </FooterLink>
