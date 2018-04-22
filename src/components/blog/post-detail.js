@@ -14,7 +14,7 @@ import {
   pre,
   code,
 } from 'components/text/css';
-import { anchorLink } from 'components/link/css';
+import { textLink, anchorLink } from 'components/link/css';
 
 export default styled.div`
   max-width: 650px;
@@ -32,11 +32,17 @@ export default styled.div`
   & h3 {
     ${h3};
   }
-  & p {
-    ${p};
-  }
   & a {
     ${anchorLink};
+  }
+  & p {
+    ${p};
+    & a {
+      ${textLink};
+      &:hover {
+        text-decoration: none;
+      }
+    }
   }
   & ul {
     ${ul};
