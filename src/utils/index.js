@@ -1,4 +1,4 @@
-import { distanceInWords, format } from 'date-fns';
+import { distanceInWordsToNow, format } from 'date-fns';
 
 export function capitalize(word) {
   return word.charAt(0).toUpperCase() + word.substring(1);
@@ -10,8 +10,8 @@ export function toCapitalizedWords(name) {
 }
 
 export function formatDate(date) {
-  return `${format(new Date(date), 'dddd, MMM Do YYYY')} (${distanceInWords(
+  return `${format(
     new Date(date),
-    Date.now()
-  )} ago)`;
+    'dddd, MMM Do YYYY'
+  )} (${distanceInWordsToNow(new Date(date))} ago)`;
 }
