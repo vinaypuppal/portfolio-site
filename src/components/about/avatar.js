@@ -13,8 +13,8 @@ const AvatarComponent = ({ avatar, email, resumeLink }) => (
       alt={`${avatar.title}_avatar_image`}
     />
     <Info>
-      <Name>{avatar.title}</Name>
-      <Email>
+      <Name center>{avatar.title}</Name>
+      <Email center>
         <P.B>Email</P.B>: <P.Link href={`mailto:${email}`}>{email}</P.Link>
       </Email>
       <Link.Button href={resumeLink}>View My Resume</Link.Button>
