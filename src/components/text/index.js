@@ -36,6 +36,7 @@ export const H3 = styled('h3')`
 
 export const P = styled('p')`
   ${p};
+  text-align: ${props => (props.center ? 'center' : 'left')};
 `;
 
 P.B = Bold;
