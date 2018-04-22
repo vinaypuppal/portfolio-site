@@ -47,7 +47,7 @@ const Filter = styled.li`
   @media (max-width: 600px) {
     margin: 6px 4px;
   }
-  @media (max-width: 440px) {
+  @media (max-width: 410px) {
     margin: 6px 3px;
   }
 `;
@@ -76,7 +76,7 @@ const FilterLink = styled(Link)`
     padding: 0.5rem;
     font-size: 14px;
   }
-  @media (max-width: 440px) {
+  @media (max-width: 410px) {
     padding: 0.5rem 2px;
   }
 `;
