@@ -7,12 +7,20 @@ import PageTitle from 'components/head/page-title';
 import Icon from 'components/icon';
 import ShareButton from 'components/share-button';
 
-const BlogPage = ({ data: { allMarkdownRemark } }) => (
+const BlogPage = ({
+  data: {
+    allMarkdownRemark,
+    allContentYaml: {
+      edges: [edge],
+    },
+  },
+  location: { pathname },
+}) => (
   <Fragment>
     <ShareButton
       title="My Blog | VinayPuppal.com"
       text="Checkout:"
-      url={window.location.href}
+      url={window ? window.location.href : `${edge.node.siteUrl}${pathname}`}
     >
       <Icon name="share" />
     </ShareButton>
@@ -35,6 +43,13 @@ export default BlogPage;
 
 export const BlogQuery = graphql`
   query BlogQuery {
+    allContentYaml {
+      edges {
+        node {
+          siteUrl
+        }
+      }
+    }
     allMarkdownRemark(
       sort: { order: DESC, fields: [frontmatter___date] }
       filter: { frontmatter: { publish: { eq: true } } }

@@ -12,6 +12,7 @@ const AboutPage = ({
     allContentYaml: {
       edges: [edge],
     },
+    location: { pathname },
   },
 }) => {
   const {
@@ -20,6 +21,7 @@ const AboutPage = ({
     title,
     skills,
     avatar,
+    siteUrl,
     company,
     country,
     resumeLink,
@@ -30,7 +32,7 @@ const AboutPage = ({
       <ShareButton
         title={pageTitle}
         text="Checkout:"
-        url={window.location.href}
+        url={window ? window.location.href : `${siteUrl}${pathname}`}
       >
         <Icon name="share" />
       </ShareButton>
@@ -70,6 +72,7 @@ export const query = graphql`
           email
           title
           country
+          siteUrl
           resumeLink
           company {
             url

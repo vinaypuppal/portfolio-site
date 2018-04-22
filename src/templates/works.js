@@ -22,7 +22,11 @@ const WorksPage = ({
       <ShareButton
         title={pageTitle}
         text="Checkout:"
-        url={window.location.href}
+        url={
+          window
+            ? window.location.href
+            : `${edge.node.siteUrl}/works/${category}`
+        }
       >
         <Icon name="share" />
       </ShareButton>
@@ -47,6 +51,7 @@ export const query = graphql`
       edges {
         node {
           title
+          siteUrl
           works {
             icon
             date

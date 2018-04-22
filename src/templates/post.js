@@ -10,14 +10,22 @@ import ShareButton from 'components/share-button';
 
 const BlogPost = ({
   data: {
-    markdownRemark: { frontmatter, html, excerpt },
+    markdownRemark: {
+      frontmatter,
+      html,
+      excerpt,
+      fields: { slug },
+    },
+    allContentYaml: {
+      edges: [edge],
+    },
   },
 }) => (
   <Fragment>
     <ShareButton
       title={frontmatter.title}
       text="Checkout:"
-      url={window.location.href}
+      url={window ? window.location.href : `${edge.node.siteUrl}/blog${slug}`}
     >
       <Icon name="share" />
     </ShareButton>
@@ -36,15 +44,20 @@ export default BlogPost;
 
 export const postQuery = graphql`
   query BlogPostBySlug($slug: String!) {
-    site {
-      siteMetadata {
-        siteUrl
+    allContentYaml {
+      edges {
+        node {
+          siteUrl
+        }
       }
     }
     markdownRemark(fields: { slug: { eq: $slug } }) {
       id
       html
       timeToRead
+      fields {
+        slug
+      }
       excerpt(pruneLength: 100)
       frontmatter {
         date(formatString: "MMMM DD, YYYY")
