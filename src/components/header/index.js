@@ -19,7 +19,7 @@ const HeaderComponent = ({
     <Container>
       <Header>
         <Logo logo={logo} />
-        <Nav pages={pages} />
+        {!isHomePage && <Nav pages={pages} />}
         <SocialNetworks isHomePage={isHomePage} networks={socialLinks} />
       </Header>
     </Container>
