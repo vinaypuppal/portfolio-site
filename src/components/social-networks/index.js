@@ -4,8 +4,8 @@ import styled from 'react-emotion';
 
 import Link from 'components/link';
 
-const SocialComponent = ({ networks, isHomepage }) => (
-  <SocialNetworks isHomepage={isHomepage}>
+const SocialComponent = ({ networks, isHomePage }) => (
+  <SocialNetworks isHomePage={isHomePage}>
     {networks.map(network => (
       <SocialNetwork key={network.name}>
         <Link.Social network={network.name} href={network.url} circular />
@@ -20,7 +20,7 @@ SocialComponent.propTypes = {
   networks: PropTypes.arrayOf(
     PropTypes.shape({ name: PropTypes.string, url: PropTypes.string })
   ).isRequired,
-  isHomepage: PropTypes.bool.isRequired,
+  isHomePage: PropTypes.bool.isRequired,
 };
 
 const SocialNetworks = styled('ul')`
@@ -33,7 +33,7 @@ const SocialNetworks = styled('ul')`
   align-items: center;
   text-align: center;
   @media (max-width: 1000px) {
-    display: ${props => (props.isHomepage ? 'flex' : 'none')};
+    display: ${props => (props.isHomePage ? 'flex' : 'none')};
   }
   @media (max-width: 600px) {
     margin: 30px;
