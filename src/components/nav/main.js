@@ -64,7 +64,7 @@ const NavLink = styled(Link)`
   font-weight: 400;
   transition: all 0.25s ease-in;
   text-decoration: none;
-  color: #999;
+  color: #ddd;
   position: relative;
   user-select: none;
   &:hover {
