@@ -5,7 +5,6 @@ import { Works, Filters } from 'components/works';
 import { H1 } from 'components/text';
 import PageTitle from 'components/head/page-title';
 import Footer from 'components/footer';
-import Icon from 'components/icon';
 import ShareButton from 'components/share-button';
 
 const WorksPage = ({
@@ -23,9 +22,7 @@ const WorksPage = ({
         title={pageTitle}
         text="Checkout:"
         url={`${edge.node.siteUrl}/works/${category}`}
-      >
-        <Icon name="share" />
-      </ShareButton>
+      />
       <Content>
         <PageTitle title={pageTitle} />
         <Container>

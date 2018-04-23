@@ -5,7 +5,6 @@ import { About, Technologies, Avatar, Bio, Skills } from 'components/about';
 import { HR } from 'components/text';
 import PageTitle from 'components/head/page-title';
 import ShareButton from 'components/share-button';
-import Icon from 'components/icon';
 
 const AboutPage = ({
   data: {
@@ -33,9 +32,7 @@ const AboutPage = ({
         title={pageTitle}
         text="Checkout:"
         url={`${siteUrl}${pathname}`}
-      >
-        <Icon name="share" />
-      </ShareButton>
+      />
       <Content>
         <PageTitle title={pageTitle} />
         <Container>

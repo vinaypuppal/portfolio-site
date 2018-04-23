@@ -21,9 +21,7 @@ const BlogPage = ({
       title="My Blog | VinayPuppal.com"
       text="Checkout:"
       url={`${edge.node.siteUrl}${pathname}`}
-    >
-      <Icon name="share" />
-    </ShareButton>
+    />
     <Content>
       <PageTitle title="My Blog | VinayPuppal.com" />
       <H1 center>My Blog</H1>

@@ -2,6 +2,7 @@ import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'react-emotion';
 
+import Icon from 'components/icon';
 import SharePopup from './share-popup';
 
 export default class ShareButtonComponent extends React.Component {
@@ -27,7 +28,7 @@ export default class ShareButtonComponent extends React.Component {
     return (
       <Fragment>
         <ShareButton className="share-btn web-share" onClick={this.toggleShare}>
-          {this.props.children}
+          <Icon name="share" size={25} />
         </ShareButton>
         <ShareModal open={this.state.shareModalOpen}>
           <Overlay

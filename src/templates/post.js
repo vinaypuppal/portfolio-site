@@ -5,7 +5,6 @@ import { H1, HR } from 'components/text';
 import { PostDate, PostDetail } from 'components/blog';
 import PageTitle from 'components/head/page-title';
 import PageDescription from 'components/head/page-description';
-import Icon from 'components/icon';
 import ShareButton from 'components/share-button';
 
 const BlogPost = ({
@@ -26,9 +25,7 @@ const BlogPost = ({
       title={frontmatter.title}
       text="Checkout:"
       url={`${edge.node.siteUrl}${slug}`}
-    >
-      <Icon name="share" />
-    </ShareButton>
+    />
     <Content>
       <PageTitle title={frontmatter.title} />
       <PageDescription description={excerpt} />
