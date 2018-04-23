@@ -1,7 +1,7 @@
 [![styled with prettier](https://img.shields.io/badge/styled_with-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
 [![License](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/vinaypuppal/vinaypuppal.github.io/blob/master/LICENSE.md)
 
-# My Portifolio Page
+# My Portfolio Page
 
 ## About Me
 
