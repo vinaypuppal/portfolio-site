@@ -30,7 +30,7 @@ const BlogPage = ({
       ) : (
         <PlaceHolder>
           <Icon name="cubes" size={100} />
-          <P center>Sorry no posts are present, check back later.</P>
+          <P center>Under construction coming soon!...</P>
         </PlaceHolder>
       )}
     </Content>

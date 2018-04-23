@@ -13,7 +13,7 @@ const NotFoundPage = () => (
       <PageTitle title="Page Not Found | vinaypuppal.com" />
       <PlaceHolder>
         <Icon name="horn" size={100} />
-        <H1>404 | Page Not Found</H1>
+        <H1 center>404 | Page Not Found</H1>
         <Link to="/">Go Back Home</Link>
       </PlaceHolder>
     </Container>
