@@ -1,21 +1,29 @@
+[![styled with prettier](https://img.shields.io/badge/styled_with-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
+[![License](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/vinaypuppal/vinaypuppal.github.io/blob/master/LICENSE.md)
+
 # My Portifolio Page
----
 
 ## About Me
-I'm a self-taught web developer with an eye for design, UX and UI development and a strong desire to learn and create.I firmly believe in life long learning and I'm constantly exploring new ideas and technologies. A while ago i started learning HTML, CSS, Javascript and after hacking away for a while I realised I wanted to learn coding properly. Since then I read some books ( <a target="_blank" href="http://www.htmlandcssbook.com/" title="http://www.htmlandcssbook.com/">HTML & CSS by Jon Duckett</a> and <a href="https://github.com/getify/You-Dont-Know-JS" target="_blank" title="https://github.com/getify/You-Dont-Know-JS">YDKJS series by Kyle Simpson</a> ), have taken courses with <a href="http://www.freecodecamp.com" target="_blank" title="http://www.freecodecamp.com">FreeCodeCamp</a>, <a href="https://www.codecademy.com/" target="_blank" title="https://www.codecademy.com/" >Codecademy</a> and built the various projects listed here.
 
-## Website UI
-!['main page ui'](https://res.cloudinary.com/vinaypuppal/image/upload/v1467928242/fcc/updated-ui.png)
+Hi, I'm VinayPuppal. I focus on creating interactive websites that empower real people and simplifies their lives. Check out some of my recent projects or learn more about me.
 
-![](https://res.cloudinary.com/vinaypuppal/image/upload/v1467842504/fcc/myworks-ui.png)
+## Tech Stack Used
 
-![](https://res.cloudinary.com/vinaypuppal/image/upload/v1467842502/fcc/contact-ui.png)
+* [GatsbyJs](https://gatsbyjs.org): Blazing-fast static site generator for React
+* [emotion](https://emotion.sh/): The Next Generation of CSS-in-JS
+* Deployed to [Netlify](https://netlify.com)
 
-## Mobile Responsive UI
-![](https://res.cloudinary.com/vinaypuppal/image/upload/c_scale,w_370/v1467842669/fcc/mobile-ui.jpg)
+## More Details
 
-![](https://res.cloudinary.com/vinaypuppal/image/upload/c_scale,w_370/v1467842670/fcc/mobile-about-ui.jpg)
+> Read this blog post https://www.vinaypuppal.com/blog/rebuilding-my-website-with-gatsbyjs/
 
-![](https://res.cloudinary.com/vinaypuppal/image/upload/c_scale,w_370/v1467842670/fcc/mobile-works-ui.jpg)
+## Credits
 
-![](https://res.cloudinary.com/vinaypuppal/image/upload/c_scale,w_370/v1467842669/fcc/mobile-contact-ui.jpg)
+* To all maintainers of open source packages used in this project
+* Icons
+  * https://www.flaticon.com/
+  * https://gorangajic.github.io/react-icons/fa.html
+
+## License
+
+[MIT](/LICENSE.md) © [VinayPuppal](https://www.vinaypuppal.com)
