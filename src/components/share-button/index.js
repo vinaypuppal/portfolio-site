@@ -13,6 +13,13 @@ export default class ShareButtonComponent extends React.Component {
   toggleShare = () => {
     const { text, url, title, onSuccess, onError } = this.props;
     if (window.navigator.share) {
+      if (window.ga) {
+        window.ga(`send`, `event`, {
+          eventCategory: `Share`,
+          eventAction: `Native Share`,
+          eventLabel: url,
+        });
+      }
       window.navigator
         .share({ title, text, url })
         .then(onSuccess)
@@ -21,6 +28,13 @@ export default class ShareButtonComponent extends React.Component {
       document.body.style.overflow = !this.state.shareModalOpen
         ? 'hidden'
         : 'auto';
+      if (window.ga && !this.state.shareModalOpen) {
+        window.ga(`send`, `event`, {
+          eventCategory: `Share`,
+          eventAction: `Share Modal`,
+          eventLabel: url,
+        });
+      }
       this.setState({ shareModalOpen: !this.state.shareModalOpen });
     }
   };

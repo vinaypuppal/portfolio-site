@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'react-emotion';
+import { OutboundLink } from 'gatsby-plugin-google-analytics';
 
 import Icon from 'components/icon';
 import Visibility from './visibility';
@@ -132,7 +133,7 @@ const StyledSharePopup = styled.div`
   transform: ${props => (props.open ? `translateY(0)` : `translateY(100%)`)};
 `;
 
-const ShareLink = styled.a`
+const ShareLink = styled(OutboundLink)`
   height: 40px;
   line-height: 40px;
   display: block;
