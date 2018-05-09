@@ -71,7 +71,7 @@ works:
   - title: Linklet
     icon: 🔗
     description: Linklet as of now contains the links which are shared in whatsapp freeCodeCamp Hyderabad group.
-    demoUrl: 'https://linklet.ml'
+    demoUrl: 'https://linklet.app'
     thumbnail: 'images/linklet.png'
     date: 1493115120
     category: react
