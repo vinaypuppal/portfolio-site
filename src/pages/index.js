@@ -13,7 +13,7 @@ const IndexPage = ({
   },
 }) => (
   <IndexContent>
-    <HeroTitle>&lt;Hello! /&gt;</HeroTitle>
+    <HeroTitle>&lt;Hello!... /&gt;</HeroTitle>
     <Nav.Hero pages={edge.node.pages} />
     <Footer title={edge.node.title} />
   </IndexContent>
