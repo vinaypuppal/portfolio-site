@@ -88,6 +88,59 @@ module.exports = {
       },
     },
     `gatsby-plugin-sitemap`,
-    `gatsby-plugin-feed`,
+    {
+      resolve: `gatsby-plugin-feed`,
+      options: {
+        feeds: [
+          {
+            query: `
+            {
+              allMarkdownRemark(
+                sort: { fields: [frontmatter___date], order: DESC }
+                filter: { frontmatter: { publish: { eq: true } } }
+                limit: 1000
+              ) {
+                edges {
+                  node {
+                    excerpt
+                    html
+                    fields { slug }
+                    frontmatter {
+                      title
+                      date
+                    }
+                  }
+                }
+              }
+            }
+          `,
+            serialize: ({ query: { site, allMarkdownRemark } }) =>
+              allMarkdownRemark
+                ? allMarkdownRemark.edges.map(edge =>
+                    Object.assign({}, edge.node.frontmatter, {
+                      description: edge.node.excerpt,
+                      url: site.siteMetadata.siteUrl + edge.node.fields.slug,
+                      guid: site.siteMetadata.siteUrl + edge.node.fields.slug,
+                      custom_elements: [{ 'content:encoded': edge.node.html }],
+                    })
+                  )
+                : [],
+            output: '/rss.xml',
+          },
+        ],
+      },
+    },
+    {
+      resolve: `gatsby-plugin-netlify`,
+      options: {
+        mergeLinkHeaders: false,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-canonical-urls`,
+      options: {
+        siteUrl: `https://www.vinaypuppal.com`,
+      },
+    },
   ],
 };
