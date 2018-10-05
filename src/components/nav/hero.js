@@ -97,7 +97,7 @@ const NavItem = styled('li')`
 const NavLink = styled(Link)`
   display: block;
   text-decoration: none;
-  color: #999;
+  color: #d5d5d5;
   user-select: none;
   font-weight: 300;
   line-height: 0;
