@@ -55,9 +55,9 @@ skills:
       color: '#61dafb'
       url: 'https://reactjs.org'
   focusing:
-    - name: vueJs
-      color: '#18653b'
-      url: 'https://vuejs.org'
+    - name: ElasticSearch
+      color: '#005571'
+      url: 'https://www.elastic.co/'
     - name: nodeJs
       color: '#518216'
       url: 'https://nodejs.org'
@@ -174,7 +174,7 @@ works:
     date: 1466261640
     category: vanilla
   - title: Simon Says Game
-    icon:  🎲
+    icon: 🎲
     description: A classic Simon Says Game built for fun.
     demoUrl: 'https://codepen.io/vinaypuppal/full/MejJZj'
     thumbnail: 'images/simon_says.png'

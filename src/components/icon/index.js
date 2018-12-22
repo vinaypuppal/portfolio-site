@@ -28,6 +28,7 @@ import {
   IconMongoDb,
   IconGraphQL,
   IconJavascript,
+  IconElasticSearch,
 } from './custom';
 
 const iconMap = {
@@ -55,6 +56,7 @@ const iconMap = {
   facebook: <FaFacebook />,
   linkedin: <FaLinkedin />,
   javascript: <IconJavascript />,
+  elasticsearch: <IconElasticSearch />,
   'circle-o': <FaCircleO />,
   'circle-check': <FaCicleCheck />,
 };
