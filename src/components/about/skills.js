@@ -53,9 +53,10 @@ const Skills = styled.ul`
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  margin: 0;
   padding: 0;
   list-style: none;
+  max-width: 400px;
+  margin: 0 auto;
 `;
 
 const Skill = styled.li`

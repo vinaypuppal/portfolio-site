@@ -12,12 +12,10 @@ email: 'hello@vinaypuppal.com'
 city: Hyderabad
 country: India
 company:
-  position: Remote Fullstack JavaScript Developer
+  position: Fullstack Remote JavaScript Developer
   name: Chat Leap Ltd
   url: 'https://www.chatleap.com/'
 socialLinks:
-  - name: facebook
-    url: 'https://www.facebook.com/puppalvinay'
   - name: twitter
     url: 'https://twitter.com/vinaypuppal'
   - name: linkedin
@@ -28,8 +26,6 @@ socialLinks:
     url: 'https://www.freecodecamp.org/vinaypuppal'
   - name: github
     url: 'https://github.com/vinaypuppal'
-  - name: medium
-    url: 'https://medium.com/@vinaypuppal'
 pages:
   - name: aboutMe
     path: '/about'
@@ -54,16 +50,19 @@ skills:
     - name: reactJs
       color: '#61dafb'
       url: 'https://reactjs.org'
-  focusing:
-    - name: ElasticSearch
-      color: '#005571'
-      url: 'https://www.elastic.co/'
     - name: nodeJs
       color: '#518216'
       url: 'https://nodejs.org'
     - name: mongoDB
       color: '#3b862e'
       url: 'https://mongodb.com'
+  focusing:
+    - name: PWAs
+      color: '#5912c7'
+      url: 'https://developers.google.com/web/progressive-web-apps/'
+    - name: amp
+      color: '#005af0'
+      url: 'https://amp.dev/'
     - name: graphQL
       color: '#e10098'
       url: 'https://graphql.com'

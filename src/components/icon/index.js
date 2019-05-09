@@ -17,6 +17,8 @@ import FaCicleCheck from 'react-icons/lib/fa/check-circle';
 
 import Logo from './logo';
 import {
+  IconPWA,
+  IconAMP,
   IconBlog,
   IconCss3,
   IconUser,
@@ -32,6 +34,8 @@ import {
 } from './custom';
 
 const iconMap = {
+  pwas: <IconPWA />,
+  amp: <IconAMP />,
   fcc: <FaFcc />,
   logo: <Logo />,
   back: <MdBackArrow />,
@@ -61,7 +65,10 @@ const iconMap = {
   'circle-check': <FaCicleCheck />,
 };
 
-const Icon = ({ name, size }) => React.cloneElement(iconMap[name], { size });
+const Icon = ({ name, size }) => {
+  console.log({ name });
+  return React.cloneElement(iconMap[name.toLowerCase()], { size });
+};
 
 export default Icon;
 

@@ -9,7 +9,6 @@ export { Avatar, Bio, Skills };
 const flex = css`
   width: 100%;
   display: flex;
-  align-items: center;
   position: relative;
   @media (max-width: 800px) {
     flex-direction: column;
@@ -18,6 +17,7 @@ const flex = css`
 
 export const About = styled.div`
   ${flex};
+  align-items: center;
 `;
 
 export const Technologies = styled.div`
