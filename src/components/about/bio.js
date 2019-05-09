@@ -22,7 +22,7 @@ const BioComponent = ({ company, city, country }) => (
       people learning coding.
     </P>
     <P>
-      I previously worked on{' '}
+      I am focusing on{' '}
       <P.Link href="https://developers.google.com/web/progressive-web-apps/">
         PWAs
       </P.Link>
