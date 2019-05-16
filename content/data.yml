@@ -60,7 +60,7 @@ skills:
     - name: PWAs
       color: '#5912c7'
       url: 'https://developers.google.com/web/progressive-web-apps/'
-    - name: amp
+    - name: AMP
       color: '#005af0'
       url: 'https://amp.dev/'
     - name: graphQL
