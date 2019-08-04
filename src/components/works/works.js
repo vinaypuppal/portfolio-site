@@ -84,6 +84,7 @@ const Work = styled.li`
   border-radius: 8px;
   flex-direction: column;
   background-color: #fff;
+  position: relative;
   & .img-wrapper {
     width: 100%;
   }
@@ -109,12 +110,14 @@ const Work = styled.li`
 const Title = styled(H3)`
   margin-bottom: 10px;
   text-align: center;
+  padding: 0 16px;
 `;
 
 const WorkDate = styled.div`
   color: #999;
   font-size: 14px;
   text-align: ${props => (props.center ? 'center' : 'left')};
+  padding: 0 16px;
   @media (max-width: 600px) {
     font-size: 12px;
   }
@@ -122,13 +125,14 @@ const WorkDate = styled.div`
 
 const Description = styled(P)`
   margin: 0;
-  padding: 10px;
+  padding: 10px 16px;
   display: flex;
   font-size: 1rem;
   text-align: center;
   min-height: 100px;
   align-items: center;
   justify-content: center;
+  padding-bottom: 70px;
   @media (max-width: 600px) {
     min-height: auto;
   }
@@ -138,4 +142,7 @@ const Cta = styled.div`
   width: 100%;
   margin: 10px 0 20px 0;
   text-align: center;
+  position: absolute;
+  left: 0;
+  bottom: 0;
 `;

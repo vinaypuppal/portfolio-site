@@ -67,6 +67,20 @@ skills:
       color: '#e10098'
       url: 'https://graphql.com'
 works:
+  - title: Coderplex Donation Page
+    icon: 💰
+    description: Built a page to accept donations through UPI without any payment gateway and added razorpay payment gateway as fallback for users who want to use Debit/Credit cards to donate!
+    demoUrl: 'https://donate.coderplex.org'
+    thumbnail: 'images/coderplex-donate.png'
+    date: 1564935578
+    category: react
+  - title: MycoForest
+    icon: 🍄
+    description: Built a B2B website for a local Cordyceps mushroom seller with a blog and contact form useing Gatsby.js and NetlifyCMS as content management system.
+    demoUrl: 'https://mycoforest.com'
+    thumbnail: 'images/mycoforest.png'
+    date: 1561401000
+    category: react
   - title: Linklet
     icon: 🔗
     description: Linklet as of now contains the links which are shared in whatsapp freeCodeCamp Hyderabad group.
@@ -80,6 +94,13 @@ works:
     demoUrl: 'https://tutorbro.com'
     thumbnail: 'images/tutorbro.png'
     date: 1470546000
+    category: react
+  - title: Coderplex
+    icon: 👨‍💻
+    description: Helped coderplex community to build a landing, events, co-learning space and learn guides pages using Next.js, EmotionCSS.
+    demoUrl: 'https://coderplex.org'
+    thumbnail: 'images/coderplex.png'
+    date: 1501612200
     category: react
   - title: TopGit
     icon: ★
