@@ -74,9 +74,16 @@ works:
     thumbnail: 'images/coderplex-donate.png'
     date: 1564935578
     category: react
+  - title: WeddingCloud
+    icon: 📸
+    description: WeddingCloud is a one place cloud solution for managing wedding photos, wedding invitation & many other things of wedding domain.
+    demoUrl: 'https://weddingcloud.in'
+    thumbnail: 'images/weddingcloud.png'
+    date: 1540751400
+    category: react
   - title: MycoForest
     icon: 🍄
-    description: Built a B2B website for a local Cordyceps mushroom seller with a blog and contact form useing Gatsby.js and NetlifyCMS as content management system.
+    description: Built a B2B website for a local Cordyceps mushroom seller with a blog and contact form using Gatsby.js and NetlifyCMS as content management system.
     demoUrl: 'https://mycoforest.com'
     thumbnail: 'images/mycoforest.png'
     date: 1561401000
@@ -109,13 +116,6 @@ works:
     thumbnail: 'images/topgit.png'
     date: 1472973240
     category: react
-  - title: FreeCodeCamp Leaderboard
-    icon: 🎓
-    description: A list of Free Code Camp campers who've earned the most brownie points in the past 30 days.
-    demoUrl: 'http://codepen.io/vinaypuppal/full/MeJqzJ/'
-    thumbnail: 'images/fCC_leaderboard.png'
-    date: 1466917200
-    category: react
   - title: Markdown Editor
     icon: 📠
     description: A Github flavoured Markdown Editor built using React.js.
@@ -130,13 +130,13 @@ works:
     thumbnail: 'images/recipe_book.png'
     date: 1467363600
     category: react
-  - title: Youtube Search
-    icon: 🎬
-    description: A React App to search youtube videos.
-    demoUrl: 'https://youtube-api.vinaypuppal.com/'
-    thumbnail: 'images/youtube_api.png'
-    date: 1466849700
-    category: react
+  - title: 'Coderplex: CodeFights'
+    icon: 👨‍💻
+    description: Built a website for coderplex codefights event with a countdown timer.
+    demoUrl: 'https://coderplex.github.io/codefights/'
+    thumbnail: 'images/coderplex-codefights.png'
+    date: 1485369000
+    category: vanilla
   - title: Tribute Page
     icon: 💁
     description: A Tribute Page For Nandamuri Taraka Rama Rao.
