@@ -1,0 +1,15 @@
+name: Lighthouse
+on: push
+jobs:
+  run-lighthouse:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - name: Run Lighthouse against a static build dir
+        run: |
+          yarn install
+          yarn build
+        uses: treosh/lighthouse-ci-action@v2
+        with:
+          # no urls needed, since it uses local folder to scan .html files
+          configPath: './lighthouserc.json'
