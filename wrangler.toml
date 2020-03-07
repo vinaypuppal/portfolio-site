@@ -1,0 +1,16 @@
+name = "site"
+type = "webpack"
+account_id = "861533869cd09ff8b4ef02d65205ac54"
+workers_dev = true
+
+[site]
+bucket = "./build"
+entry-point = "workers"
+
+[env.staging]
+route = "dev.vinaypuppal.com/*"
+zone_id = "de25462d1339fd1784870a5204a8b128"
+
+[env.production]
+route = "www.vinaypuppal.com/*"
+zone_id = "de25462d1339fd1784870a5204a8b128"
