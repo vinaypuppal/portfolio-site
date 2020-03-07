@@ -14,10 +14,6 @@ Hi, I'm VinayPuppal. I focus on creating interactive websites that empower real 
   rapidly building custom designs.
 - Deployed to [Cloudflare Workers](https://workers.cloudflare.com/)
 
-## More Details
-
-> Read this blog post https://www.vinaypuppal.com/blog/rebuilding-my-website-with-gatsbyjs/
-
 ## Credits
 
 - To all maintainers of open source packages used in this project
