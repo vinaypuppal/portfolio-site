@@ -13,7 +13,7 @@ jobs:
       - name: npm install, build
         run: |
           yarn install
-          yarn build
+          yarn build:ci
       - name: run Lighthouse CI
         env:
           LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}

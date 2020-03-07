@@ -17,6 +17,8 @@
   "scripts": {
     "dev": "next",
     "build": "next build && next export -o build",
+    "build:ci": "next build && yarn export:ci",
+    "export:ci": "GH_CI=true next export -o build",
     "deploy": "yarn build && wrangler publish",
     "preview": "wrangler preview --watch",
     "start": "NODE_ENV=production next start",

@@ -1,4 +1,5 @@
 module.exports = {
+  exportTrailingSlash: Boolean(process.env.GH_CI) ? false : true,
   experimental: {
     modern: true,
     polyfillsOptimization: true,
