@@ -1,5 +1,4 @@
-import { getAssetFromKV } from "@cloudflare/kv-asset-handler";
-import { addSecurityHeaders, NonceHandler } from "./csp";
+import { handleSecurityHeaders } from './csp';
 
 /**
  * The DEBUG flag will do two things that help during development:
@@ -10,18 +9,18 @@ import { addSecurityHeaders, NonceHandler } from "./csp";
  */
 const DEBUG = false;
 
-addEventListener("fetch", event => {
+addEventListener('fetch', event => {
   try {
     event.respondWith(handleEvent(event));
   } catch (e) {
     if (DEBUG) {
       return event.respondWith(
         new Response(e.message || e.toString(), {
-          status: 500
+          status: 500,
         })
       );
     }
-    event.respondWith(new Response("Internal Error", { status: 500 }));
+    event.respondWith(new Response('Internal Error', { status: 500 }));
   }
 });
 
@@ -31,30 +30,23 @@ async function handleEvent(event) {
     if (DEBUG) {
       // customize caching
       options.cacheControl = {
-        bypassCache: true
+        bypassCache: true,
       };
     }
-
-    const response = await getAssetFromKV(event, options);
-    let nonce = btoa(crypto.getRandomValues(new Uint32Array(2)));
-    const responseWithHeaders = addSecurityHeaders(response, nonce);
-
-    return new HTMLRewriter()
-      .on("script", new NonceHandler(nonce))
-      .on("link", new NonceHandler(nonce))
-      .transform(responseWithHeaders);
+    const response = await handleSecurityHeaders(event, options);
+    return response;
   } catch (e) {
     // if an error is thrown try to serve the asset at 404.html
     if (!DEBUG) {
       try {
-        let notFoundResponse = await getAssetFromKV(event, {
+        let notFoundResponse = await handleSecurityHeaders(event, {
           mapRequestToAsset: req =>
-            new Request(`${new URL(req.url).origin}/404/index.html`, req)
+            new Request(`${new URL(req.url).origin}/404/index.html`, req),
         });
 
         return new Response(notFoundResponse.body, {
           ...notFoundResponse,
-          status: 404
+          status: 404,
         });
       } catch (e) {}
     }

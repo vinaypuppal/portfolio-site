@@ -1,72 +1,97 @@
-import { Policy } from "./utils";
+import { Policy, hash } from './utils';
+import { NonceHandler, proxyHandler } from './handlers';
+import { securityHeaders } from './config';
+import { fetchCss } from './fetch-assets';
 
-// This should come from KV store
-const securityHeaders = [
-  {
-    name: "strict-transport-security",
-    value: "max-age=63072000; includeSubdomains; preload"
-  },
-  {
-    name: "content-security-policy",
-    value: {
-      "default-src": [`'self'`],
-      "script-src": [
-        `'self'`,
-        `'unsafe-inline'`,
-        `https:`,
-        `'report-sample'`,
-        `'strict-dynamic'`,
-        `'nonce'`
-      ],
-      "style-src": [
-        `'self'`,
-        `'unsafe-inline'`,
-        `https:`,
-        `'report-sample'`,
-        `'strict-dynamic'`,
-        `'nonce'`
-      ],
-      "base-uri": [`'none'`],
-      "object-src": [`'none'`],
-      "frame-ancestors": [`'none'`],
-      "form-action": [`'self'`],
-      "report-uri": [`https://aws-csp-test.glitch.me/violations`]
-    }
-  },
-  {
-    name: "feature-policy",
-    value: {
-      accelerometer: ["'none'"],
-      camera: ["'none'"],
-      geolocation: ["'none'"],
-      gyroscope: ["'none'"],
-      magnetometer: ["'none'"],
-      microphone: ["'none'"],
-      payment: ["'none'"],
-      usb: ["'none'"]
-    }
-  },
-  { name: "X-Content-Type-Options", value: "nosniff" },
-  { name: "X-Frame-Options", value: "DENY" },
-  { name: "X-XSS-Protection", value: "1; mode=block" },
-  { name: "Referrer-Policy", value: "same-origin" }
-];
+export async function handleSecurityHeaders(event, options) {
+  const nonce = btoa(crypto.getRandomValues(new Uint32Array(2)));
 
-export class NonceHandler {
-  constructor(nonce) {
-    this.nonce = nonce;
+  const response = await proxyHandler(event, options);
+
+  // If its not an HTML Document Request then just add headers
+  // Why? Becuase HTMLRewrite API does not work well with other content types and might break site
+  const accept = event.request.headers.get('accept');
+  if (accept && accept.indexOf('text/html') === -1) {
+    return addSecurityHeaders(response, { nonce });
   }
-  element(element) {
-    element.setAttribute("nonce", this.nonce);
-  }
+
+  const styleHashePromises = [];
+  const cssPromises = [];
+  const responseBuffer = await new HTMLRewriter()
+    .on('script', new NonceHandler(nonce))
+    .on('style', new NonceHandler(nonce))
+    .on('link', {
+      element(element) {
+        if (element.hasAttribute('href')) {
+          const href = element.getAttribute('href');
+          if (/(https?:)?\/\/fonts.googleapis.com\/css\?.*/.test(href)) {
+            cssPromises.push({
+              url: href,
+              css: fetchCss(href, event),
+            });
+          }
+        }
+        element.setAttribute('nonce', nonce);
+      },
+    })
+    .on('*', {
+      element(element) {
+        if (element.hasAttribute('style')) {
+          const value = element.getAttribute('style');
+          styleHashePromises.push(hash('SHA-256', value));
+        }
+      },
+    })
+    .transform(response)
+    .arrayBuffer();
+
+  const newResponse = new Response(responseBuffer, response);
+  const responseWithHeaders = await addSecurityHeaders(newResponse, {
+    nonce,
+    styleHashePromises,
+  });
+
+  // HACK: until element handler can be async https://github.com/cloudflare/lol-html/issues/28
+  const cssTobeInlined = await Promise.all(
+    cssPromises.map(async ({ css, url }) => ({
+      url,
+      css: await css,
+    }))
+  );
+
+  return new HTMLRewriter()
+    .on('link', {
+      element(element) {
+        if (element.hasAttribute('href')) {
+          const href = element.getAttribute('href');
+          if (
+            /(https?:)?\/\/fonts.googleapis.com\/css\?.*/.test(href) &&
+            cssTobeInlined.length > 0
+          ) {
+            const css = cssTobeInlined.find(({ url }) => url === href);
+            if (!css) {
+              return;
+            }
+            element.replace(`<style nonce="${nonce}">${css.css}</style>`, {
+              html: true,
+            });
+          }
+        }
+      },
+    })
+    .transform(responseWithHeaders);
 }
 
-export function addSecurityHeaders(response, nonce) {
-  let resHeaders = response.headers;
+export async function addSecurityHeaders(
+  response,
+  { nonce, styleHashePromises = [] }
+) {
+  let resHeaders = new Headers(response.headers);
 
+  const styleHashes = await Promise.all(styleHashePromises);
   for (const item of securityHeaders) {
-    if (typeof item.value !== "string") {
-      const policy = Policy.stringify(item.value, { nonce });
+    if (typeof item.value !== 'string') {
+      const policy = Policy.stringify(item.value, { nonce, styleHashes });
       resHeaders.set(item.name, policy);
     } else {
       resHeaders.set(item.name, item.value);
@@ -76,6 +101,6 @@ export function addSecurityHeaders(response, nonce) {
   return new Response(response.body, {
     headers: resHeaders,
     status: response.status,
-    statusText: response.statusText
+    statusText: response.statusText,
   });
 }
