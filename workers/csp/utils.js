@@ -11,25 +11,28 @@ export class Policy {
         };
       }, {});
   }
-  static stringify(obj, { nonce, styleHashes } = {}) {
-    return Object.keys(obj).reduce((p, key) => {
-      const sourceList = obj[key]
-        .map(value => {
-          if (value === `'nonce'` && nonce) {
-            return `'nonce-${nonce}'`;
-          }
-          if (
-            key === 'style-src-attr' &&
-            value === `'inline-hash'` &&
-            styleHashes
-          ) {
-            return styleHashes.map(hash => `'sha256-${hash}'`).join(' ');
-          }
-          return value;
-        })
-        .join(' ');
-      return `${p}${key} ${sourceList}; `;
-    }, '');
+  static stringify(obj, { nonce, styleHashes, isMetaTag = false } = {}) {
+    const ignoreDirectives = new Set(['report-uri', 'frame-ancestors']);
+    return Object.keys(obj)
+      .filter(key => (isMetaTag ? !ignoreDirectives.has(key) : true))
+      .reduce((p, key) => {
+        const sourceList = obj[key]
+          .map(value => {
+            if (value === `'nonce'` && nonce) {
+              return `'nonce-${nonce}'`;
+            }
+            if (
+              (key === 'style-src-attr' || key === 'style-src') &&
+              value === `'inline-hash'` &&
+              styleHashes
+            ) {
+              return styleHashes.map(hash => `'sha256-${hash}'`).join(' ');
+            }
+            return value;
+          })
+          .join(' ');
+        return `${p}${key} ${sourceList}; `;
+      }, '');
   }
 }
 
