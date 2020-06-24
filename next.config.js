@@ -1,10 +1,14 @@
-module.exports = {
-  exportTrailingSlash: Boolean(process.env.GH_CI) ? false : true,
+const withOptimizedImages = require('next-optimized-images');
+const withPlugins = require('next-compose-plugins');
+const withPrefresh = require('@prefresh/next');
+
+const config = {
+  target: 'serverless',
   experimental: {
     modern: true,
     polyfillsOptimization: true,
   },
-  webpack(config) {
+  webpack(config, { dev, isServer }) {
     const splitChunks = config.optimization && config.optimization.splitChunks;
     if (splitChunks) {
       const cacheGroups = splitChunks.cacheGroups;
@@ -22,7 +26,23 @@ module.exports = {
         };
       }
     }
+    // Install webpack aliases:
+    const aliases = config.resolve.alias || (config.resolve.alias = {});
+    aliases.react = aliases['react-dom'] = 'preact/compat';
+    // inject Preact DevTools
+    if (dev && !isServer) {
+      const entry = config.entry;
+      config.entry = () =>
+        entry().then(entries => {
+          entries['main.js'] = ['preact/debug'].concat(
+            entries['main.js'] || []
+          );
+          return entries;
+        });
+    }
 
     return config;
   },
 };
+
+module.exports = withPlugins([withPrefresh, withOptimizedImages], config);

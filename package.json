@@ -17,8 +17,6 @@
   "scripts": {
     "dev": "next",
     "build": "next build && next export -o build",
-    "build:ci": "next build && yarn export:ci",
-    "export:ci": "GH_CI=true next export -o build",
     "deploy": "yarn build && wrangler publish",
     "preview": "wrangler preview --watch",
     "start": "NODE_ENV=production next start",
@@ -26,24 +24,28 @@
   },
   "dependencies": {
     "@cloudflare/wrangler": "^1.8.1",
-    "next": "^9.2.3-canary.21",
+    "next": "^9.4.4",
     "next-seo": "^4.4.0",
-    "preact": "^10.2.1",
-    "preact-render-to-string": "^5.1.4",
+    "preact": "^10.4.4",
+    "preact-render-to-string": "^5.1.9",
     "react": "github:preact-compat/react#1.0.0",
     "react-dom": "github:preact-compat/react-dom#1.0.0",
     "react-ssr-prepass": "npm:preact-ssr-prepass@^1.0.1"
   },
   "devDependencies": {
     "@fullhuman/postcss-purgecss": "^2.1.0",
+    "@prefresh/next": "^0.3.1",
     "@types/node": "^13.9.0",
     "@types/react": "^16.9.23",
     "husky": "^4.2.3",
     "lint-staged": "^10.0.8",
+    "next-compose-plugins": "^2.2.0",
+    "next-optimized-images": "^3.0.0-canary.0",
     "postcss-easy-import": "^3.0.0",
     "postcss-preset-env": "^6.7.0",
     "prettier": "^1.19.1",
-    "tailwindcss": "^1.2.0",
+    "react-refresh": "^0.8.3",
+    "tailwindcss": "^1.4.6",
     "typescript": "^3.8.3"
   },
   "lint-staged": {
