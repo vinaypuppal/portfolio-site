@@ -31,7 +31,7 @@ export function CategoryFilter({
             'px-3 sm:px-4 py-1.5 sm:py-2 text-sm sm:text-base rounded-lg transition-all duration-300',
             selectedCategory === category.value
               ? 'bg-blue-600 text-white'
-              : 'bg-gray-800 text-gray-300 hover:bg-gray-700'
+              : 'bg-gray-800 text-gray-300 hover:bg-gray-700',
           )}
         >
           {category.label} ({category.count})

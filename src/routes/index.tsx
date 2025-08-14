@@ -1,23 +1,19 @@
 import { createFileRoute, Link } from '@tanstack/react-router'
-import { useState, useMemo } from 'react'
-import { siteConfig } from '../content/data/site-config'
-import { works, type WorkCategory } from '../content/data/works'
-import { Mail, FileText, ArrowRight } from 'lucide-react'
-import { SocialIconsInline, SocialIcons } from '../components/SocialIcons'
-import { WorkCard } from '../components/WorkCard'
-import { CategoryFilter } from '../components/CategoryFilter'
-import { SectionTitle } from '../components/SectionTitle'
-import { Container } from '../components/Container'
+import { ArrowRight, FileText, Mail } from 'lucide-react'
+import { useMemo, useState } from 'react'
 import { generatePageSeo } from '~/utils/pageSeo'
+import { CategoryFilter } from '../components/CategoryFilter'
+import { Container } from '../components/Container'
+import { SectionTitle } from '../components/SectionTitle'
+import { SocialIcons, SocialIconsInline } from '../components/SocialIcons'
+import { WorkCard } from '../components/WorkCard'
+import { siteConfig } from '../content/data/site-config'
+import { type WorkCategory, works } from '../content/data/works'
 
 export const Route = createFileRoute('/')({
   component: Home,
   head: () => ({
-    meta: generatePageSeo(
-      siteConfig.title,
-      siteConfig.description,
-      '/'
-    ),
+    meta: generatePageSeo(siteConfig.title, siteConfig.description, '/'),
   }),
 })
 
@@ -26,13 +22,11 @@ function Home() {
     avatar,
     title,
     subtitle,
-    description,
     email,
     city,
     country,
     company,
     socialLinks,
-    skills,
   } = siteConfig
   const [selectedCategory, setSelectedCategory] = useState<WorkCategory | 'all'>('all')
 
@@ -129,7 +123,9 @@ function Home() {
       <section id="works" className="py-20 bg-gray-900/50">
         <Container>
           <div className="space-y-4 sm:space-y-6 mb-8 sm:mb-12">
-            <SectionTitle lineColor="bg-green-500" className="text-2xl sm:text-3xl">Featured Projects</SectionTitle>
+            <SectionTitle lineColor="bg-green-500" className="text-2xl sm:text-3xl">
+              Featured Projects
+            </SectionTitle>
             <p className="text-sm sm:text-base md:text-lg text-gray-400 max-w-3xl">
               A selection of projects showcasing my expertise in full-stack development, from
               complex web applications to innovative AI-powered solutions.

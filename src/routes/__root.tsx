@@ -1,11 +1,11 @@
 /// <reference types="vite/client" />
-import { HeadContent, Link, Scripts, createRootRoute } from '@tanstack/react-router'
-import * as React from 'react'
+import { createRootRoute, HeadContent, Scripts } from '@tanstack/react-router'
+import type * as React from 'react'
 import { DefaultCatchBoundary } from '~/components/DefaultCatchBoundary'
 import { NotFound } from '~/components/NotFound'
+import { siteConfig } from '~/content/data/site-config'
 import appCss from '~/styles/app.css?url'
 import { seo } from '~/utils/seo'
-import { siteConfig } from '~/content/data/site-config'
 
 export const Route = createRootRoute({
   head: () => ({
@@ -32,7 +32,8 @@ export const Route = createRootRoute({
       ...seo({
         title: `${siteConfig.title} | ${siteConfig.subtitle}`,
         description: siteConfig.description,
-        keywords: 'Vinay Puppal, Full Stack Engineer, Engineering Manager, React, Node.js, Python, API Security, Generative AI, Web Development, Software Engineer, Hyderabad',
+        keywords:
+          'Vinay Puppal, Full Stack Engineer, Engineering Manager, React, Node.js, Python, API Security, Generative AI, Web Development, Software Engineer, Hyderabad',
         image: siteConfig.avatar,
         url: 'https://vinaypuppal.com',
       }),
@@ -94,8 +95,11 @@ function RootDocument({ children }: { children: React.ReactNode }) {
       addressLocality: siteConfig.city,
       addressCountry: siteConfig.country,
     },
-    sameAs: siteConfig.socialLinks.map(link => link.url),
-    knowsAbout: [...siteConfig.skills.include.map(skill => skill.name), ...siteConfig.skills.focusing.map(skill => skill.name)],
+    sameAs: siteConfig.socialLinks.map((link) => link.url),
+    knowsAbout: [
+      ...siteConfig.skills.include.map((skill) => skill.name),
+      ...siteConfig.skills.focusing.map((skill) => skill.name),
+    ],
   }
 
   return (

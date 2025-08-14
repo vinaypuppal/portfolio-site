@@ -1,10 +1,10 @@
 import { createFileRoute, Link } from '@tanstack/react-router'
-import { useState, useMemo } from 'react'
-import { works, type WorkCategory } from '../content/data/works'
-import { SimpleWorkCard } from '../components/WorkCard'
+import { useMemo, useState } from 'react'
+import { generatePageSeo } from '~/utils/pageSeo'
 import { CategoryFilter } from '../components/CategoryFilter'
 import { Container } from '../components/Container'
-import { generatePageSeo } from '~/utils/pageSeo'
+import { SimpleWorkCard } from '../components/WorkCard'
+import { type WorkCategory, works } from '../content/data/works'
 
 export const Route = createFileRoute('/works')({
   component: WorksPage,
@@ -12,7 +12,7 @@ export const Route = createFileRoute('/works')({
     meta: generatePageSeo(
       'Projects',
       'Explore my portfolio of projects showcasing expertise in full-stack development, from complex web applications to innovative AI-powered solutions.',
-      '/works'
+      '/works',
     ),
   }),
 })

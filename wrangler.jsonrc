@@ -1,12 +1,25 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
-  "name": "vinaypuppal",
+  "name": "vinaypuppal-site",
   "main": ".output/server/index.mjs",
   "compatibility_date": "2025-08-13",
   "compatibility_flags": ["nodejs_compat"],
   "assets": {
     "directory": ".output/public"
   },
+  "build": {
+    "command": "npm run build"
+  },
+  "routes": [
+    {
+      "custom_domain": true,
+      "pattern": "vinaypuppal.com/*",
+    },
+    {
+      "custom_domain": true,
+      "pattern": "www.vinaypuppal.com/*",
+    }
+  ],
   "observability": {
     "enabled": true
   }

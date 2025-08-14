@@ -20,21 +20,21 @@ export const seo = ({
     { name: 'author', content: 'Vinay Puppal' },
     { name: 'robots', content: 'index, follow' },
     { name: 'googlebot', content: 'index, follow' },
-    
+
     // Open Graph
     { property: 'og:type', content: type },
     { property: 'og:title', content: title },
     { property: 'og:description', content: description },
     { property: 'og:site_name', content: 'Vinay Puppal - Portfolio' },
     ...(url ? [{ property: 'og:url', content: url }] : []),
-    
+
     // Twitter Card
     { name: 'twitter:card', content: image ? 'summary_large_image' : 'summary' },
     { name: 'twitter:title', content: title },
     { name: 'twitter:description', content: description },
     { name: 'twitter:creator', content: '@VPuppal' },
     { name: 'twitter:site', content: '@VPuppal' },
-    
+
     // Image tags
     ...(image
       ? [
@@ -48,5 +48,5 @@ export const seo = ({
       : []),
   ]
 
-  return tags.filter(tag => tag.content !== undefined || tag.title !== undefined)
+  return tags.filter((tag) => tag.content !== undefined || tag.title !== undefined)
 }

@@ -1,5 +1,5 @@
 import { Link } from '@tanstack/react-router'
-import { Home, ArrowLeft, AlertCircle } from 'lucide-react'
+import { AlertCircle, ArrowLeft, Home } from 'lucide-react'
 
 export function NotFound({ children }: { children?: React.ReactNode }) {
   return (
@@ -9,7 +9,7 @@ export function NotFound({ children }: { children?: React.ReactNode }) {
           <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full blur-3xl opacity-20 animate-pulse" />
           <AlertCircle className="w-32 h-32 mx-auto text-blue-400 relative" />
         </div>
-        
+
         <div className="space-y-4">
           <h1 className="text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500">
             404
@@ -18,7 +18,7 @@ export function NotFound({ children }: { children?: React.ReactNode }) {
           <div className="text-gray-400 max-w-md mx-auto">
             {children || (
               <p>
-                Oops! The page you're looking for seems to have wandered off into the digital void. 
+                Oops! The page you're looking for seems to have wandered off into the digital void.
                 Let's get you back on track.
               </p>
             )}
@@ -27,6 +27,7 @@ export function NotFound({ children }: { children?: React.ReactNode }) {
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
           <button
+            type="button"
             onClick={() => window.history.back()}
             className="inline-flex items-center gap-2 px-6 py-3 bg-gray-800 hover:bg-gray-700 rounded-lg transition-all hover:scale-105 font-medium border border-gray-700"
           >

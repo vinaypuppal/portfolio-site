@@ -1,4 +1,4 @@
-import { Github, Linkedin, Twitter, Codepen, Flame } from 'lucide-react'
+import { Codepen, Flame, Github, Linkedin, Twitter } from 'lucide-react'
 import { cn } from '../utils/cn'
 
 export type SocialLink = {
@@ -29,11 +29,7 @@ interface SocialIconsProps {
   iconClassName?: string
 }
 
-export function SocialIcons({
-  links,
-  className,
-  iconClassName = 'w-5 h-5',
-}: SocialIconsProps) {
+export function SocialIcons({ links, className, iconClassName = 'w-5 h-5' }: SocialIconsProps) {
   return (
     <div className={cn('flex gap-3', className)}>
       {links.map((link) => {
@@ -83,7 +79,7 @@ export function SocialIconsInline({
             rel="noopener noreferrer"
             className={cn(
               'p-2 bg-gray-800/50 hover:bg-gray-700/50 rounded-lg transition-all hover:scale-110 border border-gray-700/50',
-              linkClassName
+              linkClassName,
             )}
             aria-label={link.name}
           >
