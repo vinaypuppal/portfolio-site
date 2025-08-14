@@ -1,0 +1,162 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    color-scheme: light dark;
+  }
+
+  * {
+    @apply border-gray-200 dark:border-gray-800;
+  }
+
+  html,
+  body {
+    @apply text-gray-900 bg-gray-50 dark:bg-gray-950 dark:text-gray-200;
+  }
+
+  .using-mouse * {
+    outline: none !important;
+  }
+}
+
+@media print {
+  @page {
+    margin: 0;
+    size: A4;
+  }
+
+  html, body {
+    background-color: #ffffff !important;
+    background: #ffffff !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    color-adjust: exact !important;
+  }
+  
+  /* Ensure all backgrounds are white */
+  * {
+    background-color: transparent !important;
+  }
+  
+  /* Except for elements that should be white */
+  .print\\:bg-white {
+    background-color: #ffffff !important;
+  }
+
+  /* Ensure links are visible and clickable in PDF */
+  a {
+    color: rgb(37, 99, 235) !important;
+    text-decoration: underline !important;
+    pointer-events: auto !important;
+  }
+  
+  a[href] {
+    color: rgb(37, 99, 235) !important;
+    text-decoration: underline !important;
+  }
+  
+  /* Preserve colors in print - Force override all other rules */
+  .print\\:text-blue-900, 
+  h1.print\\:text-blue-900,
+  h2.print\\:text-blue-900 {
+    color: rgb(30, 58, 138) !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+  
+  .print\\:text-blue-700,
+  div.print\\:text-blue-700 {
+    color: rgb(29, 78, 216) !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+  
+  .print\\:text-blue-500,
+  span.print\\:text-blue-500 {
+    color: rgb(59, 130, 246) !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+  
+  .print\\:text-blue-600,
+  span.print\\:text-blue-600,
+  a.print\\:text-blue-600 {
+    color: rgb(37, 99, 235) !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+  
+  .print\\:text-gray-500 {
+    color: rgb(107, 114, 128) !important;
+  }
+
+  /* Fix list rendering in PDF */
+  ul {
+    list-style-type: disc !important;
+    list-style-position: outside !important;
+    margin-left: 0 !important;
+    padding-left: 1.25rem !important;
+  }
+
+  ul li {
+    display: list-item !important;
+    list-style-type: disc !important;
+    margin-left: 0 !important;
+    padding-left: 0 !important;
+  }
+
+  /* Page break controls for better multi-page layout */
+  .print\\:break-before-page {
+    page-break-before: always;
+    break-before: page;
+  }
+
+  .print\\:break-before-auto {
+    page-break-before: auto;
+    break-before: auto;
+  }
+
+  .print\\:break-inside-avoid {
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+
+  /* Prevent orphans and widows */
+  h1, h2, h3, h4, h5, h6 {
+    page-break-after: avoid;
+    break-after: avoid;
+  }
+
+  p, li {
+    orphans: 3;
+    widows: 3;
+    color: rgb(55, 65, 81) !important;
+  }
+
+  /* Keep section headers with content */
+  section > h2 {
+    page-break-after: avoid;
+    break-after: avoid;
+  }
+
+  /* Ensure employment entries don't break awkwardly */
+  section > div {
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+
+  * {
+    border-color: rgb(209, 213, 219) !important;
+  }
+
+  .text-gray-500, .text-gray-600 {
+    color: rgb(75, 85, 99) !important;
+  }
+
+  /* Remove print-hidden elements */
+  .print\\:hidden {
+    display: none !important;
+  }
+}
