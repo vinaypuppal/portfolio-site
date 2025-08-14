@@ -1,95 +1,41 @@
 {
-  "name": "portfolio-site",
-  "version": "2.0.0",
+  "name": "portfolio-site-v2",
+  "version": "3.0.0",
   "description": "Vinay Puppal - Portfolio Site",
   "private": true,
-  "main": "n/a",
+  "sideEffects": false,
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "cross-env NODE_ENV=production gatsby build",
-    "dev": "cross-env NODE_ENV=development gatsby develop --host 0.0.0.0",
-    "format": "prettier --write './**/*.+(js|jsx|json|md)'",
-    "lint": "eslint .",
-    "precommit": "lint-staged"
+    "dev": "vite dev",
+    "build": "vite build && tsc --noEmit",
+    "start": "node .output/server/index.mjs",
+    "typecheck": "tsc --noEmit",
+    "lint": "biome check --write .",
+    "format": "biome format --write .",
+    "check": "biome check ."
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/vinaypuppal/vinaypuppal.github.io.git"
-  },
-  "keywords": [],
-  "author": "Vinay Puppal <me@vinaypuppal.com> (https://www.vinaypuppal.com/)",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/vinaypuppal/vinaypuppal.github.io/issues"
-  },
-  "homepage": "https://github.com/vinaypuppal/vinaypuppal.github.io#readme",
   "dependencies": {
-    "@onedoc/react-print": "^0.1.133",
-    "date-fns": "^1.29.0",
-    "emotion": "^9.1.3",
-    "emotion-server": "^9.1.3",
-    "gatsby": "^1.9.260",
-    "gatsby-image": "^1.0.51",
-    "gatsby-link": "^1.6.44",
-    "gatsby-plugin-canonical-urls": "^1.0.18",
-    "gatsby-plugin-emotion": "^1.1.16",
-    "gatsby-plugin-feed": "^1.3.22",
-    "gatsby-plugin-google-analytics": "^1.0.31",
-    "gatsby-plugin-manifest": "^1.0.21",
-    "gatsby-plugin-netlify": "^1.0.19",
-    "gatsby-plugin-nprogress": "^1.0.14",
-    "gatsby-plugin-react-helmet": "^2.0.11",
-    "gatsby-plugin-react-next": "^1.0.11",
-    "gatsby-plugin-resolve-src": "^1.1.3",
-    "gatsby-plugin-sharp": "^1.6.44",
-    "gatsby-plugin-sitemap": "^1.2.23",
-    "gatsby-remark-autolink-headers": "^1.4.18",
-    "gatsby-remark-external-links": "^0.0.4",
-    "gatsby-remark-images": "^1.5.63",
-    "gatsby-remark-responsive-iframe": "^1.4.18",
-    "gatsby-remark-smartypants": "^1.4.12",
-    "gatsby-source-filesystem": "^1.5.35",
-    "gatsby-transformer-remark": "^1.7.41",
-    "gatsby-transformer-sharp": "^1.6.24",
-    "gatsby-transformer-yaml": "^1.5.16",
-    "prop-types": "^15.6.1",
-    "react-emotion": "^9.1.3",
-    "react-helmet": "^5.2.0",
-    "react-icon-base": "^2.1.2",
-    "react-icons": "^2.2.7",
-    "react-tippy": "^1.2.2",
-    "styled-is": "^1.1.3"
+    "@tanstack/react-router": "^1.131.10",
+    "@tanstack/react-router-devtools": "^1.131.10",
+    "@tanstack/react-start": "^1.131.11",
+    "clsx": "^2.1.1",
+    "lucide-react": "^0.539.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "tailwind-merge": "^2.6.0",
+    "zod": "^3.24.2"
   },
   "devDependencies": {
-    "babel-eslint": "^8.2.3",
-    "babel-plugin-emotion": "^9.1.2",
-    "cross-env": "^5.1.5",
-    "eslint": "^4.19.1",
-    "eslint-config-airbnb": "^16.1.0",
-    "eslint-config-prettier": "^2.9.0",
-    "eslint-loader": "^2.0.0",
-    "eslint-plugin-import": "^2.11.0",
-    "eslint-plugin-jsx-a11y": "^6.0.3",
-    "eslint-plugin-prettier": "^2.6.0",
-    "eslint-plugin-react": "^7.8.1",
-    "husky": "^0.14.3",
-    "lint-staged": "^7.1.0",
-    "markdownlint-cli": "^0.8.2",
-    "prettier": "^1.12.1"
-  },
-  "lint-staged": {
-    "*.js": [
-      "prettier --write",
-      "eslint --fix",
-      "git add"
-    ],
-    "*.json": [
-      "prettier --write",
-      "git add"
-    ],
-    "**/*.md": [
-      "prettier --write",
-      "git add"
-    ]
+    "@biomejs/biome": "^2.1.4",
+    "@types/node": "^22.5.4",
+    "@types/react": "^19.0.8",
+    "@types/react-dom": "^19.0.3",
+    "@vitejs/plugin-react": "^4.6.0",
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.5.1",
+    "tailwindcss": "^3.4.17",
+    "typescript": "^5.7.2",
+    "vite": "^6.3.5",
+    "vite-tsconfig-paths": "^5.1.4"
   }
 }
