@@ -116,7 +116,7 @@ function ResumePage() {
 
       <div className="max-w-4xl mx-auto print:bg-white">
         <div
-          className="bg-white rounded-lg shadow-lg p-4 sm:p-6 md:p-8 print:pt-8 text-black print:bg-white print:shadow-none print:rounded-none print:p-8 print:max-w-none"
+          className="bg-white rounded-lg shadow-md p-4 sm:p-6 md:p-8 print:pt-8 text-black print:bg-white print:shadow-none print:rounded-none print:p-8 print:max-w-none"
           style={{ backgroundColor: 'white' }}
         >
           <div className="flex items-center flex-col md:flex-row md:justify-between gap-4 mb-4 print:flex-row print:justify-between print:mb-3 border-b border-solid border-gray-300 pb-3">
