@@ -18,16 +18,7 @@ export const Route = createFileRoute('/')({
 })
 
 function Home() {
-  const {
-    avatar,
-    title,
-    subtitle,
-    email,
-    city,
-    country,
-    company,
-    socialLinks,
-  } = siteConfig
+  const { avatar, title, subtitle, email, city, country, company, socialLinks } = siteConfig
   const [selectedCategory, setSelectedCategory] = useState<WorkCategory | 'all'>('all')
 
   const categories: Array<{ value: WorkCategory | 'all'; label: string; count: number }> = [

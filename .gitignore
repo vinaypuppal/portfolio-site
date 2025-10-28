@@ -8,6 +8,8 @@ yarn.lock
 .vercel
 .output
 .nitro
+dist
+.wrangler
 /build/
 /api/
 /server/build
