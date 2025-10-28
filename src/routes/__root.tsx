@@ -33,7 +33,7 @@ export const Route = createRootRoute({
         title: `${siteConfig.title} | ${siteConfig.subtitle}`,
         description: siteConfig.description,
         keywords:
-          'Vinay Puppal, Full Stack Engineer, Engineering Manager, React, Node.js, Python, API Security, Generative AI, Web Development, Software Engineer, Hyderabad',
+          'Vinay Puppal, Full Stack Engineer, Senior Full Stack Engineer, React, Node.js, Python, Voice AI, Customer Research, Generative AI, Web Development, Software Engineer, Hyderabad',
         image: siteConfig.avatar,
         url: 'https://vinaypuppal.com',
       }),
