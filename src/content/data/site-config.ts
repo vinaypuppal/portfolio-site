@@ -1,8 +1,8 @@
 export const siteConfig = {
   title: 'Vinay Puppal',
-  subtitle: 'Senior Full Stack Engineer & Engineering Manager',
+  subtitle: 'Senior Full Stack Engineer',
   description:
-    'Senior Full Stack Engineer and Engineering Manager with 8+ years building scalable web applications and leading cross-functional teams. Currently managing engineering initiatives at Orca Security while maintaining 40% hands-on contribution to critical features. Proven track record of delivering complex projects from conception to production, including Generative AI features, API security platforms, and enterprise SaaS solutions.',
+    'Senior Full Stack Engineer with 9+ years building scalable web applications and leading cross-functional teams. Currently developing AI-powered voice agents at Perspective AI, enabling companies to conduct empathetic customer research at scale. Proven track record of delivering complex projects from conception to production, including Generative AI features, voice conversation intelligence, API security platforms, and enterprise SaaS solutions.',
   siteUrl: 'https://www.vinaypuppal.com',
   themeColor: '#000000',
   logo: '/images/my_name_logo.png',
@@ -17,10 +17,10 @@ export const siteConfig = {
   postalCode: '500011',
   country: 'India',
   company: {
-    position: 'Engineering Manager',
-    name: 'Orca Security',
-    url: 'https://orca.security/',
-    focus: 'API Security & Generative AI Features',
+    position: 'Senior Full Stack Engineer',
+    name: 'Perspective AI',
+    url: 'https://getperspective.ai/',
+    focus: 'AI Voice Agents & Customer Research Platform',
   },
   socialLinks: [
     { name: 'twitter', url: 'https://twitter.com/vinaypuppal' },

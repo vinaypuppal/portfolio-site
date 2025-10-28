@@ -1,6 +1,6 @@
 # Vinay Puppal - Portfolio Site
 
-A modern, responsive portfolio website built with React, TypeScript, and TanStack Router showcasing my work as a Senior Full Stack Engineer and Engineering Manager.
+A modern, responsive portfolio website built with React, TypeScript, and TanStack Router showcasing my work as a Senior Full Stack Engineer.
 
 ## 🚀 Tech Stack
 

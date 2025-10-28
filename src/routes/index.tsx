@@ -78,7 +78,7 @@ function Home() {
               </div>
 
               <p className="text-base sm:text-lg md:text-xl text-gray-300 leading-relaxed max-w-2xl mx-auto lg:mx-0">
-                Engineering Manager at{' '}
+                {company.position} at{' '}
                 <a
                   href={company.url}
                   target="_blank"
@@ -91,8 +91,9 @@ function Home() {
               </p>
 
               <p className="text-sm sm:text-base md:text-lg text-gray-400 leading-relaxed max-w-2xl mx-auto lg:mx-0">
-                With 8+ years of experience, I drive innovation at the intersection of security and
-                AI, building scalable solutions that protect and empower businesses.
+                With 9+ years of experience, I drive innovation at the intersection of voice AI and
+                customer intelligence, building scalable solutions that help businesses understand
+                their customers.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 pt-4 justify-center lg:justify-start">
