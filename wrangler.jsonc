@@ -1,23 +1,17 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "vinaypuppal-site",
-  "main": ".output/server/index.mjs",
+  "main": "@tanstack/react-start/server-entry",
   "compatibility_date": "2025-08-13",
   "compatibility_flags": ["nodejs_compat"],
-  "assets": {
-    "directory": ".output/public"
-  },
-  "build": {
-    "command": "npm run build"
-  },
   "routes": [
     {
       "custom_domain": true,
-      "pattern": "vinaypuppal.com/*",
+      "pattern": "vinaypuppal.com",
     },
     {
       "custom_domain": true,
-      "pattern": "www.vinaypuppal.com/*",
+      "pattern": "www.vinaypuppal.com",
     }
   ],
   "observability": {
