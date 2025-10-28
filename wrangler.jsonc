@@ -7,11 +7,11 @@
   "routes": [
     {
       "custom_domain": true,
-      "pattern": "vinaypuppal.com/*",
+      "pattern": "vinaypuppal.com",
     },
     {
       "custom_domain": true,
-      "pattern": "www.vinaypuppal.com/*",
+      "pattern": "www.vinaypuppal.com",
     }
   ],
   "observability": {
