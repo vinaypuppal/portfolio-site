@@ -254,13 +254,13 @@ function ResumePage() {
                 </li>
                 <li>
                   Contributing to the platform that enables companies to conduct research 10x faster
-                  at 1/10th the cost compared to traditional methods, with multi-language support and
-                  natural conversation flows.
+                  at 1/10th the cost compared to traditional methods, with multi-language support
+                  and natural conversation flows.
                 </li>
                 <li>
-                  Working with cutting-edge AI technologies to create voice agents that build rapport,
-                  ask nuanced follow-ups, and extract authentic customer feedback through natural
-                  dialogue.
+                  Working with cutting-edge AI technologies to create voice agents that build
+                  rapport, ask nuanced follow-ups, and extract authentic customer feedback through
+                  natural dialogue.
                 </li>
               </ul>
             </div>
