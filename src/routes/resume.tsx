@@ -7,7 +7,7 @@ export const Route = createFileRoute('/resume')({
   head: () => ({
     meta: generatePageSeo(
       'Resume',
-      'Senior Full Stack Engineer and Engineering Manager with 8+ years of experience building scalable web applications and leading cross-functional teams.',
+      'Senior Full Stack Engineer with 9+ years of experience building scalable web applications and leading cross-functional teams.',
       '/resume',
     ),
   }),
@@ -207,16 +207,15 @@ function ResumePage() {
               SUMMARY
             </h2>
             <p className="text-xs sm:text-sm md:text-base text-gray-700 leading-relaxed print:text-xs print:leading-snug">
-              Senior Full Stack Engineer and Engineering Manager with 8+ years building scalable web
-              applications and leading cross-functional teams. Currently managing engineering
-              initiatives at Orca Security while maintaining 40% hands-on contribution to critical
-              features. Proven track record of delivering complex projects from conception to
-              production, including Generative AI features, API security platforms, and enterprise
-              SaaS solutions. Expertise in React, Node.js, Python, and cloud architectures.
-              Successfully led product development through acquisition (RapidSec → Orca Security)
-              and consistently recognized for technical excellence, winning company hackathons and
-              driving innovation. Seeking senior engineering or engineering management roles to
-              leverage my blend of technical depth and leadership experience.
+              Senior Full Stack Engineer with 9+ years building scalable web applications and
+              leading cross-functional teams. Currently developing AI-powered voice agents at
+              Perspective AI, enabling companies to conduct empathetic customer research at scale.
+              Proven track record of delivering complex projects from conception to production,
+              including Generative AI features, voice conversation intelligence, API security
+              platforms, and enterprise SaaS solutions. Expertise in React, Node.js, Python, and
+              cloud architectures. Successfully led product development through acquisition
+              (RapidSec → Orca Security) and consistently recognized for technical excellence,
+              winning company hackathons and driving innovation.
             </p>
           </section>
 
@@ -232,6 +231,47 @@ function ResumePage() {
               <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start mb-1 print:mb-1 print:flex-row">
                 <div>
                   <h3 className="font-bold text-gray-900 text-sm sm:text-base print:text-sm">
+                    Senior Full Stack Engineer, Perspective AI
+                  </h3>
+                  <p className="text-xs sm:text-sm text-gray-600 print:text-xs">
+                    AI Voice Agents & Customer Research Platform
+                  </p>
+                </div>
+                <span className="text-xs sm:text-sm text-blue-600 font-medium print:text-xs print:text-blue-600 mt-1 sm:mt-0">
+                  Nov 2025 — Present (Remote)
+                </span>
+              </div>
+              <ul className="text-xs sm:text-sm space-y-0.5 text-gray-700 list-disc pl-4 sm:pl-5 print:text-xs print:space-y-0 print:pl-5">
+                <li>
+                  Building AI-powered voice agents that conduct empathetic, conversational customer
+                  research interviews at scale, enabling product, marketing, and research teams to
+                  gather deep customer insights.
+                </li>
+                <li>
+                  Developing full-stack features for the customer research platform, including voice
+                  conversation intelligence, automated insight extraction, and research-backed
+                  deliverables generation.
+                </li>
+                <li>
+                  Contributing to the platform that enables companies to conduct research 10x faster
+                  at 1/10th the cost compared to traditional methods, with multi-language support
+                  and natural conversation flows.
+                </li>
+                <li>
+                  Working with cutting-edge AI technologies to create voice agents that build
+                  rapport, ask nuanced follow-ups, and extract authentic customer feedback through
+                  natural dialogue.
+                </li>
+              </ul>
+            </div>
+
+            <div
+              className="mb-4 print:mb-3"
+              style={{ breakInside: 'avoid', pageBreakInside: 'avoid' }}
+            >
+              <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start mb-1 print:mb-1 print:flex-row">
+                <div>
+                  <h3 className="font-bold text-gray-900 text-sm sm:text-base print:text-sm">
                     Engineering Manager, Orca Security
                   </h3>
                   <p className="text-xs sm:text-sm text-gray-600 print:text-xs">
@@ -239,7 +279,7 @@ function ResumePage() {
                   </p>
                 </div>
                 <span className="text-xs sm:text-sm text-blue-600 font-medium print:text-xs print:text-blue-600 mt-1 sm:mt-0">
-                  May 2023 — Present (Remote)
+                  May 2023 — Oct 2025 (Remote)
                 </span>
               </div>
               <ul className="text-xs sm:text-sm space-y-0.5 text-gray-700 list-disc pl-4 sm:pl-5 print:text-xs print:space-y-0 print:pl-5">
