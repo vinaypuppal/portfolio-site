@@ -28,9 +28,7 @@ export function WorkCard({ work }: WorkCardProps) {
 
         {/* Content section */}
         <div className="p-5 bg-[#0f1729]">
-          <h3 className="text-xl font-bold mb-2 text-white">
-            {work.title}
-          </h3>
+          <h3 className="text-xl font-bold mb-2 text-white">{work.title}</h3>
           <p className="text-gray-400 text-sm mb-4 line-clamp-2 leading-normal">
             {work.description}
           </p>
@@ -87,7 +85,9 @@ export function SimpleWorkCard({ work }: SimpleWorkCardProps) {
         {/* Content section */}
         <div className="p-5 bg-[#0f1729]">
           <h3 className="text-xl font-bold mb-2 text-white">{work.title}</h3>
-          <p className="text-gray-400 text-sm mb-4 line-clamp-3 leading-normal">{work.description}</p>
+          <p className="text-gray-400 text-sm mb-4 line-clamp-3 leading-normal">
+            {work.description}
+          </p>
 
           <div className="flex items-center justify-between">
             <span className="text-sm text-gray-500">

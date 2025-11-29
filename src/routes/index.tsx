@@ -78,9 +78,9 @@ function Home() {
               </p>
 
               <p className="text-sm sm:text-base md:text-lg text-gray-400 leading-relaxed max-w-2xl mx-auto lg:mx-0">
-                With 9+ years of experience, I drive innovation and deliver measurable results at the
-                intersection of voice AI and customer intelligence. I build scalable solutions that
-                transform business operations.
+                With 9+ years of experience, I drive innovation and deliver measurable results at
+                the intersection of voice AI and customer intelligence. I build scalable solutions
+                that transform business operations.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 pt-4 justify-center lg:justify-start">
@@ -150,9 +150,7 @@ function Home() {
         <Container className="py-12">
           <div className="grid md:grid-cols-3 gap-8">
             <div className="space-y-3">
-              <h3 className="text-xl font-bold text-lime-500">
-                {title}
-              </h3>
+              <h3 className="text-xl font-bold text-lime-500">{title}</h3>
               <p className="text-gray-400">{subtitle}</p>
               <p className="text-sm text-gray-500">
                 {city}, {country}
