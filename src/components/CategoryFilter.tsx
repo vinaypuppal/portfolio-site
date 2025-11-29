@@ -28,10 +28,10 @@ export function CategoryFilter({
           type="button"
           onClick={() => onCategoryChange(category.value)}
           className={cn(
-            'px-3 sm:px-4 py-1.5 sm:py-2 text-sm sm:text-base rounded-lg transition-all duration-300',
+            'px-4 sm:px-5 py-1.5 sm:py-2 text-sm sm:text-base rounded-full transition-all duration-300 border',
             selectedCategory === category.value
-              ? 'bg-blue-600 text-white'
-              : 'bg-gray-800 text-gray-300 hover:bg-gray-700',
+              ? 'bg-lime-500/10 border-lime-500 text-lime-400'
+              : 'bg-slate-800 border-slate-700 text-gray-300 hover:bg-slate-700 hover:border-slate-600',
           )}
         >
           {category.label} ({category.count})

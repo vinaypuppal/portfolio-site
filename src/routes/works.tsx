@@ -42,11 +42,11 @@ function WorksPage() {
   }, [selectedCategory])
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-900 to-black text-white">
+    <div className="min-h-screen bg-slate-950 text-white">
       <Container maxWidth="max-w-7xl" className="py-8">
         <Link
           to="/"
-          className="inline-flex items-center gap-2 text-gray-400 hover:text-white mb-8 transition-colors"
+          className="inline-flex items-center gap-2 text-gray-400 hover:text-lime-400 mb-8 transition-colors"
         >
           ← Back to Portfolio
         </Link>

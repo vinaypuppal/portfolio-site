@@ -8,7 +8,7 @@ interface SectionTitleProps {
 
 export function SectionTitle({
   children,
-  lineColor = 'bg-blue-500',
+  lineColor = 'bg-lime-500',
   className,
 }: SectionTitleProps) {
   return (

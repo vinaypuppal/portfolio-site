@@ -1,5 +1,14 @@
 @import "tailwindcss";
 
+@theme {
+  --color-primary: #84cc16;
+  --color-primary-light: #a3e635;
+  --color-primary-dark: #65a30d;
+  --color-bg-dark: #0f172a;
+  --color-bg-card: #1e293b;
+  --color-bg-card-content: #0f1729;
+}
+
 @layer base {
   html {
     color-scheme: light dark;
@@ -16,6 +25,64 @@
 
   .using-mouse * {
     outline: none !important;
+  }
+}
+
+/* Angled card design */
+@layer components {
+  .card-angled {
+    position: relative;
+    clip-path: polygon(
+      4% 0,
+      100% 0,
+      100% calc(100% - 16px),
+      calc(100% - 16px) 100%,
+      0 100%,
+      0 4%
+    );
+  }
+
+  .card-angled-border {
+    position: absolute;
+    inset: 0;
+    clip-path: polygon(
+      4% 0,
+      100% 0,
+      100% calc(100% - 16px),
+      calc(100% - 16px) 100%,
+      0 100%,
+      0 4%
+    );
+    padding: 1px;
+    background: linear-gradient(135deg, #22d3ee 0%, #84cc16 50%, #22d3ee 100%);
+    -webkit-mask:
+      linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
+    mask:
+      linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+  }
+
+  .card-angled-inner {
+    clip-path: polygon(
+      4% 0,
+      100% 0,
+      100% calc(100% - 16px),
+      calc(100% - 16px) 100%,
+      0 100%,
+      0 4%
+    );
+  }
+
+  .card-divider {
+    position: relative;
+    height: 3px;
+    background: linear-gradient(90deg, #22d3ee, #84cc16);
+    transform: skewY(-1.5deg);
+    margin: 0 -1px;
   }
 }
 

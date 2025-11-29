@@ -7,45 +7,52 @@ interface WorkCardProps {
 
 export function WorkCard({ work }: WorkCardProps) {
   return (
-    <div className="group bg-gray-800/50 backdrop-blur-sm rounded-xl overflow-hidden hover:scale-[1.02] transition-all duration-300 border border-gray-700/50 hover:border-gray-600">
-      <div className="aspect-video bg-gray-900 relative overflow-hidden">
-        <img
-          src={work.thumbnail}
-          alt={work.title}
-          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-          loading="lazy"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-transparent to-transparent opacity-60" />
-        <div className="absolute top-3 right-3 text-2xl bg-gray-900/80 backdrop-blur-sm p-2 rounded-lg">
-          {work.icon}
+    <div className="group relative">
+      {/* Gradient border effect */}
+      <div className="card-angled-border" />
+
+      {/* Card content */}
+      <div className="card-angled bg-slate-900 overflow-hidden hover:scale-[1.02] transition-all duration-300">
+        {/* Image section */}
+        <div className="aspect-video bg-slate-950 relative overflow-hidden">
+          <img
+            src={work.thumbnail}
+            alt={work.title}
+            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+            loading="lazy"
+          />
         </div>
-      </div>
 
-      <div className="p-6">
-        <h3 className="text-xl font-semibold mb-3 group-hover:text-blue-400 transition-colors">
-          {work.title}
-        </h3>
-        <p className="text-gray-400 text-sm mb-4 line-clamp-2 leading-relaxed">
-          {work.description}
-        </p>
+        {/* Angled divider */}
+        <div className="card-divider" />
 
-        <div className="flex items-center justify-between pt-2">
-          <span className="text-xs text-gray-500 font-medium">
-            {new Date(work.date * 1000).toLocaleDateString('en-US', {
-              year: 'numeric',
-              month: 'short',
-            })}
-          </span>
+        {/* Content section */}
+        <div className="p-5 bg-[#0f1729]">
+          <h3 className="text-xl font-bold mb-2 text-white">
+            {work.title}
+          </h3>
+          <p className="text-gray-400 text-sm mb-4 line-clamp-2 leading-normal">
+            {work.description}
+          </p>
 
-          <a
-            href={work.demoUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-1 text-blue-400 hover:text-blue-300 transition-colors font-medium group-hover:gap-2"
-          >
-            View Project
-            <ArrowRight className="w-4 h-4" />
-          </a>
+          <div className="flex items-center justify-between">
+            <span className="text-sm text-gray-500">
+              {new Date(work.date * 1000).toLocaleDateString('en-US', {
+                year: 'numeric',
+                month: 'short',
+              })}
+            </span>
+
+            <a
+              href={work.demoUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 text-lime-400 hover:text-lime-300 transition-colors font-medium group-hover:gap-2"
+            >
+              View Project
+              <ArrowRight className="w-4 h-4" />
+            </a>
+          </div>
         </div>
       </div>
     </div>
@@ -58,37 +65,48 @@ interface SimpleWorkCardProps {
 
 export function SimpleWorkCard({ work }: SimpleWorkCardProps) {
   return (
-    <div className="bg-gray-800 rounded-lg overflow-hidden hover:scale-105 transition-transform duration-300">
-      <div className="aspect-video bg-gray-900 relative overflow-hidden">
-        <img
-          src={work.thumbnail}
-          alt={work.title}
-          className="w-full h-full object-cover"
-          loading="lazy"
-        />
-        <div className="absolute top-2 right-2 text-2xl">{work.icon}</div>
-      </div>
+    <div className="group relative">
+      {/* Gradient border effect */}
+      <div className="card-angled-border" />
 
-      <div className="p-6">
-        <h3 className="text-xl font-semibold mb-2">{work.title}</h3>
-        <p className="text-gray-400 text-sm mb-4 line-clamp-3">{work.description}</p>
+      {/* Card content */}
+      <div className="card-angled bg-slate-900 overflow-hidden hover:scale-[1.02] transition-transform duration-300">
+        {/* Image section */}
+        <div className="aspect-video bg-slate-950 relative overflow-hidden">
+          <img
+            src={work.thumbnail}
+            alt={work.title}
+            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+            loading="lazy"
+          />
+        </div>
 
-        <div className="flex items-center justify-between">
-          <span className="text-xs text-gray-500">
-            {new Date(work.date * 1000).toLocaleDateString('en-US', {
-              year: 'numeric',
-              month: 'short',
-            })}
-          </span>
+        {/* Angled divider */}
+        <div className="card-divider" />
 
-          <a
-            href={work.demoUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-1 text-blue-400 hover:text-blue-300 transition-colors"
-          >
-            View Demo →
-          </a>
+        {/* Content section */}
+        <div className="p-5 bg-[#0f1729]">
+          <h3 className="text-xl font-bold mb-2 text-white">{work.title}</h3>
+          <p className="text-gray-400 text-sm mb-4 line-clamp-3 leading-normal">{work.description}</p>
+
+          <div className="flex items-center justify-between">
+            <span className="text-sm text-gray-500">
+              {new Date(work.date * 1000).toLocaleDateString('en-US', {
+                year: 'numeric',
+                month: 'short',
+              })}
+            </span>
+
+            <a
+              href={work.demoUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 text-lime-400 hover:text-lime-300 transition-colors font-medium"
+            >
+              View Project
+              <ArrowRight className="w-4 h-4" />
+            </a>
+          </div>
         </div>
       </div>
     </div>

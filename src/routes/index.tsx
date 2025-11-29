@@ -41,30 +41,26 @@ function Home() {
   }, [selectedCategory])
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-900 to-black text-white">
+    <div className="min-h-screen bg-slate-950 text-white">
+      {/* Hero Section */}
       <section className="relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-600/10 via-purple-600/5 to-transparent" />
         <Container className="py-12 sm:py-16 md:py-24 relative">
           <div className="flex flex-col lg:flex-row items-center gap-8 md:gap-12">
             {/* Avatar - shows first on mobile, second on desktop */}
             <div className="relative order-1 lg:order-2 mb-6 lg:mb-0">
-              <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full blur-3xl opacity-20" />
               <img
                 src={avatar}
                 alt={title}
-                className="w-48 h-48 sm:w-56 sm:h-56 md:w-64 md:h-64 lg:w-80 lg:h-80 rounded-full border-4 border-gray-700/50 relative shadow-2xl"
+                className="w-48 h-48 sm:w-56 sm:h-56 md:w-64 md:h-64 lg:w-80 lg:h-80 relative"
               />
             </div>
 
             {/* Content - shows second on mobile, first on desktop */}
             <div className="flex-1 space-y-4 sm:space-y-6 order-2 lg:order-1 text-center lg:text-left">
               <div className="space-y-2">
-                <p className="text-sm sm:text-base text-blue-400 font-medium">{subtitle}</p>
-                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold">
-                  Hi, I'm{' '}
-                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500">
-                    {title}
-                  </span>
+                <p className="text-sm sm:text-base text-lime-500 font-medium">{subtitle}</p>
+                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white">
+                  Hi, I'm {title}
                 </h1>
               </div>
 
@@ -82,22 +78,22 @@ function Home() {
               </p>
 
               <p className="text-sm sm:text-base md:text-lg text-gray-400 leading-relaxed max-w-2xl mx-auto lg:mx-0">
-                With 9+ years of experience, I drive innovation at the intersection of voice AI and
-                customer intelligence, building scalable solutions that help businesses understand
-                their customers.
+                With 9+ years of experience, I drive innovation and deliver measurable results at the
+                intersection of voice AI and customer intelligence. I build scalable solutions that
+                transform business operations.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 pt-4 justify-center lg:justify-start">
                 <a
                   href={`mailto:${email}`}
-                  className="inline-flex items-center justify-center gap-2 px-4 sm:px-6 py-2.5 sm:py-3 bg-blue-600 hover:bg-blue-700 rounded-lg transition-all hover:scale-105 font-medium text-sm sm:text-base"
+                  className="inline-flex items-center justify-center gap-2 px-4 sm:px-6 py-2.5 sm:py-3 bg-lime-500 hover:bg-lime-600 text-black rounded-lg transition-all hover:scale-105 font-medium text-sm sm:text-base"
                 >
                   <Mail className="w-4 h-4 sm:w-5 sm:h-5" />
                   Get in Touch
                 </a>
                 <Link
                   to="/resume"
-                  className="inline-flex items-center justify-center gap-2 px-4 sm:px-6 py-2.5 sm:py-3 bg-gray-800 hover:bg-gray-700 rounded-lg transition-all hover:scale-105 font-medium border border-gray-700 text-sm sm:text-base"
+                  className="inline-flex items-center justify-center gap-2 px-4 sm:px-6 py-2.5 sm:py-3 bg-transparent hover:bg-slate-800 rounded-lg transition-all hover:scale-105 font-medium border border-slate-600 hover:border-slate-500 text-sm sm:text-base"
                 >
                   <FileText className="w-4 h-4 sm:w-5 sm:h-5" />
                   View Resume
@@ -112,10 +108,11 @@ function Home() {
         </Container>
       </section>
 
-      <section id="works" className="py-20 bg-gray-900/50">
+      {/* Featured Projects Section */}
+      <section id="works" className="py-20 bg-slate-900/50">
         <Container>
           <div className="space-y-4 sm:space-y-6 mb-8 sm:mb-12">
-            <SectionTitle lineColor="bg-green-500" className="text-2xl sm:text-3xl">
+            <SectionTitle lineColor="bg-lime-500" className="text-2xl sm:text-3xl">
               Featured Projects
             </SectionTitle>
             <p className="text-sm sm:text-base md:text-lg text-gray-400 max-w-3xl">
@@ -139,7 +136,7 @@ function Home() {
           <div className="mt-12 text-center">
             <Link
               to="/works"
-              className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 rounded-lg transition-all hover:scale-105 font-medium text-lg"
+              className="inline-flex items-center gap-2 px-8 py-4 bg-lime-500 hover:bg-lime-600 text-black rounded-full transition-all hover:scale-105 font-medium text-lg"
             >
               Explore All Projects
               <ArrowRight className="w-5 h-5" />
@@ -148,11 +145,12 @@ function Home() {
         </Container>
       </section>
 
-      <footer className="bg-gray-900/80 border-t border-gray-800">
+      {/* Footer */}
+      <footer className="bg-slate-900/80 border-t border-slate-800">
         <Container className="py-12">
           <div className="grid md:grid-cols-3 gap-8">
             <div className="space-y-3">
-              <h3 className="text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500">
+              <h3 className="text-xl font-bold text-lime-500">
                 {title}
               </h3>
               <p className="text-gray-400">{subtitle}</p>
@@ -162,7 +160,7 @@ function Home() {
             </div>
 
             <div className="space-y-3">
-              <h4 className="font-semibold text-gray-300">Quick Links</h4>
+              <h4 className="font-semibold text-gray-200">Quick Links</h4>
               <div className="flex flex-col gap-2">
                 <a href="#works" className="text-gray-400 hover:text-white transition-colors">
                   Projects
@@ -174,7 +172,7 @@ function Home() {
             </div>
 
             <div className="space-y-3">
-              <h4 className="font-semibold text-gray-300">Connect</h4>
+              <h4 className="font-semibold text-gray-200">Connect</h4>
               <SocialIcons links={socialLinks} />
               <a
                 href={`mailto:${email}`}
@@ -185,7 +183,7 @@ function Home() {
             </div>
           </div>
 
-          <div className="mt-8 pt-8 border-t border-gray-800 text-center text-gray-500 text-sm">
+          <div className="mt-8 pt-8 border-t border-slate-800 text-center text-gray-500 text-sm">
             © {new Date().getFullYear()} {title}. All rights reserved.
           </div>
         </Container>

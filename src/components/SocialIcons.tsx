@@ -43,7 +43,7 @@ export function SocialIcons({ links, className, iconClassName = 'w-5 h-5' }: Soc
             href={link.url}
             target="_blank"
             rel="noopener noreferrer"
-            className="p-2.5 bg-gray-800 hover:bg-gray-700 rounded-lg transition-all hover:scale-110"
+            className="p-2.5 bg-slate-800 hover:bg-slate-700 rounded-full transition-all hover:scale-110"
             aria-label={link.name}
           >
             <IconComponent className={iconClassName} />
@@ -78,7 +78,7 @@ export function SocialIconsInline({
             target="_blank"
             rel="noopener noreferrer"
             className={cn(
-              'p-2 bg-gray-800/50 hover:bg-gray-700/50 rounded-lg transition-all hover:scale-110 border border-gray-700/50',
+              'p-2 bg-slate-800 hover:bg-slate-700 rounded-full transition-all hover:scale-110',
               linkClassName,
             )}
             aria-label={link.name}
