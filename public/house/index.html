@@ -88,7 +88,7 @@
     font-weight: 700;
     letter-spacing: -0.02em;
   }
-  .top h1 span { color: var(--muted); font-weight: 500; }
+  .te-name { font-size: clamp(1.25rem, 3vw, 1.7rem); font-weight: 600; color: var(--accent-ink); line-height: 1.3; }
   .lede { max-width: 64ch; color: var(--muted); font-size: 1.05rem; }
   .facts {
     display: flex;
@@ -341,7 +341,7 @@
   .renders { display: grid; grid-template-columns: minmax(0, 1fr); gap: 18px; }
   @media (min-width: 760px) {
     .renders { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-    .renders figure:first-child { grid-column: 1 / -1; }
+    .renders figure.wide { grid-column: 1 / -1; }
   }
   .renders figure { margin: 0; display: grid; gap: 8px; }
   .renders img {
@@ -355,6 +355,21 @@
   }
   .renders figcaption { font-size: 14px; color: var(--muted); }
   .renders figcaption b { font: 500 12px/1 var(--mono); color: var(--accent-ink); margin-right: 8px; }
+
+  .paints { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px 14px; }
+  @media (min-width: 760px) { .paints { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+  .paints figure { margin: 0; display: grid; gap: 7px; }
+  .paints img {
+    width: 100%;
+    max-width: 100%;
+    aspect-ratio: 16 / 10;
+    object-fit: cover;
+    border-radius: 8px;
+    background: var(--chip);
+    display: block;
+  }
+  .paints figcaption { display: flex; align-items: center; gap: 8px; font-size: 14px; }
+  .paints .chips { width: 46px; height: 14px; flex: none; }
 
   .table-wrap { overflow-x: auto; border: 1px solid var(--rule); border-radius: 10px; background: var(--surface); }
   table { width: 100%; border-collapse: collapse; min-width: 560px; }
@@ -407,13 +422,14 @@
 <div class="wrap">
   <header class="top">
     <p class="eyebrow">Village house · East facing corner plot</p>
-    <h1>Puppala House <span>in 3D</span></h1>
+    <h1>Puppala Vinay Nilayam</h1>
+    <p class="te-name" lang="te">పుప్పాల వినయ్ నిలయం</p>
     <p class="lede">Your hand-drawn plan built as a walkable model: two bedrooms, hall, dining, kitchen and puja room, with the outside staircase to the terrace. It sits on the plot from your photos, among the coconut palms and neem trees.</p>
     <dl class="facts">
       <div><dt>Built-up</dt><dd>744 sq ft</dd></div>
       <div><dt>Footprint</dt><dd>23′3″ × 32′0″</dd></div>
       <div><dt>Plot (approx.)</dt><dd>31′9″ × 43′ · 152 sq yd</dd></div>
-      <div><dt>Roads</dt><dd>East &amp; North</dd></div>
+      <div><dt>Roads</dt><dd>East &amp; North (set back)</dd></div>
     </dl>
   </header>
 
@@ -426,6 +442,7 @@
         <button type="button" data-view="aerial" aria-pressed="false">Aerial</button>
         <button type="button" data-view="plan" aria-pressed="false">Floor plan</button>
         <button type="button" data-view="inside" aria-pressed="false">Inside</button>
+        <button type="button" data-view="front" aria-pressed="false">Front gate</button>
         <button type="button" data-view="rear" aria-pressed="false">Back</button>
       </div>
       <div class="compass" aria-hidden="true"><div class="needle" id="needle"><b>N</b><i></i></div></div>
@@ -472,26 +489,45 @@
       <p>Stills taken from the same model with soft shadows on. Sun positions are for mid-October at the site.</p>
     </div>
     <div class="renders">
-      <figure>
-        <img src="renders/street.jpg" alt="The house from the road junction at the north-east corner in morning light, with the compound wall, gates, staircase and coconut palm." loading="lazy">
+      <figure class="wide">
+        <img src="renders/street.jpg" alt="The house from the road junction at the north-east corner in morning light, with the compound wall, gates, sitting platform and coconut palms." loading="lazy">
         <figcaption><b>8:10 AM</b>From the road junction. Morning sun on the east front and main door.</figcaption>
       </figure>
       <figure>
-        <img src="renders/aerial.jpg" alt="Aerial view of the house, terrace, water tank and plot from the north-east." loading="lazy">
-        <figcaption><b>3:30 PM</b>Aerial from the north-east: terrace, tank and front yard.</figcaption>
+        <img src="renders/aerial.jpg" alt="Aerial view of the house, terrace, white water tank and plot from the north-east." loading="lazy">
+        <figcaption><b>3:30 PM</b>Aerial from the north-east: terrace, tank, front yard and the open strip by the north road.</figcaption>
       </figure>
       <figure>
         <img src="renders/plan.jpg" alt="Top-down cutaway of the house showing every room with labels." loading="lazy">
         <figcaption><b>12:00 PM</b>Cutaway plan, east at the top as in your drawing.</figcaption>
       </figure>
-      <figure>
-        <img src="renders/inside.jpg" alt="Inside the front room looking through the hall to the dining area and the arched kitchen opening." loading="lazy">
-        <figcaption><b>10:30 AM</b>From the front room through the hall into the dining area.</figcaption>
+      <figure class="wide">
+        <img src="renders/front.jpg" alt="The front of the house at night from the east road, with the house name on the parapet, gate lanterns and festive lights." loading="lazy">
+        <figcaption><b>6:30 PM</b>Front gate at night: house name, gate lanterns and festive lights.</figcaption>
       </figure>
       <figure>
-        <img src="renders/evening.jpg" alt="The house at dusk with lights on inside." loading="lazy">
-        <figcaption><b>5:30 PM</b>Sunset behind the house, lights coming on.</figcaption>
+        <img src="renders/inside.jpg" alt="Inside the hall looking toward the front room, the dining area and the arched kitchen opening." loading="lazy">
+        <figcaption><b>10:30 AM</b>From the hall toward the front room, dining and the kitchen arch.</figcaption>
       </figure>
+      <figure>
+        <img src="renders/evening.jpg" alt="The house at sunset with the lights coming on." loading="lazy">
+        <figcaption><b>5:45 PM</b>Sunset from the road junction, lights coming on.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section aria-labelledby="h-paint">
+    <div class="sec-head">
+      <h2 id="h-paint">Paint options</h2>
+      <p>The same morning view in six exterior schemes. Pick one under Exterior paint above to try it on the 3D model.</p>
+    </div>
+    <div class="paints">
+      <figure><img src="renders/paint-0.jpg" alt="House painted lime wash with turmeric yellow bands." loading="lazy"><figcaption><span class="chips"><i style="background:#F1E6D0"></i><i style="background:#D69A2A"></i><i style="background:#6D6961"></i></span>Lime wash &amp; turmeric</figcaption></figure>
+      <figure><img src="renders/paint-1.jpg" alt="House painted peach with brown bands." loading="lazy"><figcaption><span class="chips"><i style="background:#F0CBAA"></i><i style="background:#6E3F22"></i><i style="background:#5B4636"></i></span>Peach &amp; brown</figcaption></figure>
+      <figure><img src="renders/paint-2.jpg" alt="House painted ivory with terracotta bands." loading="lazy"><figcaption><span class="chips"><i style="background:#EEE3CD"></i><i style="background:#B4532F"></i><i style="background:#6A5547"></i></span>Ivory &amp; terracotta</figcaption></figure>
+      <figure><img src="renders/paint-3.jpg" alt="House painted sandstone with maroon bands." loading="lazy"><figcaption><span class="chips"><i style="background:#E7D0A7"></i><i style="background:#7C2E26"></i><i style="background:#5B4A3E"></i></span>Sandstone &amp; maroon</figcaption></figure>
+      <figure><img src="renders/paint-4.jpg" alt="House painted off-white with teak brown bands." loading="lazy"><figcaption><span class="chips"><i style="background:#F3EFE6"></i><i style="background:#7B4F2C"></i><i style="background:#5A5048"></i></span>Off-white &amp; teak</figcaption></figure>
+      <figure><img src="renders/paint-5.jpg" alt="House painted light grey with charcoal bands." loading="lazy"><figcaption><span class="chips"><i style="background:#D8D7D2"></i><i style="background:#3E4447"></i><i style="background:#4A4E50"></i></span>Grey &amp; charcoal</figcaption></figure>
     </div>
   </section>
 
@@ -533,6 +569,16 @@
         <li>Page 2 lists 6 doors, 8 windows, 2 ventilators and 6 cupboards. The model has the same counts; the two bedroom cupboards are the lofts drawn as dashed lines on the west wall.</li>
         <li>Heights are not on the plan. I used a 2′ plinth, 10′ ceilings, 7′ door and window heads, 9″ outer walls and a 2′9″ terrace parapet.</li>
         <li>The circle on the north side is the septic tank, next to the outside toilet. It is modelled as precast concrete rings with a slab cover and a vent pipe, like the old tank in your first photo. The ⊕ marked బోరింగ్ is the borewell hand pump.</li>
+      </ul>
+    </div>
+    <div>
+      <h3>Added to the design</h3>
+      <ul>
+        <li>House name <span lang="te">పుప్పాల వినయ్ నిలయం</span> in gold letters on a black granite plaque on the front parapet, above the main door.</li>
+        <li>White uPVC two-track sliding windows with a steel safety grill outside, uPVC ventilators with glass louvres, and a white water tank.</li>
+        <li>Decoration lights: lanterns on the four gate pillars, wall lights on the compound wall and beside both house doors, and festive string lights along the terrace parapet and compound wall. Move the time slider past 6 PM to see them lit.</li>
+        <li>An arugu, the raised sitting platform, outside the north gate with two chairs, on the open strip beside the road.</li>
+        <li>Open land of about 10′ between the north wall and the road, the south neighbour well away, and nothing behind the house. These gaps are estimates; tell me the real figures and I will match them.</li>
       </ul>
     </div>
     <div class="check">
@@ -584,6 +630,8 @@ const W = (u, v, y) => new THREE.Vector3(X(v), y, Z(u));
 const FFL = 2, CEIL = 12, ROOF = 12.42, PARA = 2.75;
 const TE = 0.75, TI = 0.5;
 const R = ROOF / 18; // stair riser
+const NGAP = 10; // open land between the north compound wall and the north road
+const SGAP = 55; // open land between the plot and the house to the south
 const SILL = { win: 3, vent: 5.5, door: 0, main: 0, arch: 0 };
 
 const lerp = (a, b, t) => a + (b - a) * t;
@@ -732,7 +780,7 @@ TEX.wood = pixelTex(256, (x, y, i, o) => {
 }
 TEX.tank = pixelTex(256, (x, y, i, o) => {
   const rib = Math.pow(Math.abs(Math.sin(y * 0.098)), 6);
-  const v = 40 + rib * 38 + (S1[i] - 0.5) * 10;
+  const v = 222 + rib * 30 + (S1[i] - 0.5) * 8;
   o[0] = o[1] = o[2] = v;
 });
 TEX.trunk = canvasTex(128, 512, (g, w, h) => {
@@ -831,6 +879,9 @@ const MAT = {
   metal: std({ color: '#26292B', roughness: 0.5, metalness: 0.6 }),
   gate: std({ color: '#2F3A36', roughness: 0.45, metalness: 0.55 }),
   steel: std({ color: '#9AA1A5', roughness: 0.35, metalness: 0.75 }),
+  upvc: std({ color: '#F4F4F1', roughness: 0.32 }),
+  lamp: std({ color: '#FFF4DE', emissive: '#FFC877', emissiveIntensity: 0.1, roughness: 0.3 }),
+  bulb: std({ color: '#FFE3A3', emissive: '#FFB547', emissiveIntensity: 0.1, roughness: 0.4 }),
   glass: std({ color: '#2A3A40', roughness: 0.04, metalness: 0.2, transparent: true, opacity: 0.5, envMapIntensity: 1.8, emissive: '#FFC98A', emissiveIntensity: 0 }),
   mirror: std({ color: '#CFD8DC', roughness: 0.03, metalness: 1 }),
   ceiling: std({ color: '#F6F3EC', roughness: 0.95, envMapIntensity: 0.4 }),
@@ -864,7 +915,6 @@ const MAT = {
   sheet: std({ color: '#9EA3A4', roughness: 0.45, metalness: 0.7, side: THREE.DoubleSide }),
   net: std({ color: '#1C8C87', roughness: 0.9, transparent: true, opacity: 0.62, side: THREE.DoubleSide }),
   nb1: std({ map: TEX.plaster, color: '#A9ABA4', roughness: 0.95 }),
-  nb2: std({ map: TEX.plaster, color: '#A9BAC3', roughness: 0.95 }),
   nb3: std({ map: TEX.plaster, color: '#C9BA90', roughness: 0.95 }),
   nb4: std({ map: TEX.plaster, color: '#BFA497', roughness: 0.95 }),
   pole: std({ map: TEX.slab, color: '#BDB8AE', roughness: 0.9 }),
@@ -876,14 +926,16 @@ const MAT = {
 const UVS = {
   ext: 6, int: 6, plinth: 6, accent: 6, cap: 6, floor: 4, bath: 2, marble: 3, granite: 2, stone: 5,
   wood: 3, woodL: 3, door: 3, slab: 10, concrete: 10, paving: 8, road: 24, roadX: 24, lawn: 16,
-  nb1: 6, nb2: 6, nb3: 6, nb4: 6, pole: 4,
+  nb1: 6, nb3: 6, nb4: 6, pole: 4,
 };
 
 const SCHEMES = [
   { name: 'Lime wash & turmeric', wall: '#F1E6D0', accent: '#D69A2A', plinth: '#6D6961', gate: '#2F3A36' },
-  { name: 'Coastal mint', wall: '#CFE3D5', accent: '#F6F5EF', plinth: '#5D6A66', gate: '#1F4B45' },
+  { name: 'Peach & brown', wall: '#F0CBAA', accent: '#6E3F22', plinth: '#5B4636', gate: '#2E2520' },
+  { name: 'Ivory & terracotta', wall: '#EEE3CD', accent: '#B4532F', plinth: '#6A5547', gate: '#2F2A26' },
   { name: 'Sandstone & maroon', wall: '#E7D0A7', accent: '#7C2E26', plinth: '#5B4A3E', gate: '#3A2A26' },
-  { name: 'Sky blue & white', wall: '#CFDCE8', accent: '#FAFAF7', plinth: '#56606B', gate: '#27354A' },
+  { name: 'Off-white & teak', wall: '#F3EFE6', accent: '#7B4F2C', plinth: '#5A5048', gate: '#2B2622' },
+  { name: 'Grey & charcoal', wall: '#D8D7D2', accent: '#3E4447', plinth: '#4A4E50', gate: '#1E2224' },
 ];
 
 // ---------------------------------------------------------------- geometry kit
@@ -1049,11 +1101,12 @@ const SITE_LABELS = [
   { name: 'Main door', u: 8.6, v: 6.2, y: 10.4 },
   { name: 'Stairs to terrace', u: 21.5, v: 4, y: 15.2 },
   { name: 'Septic tank', u: 3, v: 29.2, y: 3.6 },
+  { name: 'Arugu (sit-out)', u: -1.6, v: 12.2, y: 3.4 },
   { name: 'Borewell', u: 2.3, v: 1.5, y: 6.2 },
   { name: 'Outside toilet', u: 2.3, v: 36, y: 9.4 },
   { name: 'Tulasi kota', u: 14.2, v: 3.6, y: 6.4 },
   { name: 'East road', u: 20, v: -8.5, y: 1.2 },
-  { name: 'North road', u: -8.5, v: 24, y: 1.2 },
+  { name: 'North road', u: -8.5 - NGAP, v: 24, y: 1.2 },
   { name: 'Water tank', u: 26.5, v: 37.2, y: ROOF + 6.4, roof: true },
 ];
 
@@ -1128,17 +1181,25 @@ function fitOpening(k, w, o) {
   const out = { N: -1, S: 1, E: -1, W: 1 }[ext] ?? 0;
   const y0 = FFL + (o.sill ?? SILL[o.kind]), y1 = FFL + (o.head ?? 7);
   if (o.kind === 'arch') { archInfill(k.group, w, o); return; }
-  const fw = 0.22, fd = o.kind === 'vent' ? 0.3 : 0.4;
-  seg(k, axis, c - fd / 2, c + fd / 2, o.a, o.a + fw, y0, y1, 'wood');
-  seg(k, axis, c - fd / 2, c + fd / 2, o.b - fw, o.b, y0, y1, 'wood');
-  seg(k, axis, c - fd / 2, c + fd / 2, o.a + fw, o.b - fw, y1 - fw, y1, 'wood');
-  if (o.kind === 'win' || o.kind === 'vent') {
-    seg(k, axis, c - fd / 2, c + fd / 2, o.a + fw, o.b - fw, y0, y0 + 0.14, 'wood');
+  const win = o.kind === 'win' || o.kind === 'vent';
+  // doors get a wooden frame; windows and ventilators a white uPVC frame
+  const fw = win ? 0.18 : 0.22, fd = win ? 0.32 : 0.4, fm = win ? 'upvc' : 'wood';
+  seg(k, axis, c - fd / 2, c + fd / 2, o.a, o.a + fw, y0, y1, fm);
+  seg(k, axis, c - fd / 2, c + fd / 2, o.b - fw, o.b, y0, y1, fm);
+  seg(k, axis, c - fd / 2, c + fd / 2, o.a + fw, o.b - fw, y1 - fw, y1, fm);
+  if (win) {
+    seg(k, axis, c - fd / 2, c + fd / 2, o.a + fw, o.b - fw, y0, y0 + fw, fm);
     if (o.kind === 'win') {
-      seg(k, axis, c - 0.025, c + 0.025, o.a + fw, o.b - fw, y0 + 0.14, y1 - fw, 'glass');
-      const mid = (o.a + o.b) / 2;
-      seg(k, axis, c - 0.09, c + 0.09, mid - 0.07, mid + 0.07, y0 + 0.14, y1 - 1.1, 'wood');
-      seg(k, axis, c - 0.09, c + 0.09, o.a + fw, o.b - fw, y1 - 1.25, y1 - 1.1, 'wood');
+      // two-track sliding sashes that overlap at the middle
+      const mid = (o.a + o.b) / 2, sw = 0.11, ya = y0 + fw, yb = y1 - fw;
+      for (const [sa, sb, pc] of [[o.a + fw, mid + 0.1, c - 0.07], [mid - 0.1, o.b - fw, c + 0.07]]) {
+        seg(k, axis, pc - 0.045, pc + 0.045, sa, sa + sw, ya, yb, fm);
+        seg(k, axis, pc - 0.045, pc + 0.045, sb - sw, sb, ya, yb, fm);
+        seg(k, axis, pc - 0.045, pc + 0.045, sa + sw, sb - sw, yb - sw, yb, fm);
+        seg(k, axis, pc - 0.045, pc + 0.045, sa + sw, sb - sw, ya, ya + sw, fm);
+        seg(k, axis, pc - 0.012, pc + 0.012, sa + sw, sb - sw, ya + sw, yb - sw, 'glass');
+      }
+      seg(k, axis, c - 0.16, c - 0.115, mid - 0.24, mid - 0.2, y0 + 1.6, y0 + 2.1, 'metal');
     } else {
       for (let yy = y0 + 0.28; yy < y1 - 0.3; yy += 0.26) seg(k, axis, c - 0.12, c + 0.12, o.a + fw, o.b - fw, yy, yy + 0.05, 'glass');
     }
@@ -1223,6 +1284,23 @@ function buildShell(k, cut) {
   dish.position.copy(W(29.2, 12, P1 + 0.9));
   dish.rotation.set(-Math.PI / 2 + 1.15, 0, 0);
   rod(k.group, W(29.6, 12, P1 - 0.4), W(29.35, 12, P1 + 0.6), 0.05, MAT.steel);
+  namePlaque(k.group);
+  // up-down wall lights beside the main door and the north door
+  for (const u of [6.26, 11.07]) {
+    k.pbox(u - 0.13, u + 0.13, 7.36, 7.625, FFL + 5.2, FFL + 6.0, 'lamp');
+    k.pbox(u - 0.15, u + 0.15, 7.34, 7.625, FFL + 6.0, FFL + 6.08, 'metal');
+    k.pbox(u - 0.15, u + 0.15, 7.34, 7.625, FFL + 5.12, FFL + 5.2, 'metal');
+  }
+  for (const v of [17.25, 21.35]) {
+    k.pbox(5.36, 5.625, v - 0.13, v + 0.13, FFL + 5.2, FFL + 6.0, 'lamp');
+    k.pbox(5.34, 5.625, v - 0.15, v + 0.15, FFL + 6.0, FFL + 6.08, 'metal');
+    k.pbox(5.34, 5.625, v - 0.15, v + 0.15, FFL + 5.12, FFL + 5.2, 'metal');
+  }
+  const top = ROOF + PARA - 0.06;
+  stringLights(k.group, [
+    [W(5.4, 7.27, top), W(29.85, 7.27, top), 12, 0.45],
+    [W(5.27, 7.3, top), W(5.27, 40.7, top), 16, 0.45],
+  ]);
   // main door threshold painted with turmeric and kumkum dots
   k.pbox(6.9, 10.4, 7.625, 8.375, FFL, FFL + 0.22, 'turmeric');
   for (let u = 7.3; u < 10.1; u += 0.55) k.pbox(u - 0.07, u + 0.07, 7.6, 7.625, FFL + 0.06, FFL + 0.18, 'kumkum');
@@ -1244,6 +1322,65 @@ function buildShell(k, cut) {
       f.position.copy(W(u, 7.48, FFL + 6.8));
     }
   }
+}
+const NAME_TE = 'పుప్పాల వినయ్ నిలయం';
+function drawName(g, w, h) {
+  const r = rng(77);
+  g.fillStyle = '#17181A';
+  g.fillRect(0, 0, w, h);
+  for (let i = 0; i < 2600; i++) {
+    g.fillStyle = `rgba(255,255,255,${r() * 0.07})`;
+    g.fillRect(r() * w, r() * h, 1.5, 1.5);
+  }
+  g.strokeStyle = '#C9A24E';
+  g.lineWidth = 5;
+  g.strokeRect(14, 14, w - 28, h - 28);
+  g.textAlign = 'center';
+  g.textBaseline = 'middle';
+  let size = 120;
+  do {
+    g.font = `700 ${size}px "Anek Telugu", "Noto Sans Telugu", "Gautami", sans-serif`;
+    size -= 4;
+  } while (g.measureText(NAME_TE).width > w - 100 && size > 40);
+  g.shadowColor = 'rgba(0,0,0,0.65)';
+  g.shadowOffsetY = 3;
+  g.shadowBlur = 4;
+  g.fillStyle = '#E4BF62';
+  g.fillText(NAME_TE, w / 2, h / 2 + 10);
+}
+function namePlaque(group) {
+  TEX.name = canvasTex(1024, 210, drawName, { repeat: false });
+  const granite = std({ color: '#17181A', roughness: 0.3 });
+  const face = std({ map: TEX.name, roughness: 0.28 });
+  const m = mesh(new THREE.BoxGeometry(0.12, 1.8, 8.8), [face, granite, granite, granite, granite, granite], group);
+  m.position.set(X(7.325) + 0.06, ROOF + 1.4, Z(10.8));
+  // redraw once the Telugu web font has loaded
+  document.fonts?.load(`700 100px "Anek Telugu"`, NAME_TE).then(() => {
+    drawName(TEX.name.image.getContext('2d'), 1024, 210);
+    TEX.name.needsUpdate = true;
+    invalidate();
+  }).catch(() => {});
+}
+function stringLights(parent, runs) {
+  // runs: [start, end, number of scallops, sag in feet]
+  const pts = [];
+  const wire = new THREE.LineBasicMaterial({ color: '#2a2a2a' });
+  for (const [a, b, spans, sag] of runs) {
+    const n = Math.round(a.distanceTo(b) / 0.5), line = [];
+    for (let i = 0; i <= n; i++) {
+      const t = i / n, local = (t * spans) % 1, p = a.clone().lerp(b, t);
+      p.y -= sag * 4 * local * (1 - local);
+      pts.push(p);
+      line.push(p);
+    }
+    parent.add(new THREE.Line(new THREE.BufferGeometry().setFromPoints(line), wire));
+  }
+  const im = new THREE.InstancedMesh(new THREE.SphereGeometry(0.075, 8, 6), MAT.bulb, pts.length);
+  const M = new THREE.Matrix4();
+  pts.forEach((p, i) => { M.makeTranslation(p.x, p.y - 0.08, p.z); im.setMatrixAt(i, M); });
+  im.userData.noAO = true;
+  im.computeBoundingSphere();
+  parent.add(im);
 }
 function buildBase(k) {
   k.pbox(5.625, 29.625, 7.625, 40.375, 0, FFL, { def: 'plinth', T: 'floor', B: null });
@@ -1310,13 +1447,14 @@ function buildStair(k) {
     (p) => (uOf(p) < 17.3 ? ROOF : f2surf(p)));
 }
 function box(k, u0, u1, v0, v1, y0, y1, m) { k.pbox(u0, u1, v0, v1, FFL + y0, FFL + y1, m); }
-function chair(k, u, v, face, mat = 'woodL') {
+function chair(k, u, v, face, mat = 'woodL', yb = FFL) {
   // face: direction the sitter looks, one of N S E W
   const s = 0.78;
-  box(k, u - s, u + s, v - s, v + s, 1.45, 1.58, mat);
-  for (const du of [-s + 0.08, s - 0.08]) for (const dv of [-s + 0.08, s - 0.08]) box(k, u + du - 0.06, u + du + 0.06, v + dv - 0.06, v + dv + 0.06, 0, 1.45, mat);
+  const b = (u0, u1, v0, v1, y0, y1) => k.pbox(u0, u1, v0, v1, yb + y0, yb + y1, mat);
+  b(u - s, u + s, v - s, v + s, 1.45, 1.58);
+  for (const du of [-s + 0.08, s - 0.08]) for (const dv of [-s + 0.08, s - 0.08]) b(u + du - 0.06, u + du + 0.06, v + dv - 0.06, v + dv + 0.06, 0, 1.45);
   const back = { N: [u + s - 0.12, u + s, v - s, v + s], S: [u - s, u - s + 0.12, v - s, v + s], E: [u - s, u + s, v + s - 0.12, v + s], W: [u - s, u + s, v - s, v - s + 0.12] }[face];
-  box(k, back[0], back[1], back[2], back[3], 1.58, 3.1, mat);
+  b(back[0], back[1], back[2], back[3], 1.58, 3.1);
 }
 function furnish(k) {
   // master bedroom
@@ -1414,6 +1552,13 @@ function furnishExtras(group) {
 }
 const fans = [];
 const interiorLights = [];
+const outdoorLights = [];
+for (const p of [W(-1.6, 5.1, 6.6), W(8.25, -1.6, 6.6), W(8.65, 6.5, FFL + 5.8), W(4.6, 19.3, FFL + 5.8), W(-2.4, 12.2, 5.2)]) {
+  const pl = new THREE.PointLight('#FFC98A', 0, 15, 2);
+  pl.position.copy(p);
+  scene.add(pl);
+  outdoorLights.push(pl);
+}
 function fixtures(group) {
   for (const [u, v] of [[11.6, 12.5], [11.6, 22.5], [21.25, 23.5], [11.6, 34], [23.25, 34]]) {
     const f = new THREE.Group();
@@ -1519,7 +1664,8 @@ function buildSite(k) {
   k.pbox(29.625, 31.375, 7.625, 42.625, 0, 0.08, ap);
   k.pbox(0.375, 29.625, 40.375, 42.625, 0, 0.08, ap);
   // roads
-  k.pbox(-15.5, -1.5, -420, 420, 0, 0.06, { def: null, T: 'roadX' });
+  k.pbox(-15.5 - NGAP, -1.5 - NGAP, -420, 420, 0, 0.06, { def: null, T: 'roadX' });
+  k.pbox(-1.5 - NGAP, -0.625, 2.75, 7.5, 0, 0.07, { def: 'concrete', B: null });
   k.pbox(-420, 420, -15.5, -1.5, 0, 0.09, { def: null, T: 'road' });
   compound(k);
   // gates
@@ -1549,6 +1695,32 @@ function buildSite(k) {
   cyl(site, 2.35, 1.45, 2.84, 1.15, 0.27, MAT.pump, 16);
   rod(site, W(2.35, 1.45, 3.1), W(3.2, 1.45, 2.85), 0.08, MAT.pump);
   rod(site, W(2.35, 1.45, 4.0), W(2.35, 4.3, 5.1), 0.06, MAT.pump);
+  // lanterns on the gate pillars
+  for (const [u, v] of [[0, 2.125], [0, 8.125], [4.875, 0], [11.625, 0]]) {
+    mesh(new THREE.BoxGeometry(0.56, 0.12, 0.56), MAT.metal, site).position.copy(W(u, v, 5.86));
+    mesh(new THREE.BoxGeometry(0.4, 0.62, 0.4), MAT.lamp, site, { cast: false }).position.copy(W(u, v, 6.23));
+    const roof = mesh(new THREE.ConeGeometry(0.4, 0.32, 4), MAT.metal, site);
+    roof.rotation.y = Math.PI / 4;
+    roof.position.copy(W(u, v, 6.7));
+    mesh(new THREE.SphereGeometry(0.06, 8, 6), MAT.metal, site).position.copy(W(u, v, 6.9));
+  }
+  // wall lights on the road faces of the compound wall piers
+  for (const v of [16, 25, 34]) {
+    k.pbox(-0.72, -0.45, v - 0.14, v + 0.14, 3.3, 3.85, 'lamp');
+    k.pbox(-0.76, -0.45, v - 0.18, v + 0.18, 3.85, 3.93, 'metal');
+  }
+  k.pbox(21.86, 22.14, -0.72, -0.45, 3.3, 3.85, 'lamp');
+  k.pbox(21.82, 22.18, -0.76, -0.45, 3.85, 3.93, 'metal');
+  stringLights(site, [
+    [W(-0.5, -0.4, 4.55), W(-0.5, 43.4, 4.55), 18, 0.3],
+    [W(-0.4, -0.5, 4.55), W(31.9, -0.5, 4.55), 13, 0.3],
+  ]);
+  // arugu: a raised sitting platform outside the north gate, with two chairs
+  k.pbox(-6.6, -0.42, 8.6, 15.45, 0, 0.07, { def: 'concrete', B: null });
+  k.pbox(-2.6, -0.42, 9.1, 15.3, 0.07, 1.4, { def: 'ext', B: null, T: null });
+  k.pbox(-2.75, -0.42, 9.0, 15.4, 1.4, 1.55, 'stone');
+  chair(k, -4.9, 10.9, 'S', 'white', 0.07);
+  chair(k, -4.9, 13.5, 'S', 'white', 0.07);
   // septic tank: precast concrete rings, slab cover with a manhole, vent pipe
   const septic = new THREE.Group();
   septic.position.copy(W(3, 29.2, 0));
@@ -1569,21 +1741,20 @@ function buildSite(k) {
   k.pbox(4.25, 4.28, 36.2, 37.4, 5.9, 6.7, 'dark');
   k.pbox(0.8, 3.7, 30.95, 31.75, 0.08, 0.45, { def: 'stone', B: null });
   // neighbours
-  simpleHouse(k, 35, 49, 6, 30, 11.2, 'nb1', [['N', 9], ['N', 21], ['E', 40]]);
+  simpleHouse(k, 35 + SGAP, 49 + SGAP, 6, 30, 11.2, 'nb1', [['N', 9], ['N', 21], ['E', 40 + SGAP]]);
   const ver = mesh(new THREE.BoxGeometry(12, 0.06, 3.2), MAT.sheet, site);
-  ver.position.copy(W(33.5, 13, 9.4));
+  ver.position.copy(W(33.5 + SGAP, 13, 9.4));
   ver.rotation.x = 0.28;
-  for (const v of [7.6, 18.4]) rod(site, W(32.2, v, 0), W(32.2, v, 8.9), 0.12, MAT.gate);
-  simpleHouse(k, 4, 24, 50, 69, 11, 'nb2', [['E', 8], ['E', 16], ['N', 55]]);
-  simpleHouse(k, -46, -24, 6, 28, 10.5, 'nb3', [['S', 10], ['S', 19]]);
+  for (const v of [7.6, 18.4]) rod(site, W(32.2 + SGAP, v, 0), W(32.2 + SGAP, v, 8.9), 0.12, MAT.gate);
+  simpleHouse(k, -46 - NGAP, -24 - NGAP, 6, 28, 10.5, 'nb3', [['S', 10], ['S', 19]]);
   simpleHouse(k, 8, 26, -46, -28, 10, 'nb4', [['W', 12], ['W', 19]]);
   // shade-net fence across the north road (as in the photos)
   const net = mesh(new THREE.PlaneGeometry(60, 6), MAT.net, site, { cast: false, noAO: true });
-  net.position.copy(W(-17.6, 62, 3));
-  for (let v = 32; v <= 92; v += 10) rod(site, W(-17.6, v, 0), W(-17.6, v, 6.3), 0.1, MAT.woodL, 5);
+  net.position.copy(W(-17.6 - NGAP, 62, 3));
+  for (let v = 32; v <= 92; v += 10) rod(site, W(-17.6 - NGAP, v, 0), W(-17.6 - NGAP, v, 6.3), 0.1, MAT.woodL, 5);
   // electric poles and wires along both roads
-  const northPoles = [W(-2.6, -16, 0), W(-2.6, 44, 0), W(-2.6, 104, 0)];
-  const eastPoles = [W(-20, -2.6, 0), W(50, -2.6, 0), W(110, -2.6, 0)];
+  const northPoles = [W(-2.6 - NGAP, -16, 0), W(-2.6 - NGAP, 44, 0), W(-2.6 - NGAP, 104, 0)];
+  const eastPoles = [W(-20 - NGAP, -2.6, 0), W(50, -2.6, 0), W(110, -2.6, 0)];
   const pole = (p, alongX) => {
     mesh(new THREE.CylinderGeometry(0.22, 0.36, 30, 8), MAT.pole, site).position.set(p.x, 15, p.z);
     const arm = mesh(new THREE.BoxGeometry(0.25, 0.25, 4.5), MAT.metal, site);
@@ -1773,19 +1944,21 @@ function buildTrees() {
 
   const r = rng(2024);
   const palms = [[], [], []];
-  const P = (u, v, k, rot, s = 1) => palms[k].push({ p: W(u, v, 0), rot, s });
+  const uN = (u) => (u < -1 ? u - NGAP : u); // trees across the north road shift with it
+  const P = (u, v, k, rot, s = 1) => palms[k].push({ p: W(uN(u), v, 0), rot, s });
   P(30.4, 1.4, 0, 0.3);
   P(1.4, 41.7, 1, 2.6);
   P(-22, 52, 2, 1.2); P(-22, 34, 0, 2.2); P(-26, 44, 1, 0.4); P(36, -21, 2, -0.6); P(44, -30, 0, 3.0);
   P(-34, -46, 1, 0.8); P(52, 12, 0, 1.4); P(12, 46.5, 2, 3.4); P(46, 36, 2, 1.0);
   P(-30, -40, 0, 2.0); P(8, -40, 1, 0.2); P(60, 60, 2, 2.2);
+  P(44, 22, 1, 1.1); P(63, 6, 0, 2.7); P(71, 31, 2, 0.6); P(52, 40, 0, 1.9);
   const broad = [[], []];
-  const B = (u, v, k, rot, s = 1) => broad[k].push({ p: W(u, v, 0), rot, s });
+  const B = (u, v, k, rot, s = 1) => broad[k].push({ p: W(uN(u), v, 0), rot, s });
   B(-42, 40, 0, 0.5, 1.05); B(64, 38, 1, 2.2, 1.1); B(10, 60, 0, 1.4, 0.85); B(-40, -44, 1, 0.3, 0.9); B(-38, 30, 1, 1.8);
   for (let i = 0; i < 70; i++) {
     const a = r() * Math.PI * 2, d = 110 + r() * 520;
     const x = Math.cos(a) * d, z = Math.sin(a) * d;
-    if (Math.abs(x - X(-8.5)) < 16 || Math.abs(z - Z(-8.5)) < 16) continue;
+    if (Math.abs(x - X(-8.5)) < 16 || Math.abs(z - Z(-8.5 - NGAP)) < 16) continue;
     const t = { p: new THREE.Vector3(x, 0, z), rot: r() * 6.28, s: 0.85 + r() * 0.4 };
     if (r() < 0.62) palms[(r() * 3) | 0].push(t); else broad[(r() * 2) | 0].push(t);
   }
@@ -1918,6 +2091,9 @@ function updateSun() {
   for (const l of interiorLights) l.intensity = lights * 55;
   MAT.glass.emissiveIntensity = lights * 0.85;
   MAT.tube.emissiveIntensity = 0.2 + lights * 3;
+  MAT.lamp.emissiveIntensity = 0.1 + lights * 2.6;
+  MAT.bulb.emissiveIntensity = 0.1 + lights * 3.4;
+  for (const l of outdoorLights) l.intensity = lights * 26;
   renderer.toneMappingExposure = lerp(1.05, 0.6, smooth(-5, 22, a));
   scene.fog.color.copy(fogColor(a));
   if (envRT) envRT.dispose();
@@ -1958,11 +2134,12 @@ function makeComposer() {
 
 // ---------------------------------------------------------------- views
 const VIEWS = {
-  street: { pos: W(-13, -11, 6.4), tgt: W(15, 19, 8.8), fov: 50 },
-  aerial: { pos: W(-22, -18, 72), tgt: W(16, 22, 2), fov: 40 },
+  street: { pos: W(-16, -11, 6.4), tgt: W(15, 19, 8.8), fov: 50 },
+  aerial: { pos: W(-26, -18, 74), tgt: W(14, 22, 2), fov: 42 },
   plan: { pos: W(15.9, 22.2, 84), tgt: W(15.9, 21.5, 0), fov: 38, cut: true },
   inside: { pos: W(7.3, 26.9, FFL + 5.1), tgt: W(21.5, 14.5, FFL + 3.7), fov: 66 },
   rear: { pos: W(44, 57, 17), tgt: W(17, 24, 8), fov: 46 },
+  front: { pos: W(9.5, -13.5, 5.6), tgt: W(11, 12, 9.2), fov: 56 },
 };
 const state = { still: false, view: 'street', cut: false, furn: true, labels: true, hq: !isTouch && window.innerWidth > 900, minutes: 490, month: new Date().getMonth(), scheme: 0 };
 let tween = null;
