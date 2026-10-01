@@ -408,7 +408,7 @@
   <header class="top">
     <p class="eyebrow">Village house · East facing corner plot</p>
     <h1>Puppala House <span>in 3D</span></h1>
-    <p class="lede">Your hand-drawn plan built as a walkable model: two bedrooms, hall, dining, kitchen and puja room, with the outside staircase to the terrace. It sits on the plot from your photos, with coconut palms, neem trees and the old well.</p>
+    <p class="lede">Your hand-drawn plan built as a walkable model: two bedrooms, hall, dining, kitchen and puja room, with the outside staircase to the terrace. It sits on the plot from your photos, among the coconut palms and neem trees.</p>
     <dl class="facts">
       <div><dt>Built-up</dt><dd>744 sq ft</dd></div>
       <div><dt>Footprint</dt><dd>23′3″ × 32′0″</dd></div>
@@ -520,7 +520,7 @@
         </tfoot>
       </table>
     </div>
-    <p class="table-note">Outside the house: staircase to the terrace in the east front yard, outside toilet and bath on the north side, well, borewell hand pump at the north-east corner.</p>
+    <p class="table-note">Outside the house: staircase to the terrace in the east front yard, outside toilet and bath on the north side with the septic tank beside it, borewell hand pump at the north-east corner.</p>
   </section>
 
   <section class="notes" aria-label="Notes on the plan">
@@ -532,7 +532,7 @@
         <li>The dotted lines between the front room, hall and dining are open spans with a beam overhead, so those three spaces flow into one.</li>
         <li>Page 2 lists 6 doors, 8 windows, 2 ventilators and 6 cupboards. The model has the same counts; the two bedroom cupboards are the lofts drawn as dashed lines on the west wall.</li>
         <li>Heights are not on the plan. I used a 2′ plinth, 10′ ceilings, 7′ door and window heads, 9″ outer walls and a 2′9″ terrace parapet.</li>
-        <li>The circle on the north side is the old well from your first photo, rebuilt with a new ring and pulley. The ⊕ marked బోరింగ్ is the borewell hand pump.</li>
+        <li>The circle on the north side is the septic tank, next to the outside toilet. It is modelled as precast concrete rings with a slab cover and a vent pipe, like the old tank in your first photo. The ⊕ marked బోరింగ్ is the borewell hand pump.</li>
       </ul>
     </div>
     <div class="check">
@@ -542,6 +542,7 @@
         <li><strong>East setback depth.</strong> The stair is about 5′ wide. Confirm the front yard is at least 8′ so a walkway stays clear beside it.</li>
         <li><strong>Toilet access.</strong> The only indoor toilet opens from the master bedroom. Everyone else uses the outside toilet on the north side.</li>
         <li><strong>Puja room width.</strong> At 4′ wide with a platform on the east wall, the clear floor inside is about 3′6″ × 7′.</li>
+        <li><strong>Septic tank and borewell distance.</strong> They are about 28′ (8.5 m) apart on this plan. Common guidance is to keep a septic tank or soak pit around 15 m (50′) from a drinking-water borewell, which this plot cannot fit. Ask about a fully sealed tank and where its outflow will soak away, and keep that away from the borewell.</li>
         <li><strong>The coconut palm in your photos.</strong> I could not tell where it stands on the plot, so the palms here are placed at the corners. If it falls inside the footprint it will have to come down.</li>
       </ul>
     </div>
@@ -855,7 +856,6 @@ const MAT = {
   brass: std({ color: '#C39433', roughness: 0.3, metalness: 1 }),
   flame: new THREE.MeshBasicMaterial({ color: '#FFB347' }),
   tube: std({ color: '#FFFFFF', emissive: '#FFF3DE', emissiveIntensity: 0.2 }),
-  water: std({ color: '#1E2B2A', roughness: 0.05, metalness: 0.3 }),
   dark: std({ color: '#1A1C1D', roughness: 0.6 }),
   tv: std({ color: '#0E0F10', roughness: 0.15, metalness: 0.2 }),
   fridge: std({ color: '#C8CED1', roughness: 0.3, metalness: 0.5 }),
@@ -1048,7 +1048,7 @@ const ROOMS = [
 const SITE_LABELS = [
   { name: 'Main door', u: 8.6, v: 6.2, y: 10.4 },
   { name: 'Stairs to terrace', u: 21.5, v: 4, y: 15.2 },
-  { name: 'Well', u: 3, v: 29.2, y: 5.2 },
+  { name: 'Septic tank', u: 3, v: 29.2, y: 3.6 },
   { name: 'Borewell', u: 2.3, v: 1.5, y: 6.2 },
   { name: 'Outside toilet', u: 2.3, v: 36, y: 9.4 },
   { name: 'Tulasi kota', u: 14.2, v: 3.6, y: 6.4 },
@@ -1549,27 +1549,19 @@ function buildSite(k) {
   cyl(site, 2.35, 1.45, 2.84, 1.15, 0.27, MAT.pump, 16);
   rod(site, W(2.35, 1.45, 3.1), W(3.2, 1.45, 2.85), 0.08, MAT.pump);
   rod(site, W(2.35, 1.45, 4.0), W(2.35, 4.3, 5.1), 0.06, MAT.pump);
-  // well
-  const well = new THREE.Group();
-  well.position.copy(W(3, 29.2, 0));
-  mesh(new THREE.CylinderGeometry(2.2, 2.25, 2.6, 40, 1, true), MAT.concrete, well).position.y = 1.3;
-  const inner = mesh(new THREE.CylinderGeometry(1.8, 1.8, 2.6, 40, 1, true), MAT.concrete.clone(), well);
-  inner.material.side = THREE.BackSide;
-  inner.position.y = 1.3;
-  const rim = mesh(new THREE.RingGeometry(1.8, 2.2, 40), MAT.concrete.clone(), well);
-  rim.material.side = THREE.DoubleSide;
-  rim.rotation.x = -Math.PI / 2;
-  rim.position.y = 2.6;
-  const water = mesh(new THREE.CircleGeometry(1.8, 40), MAT.water, well, { cast: false });
-  water.rotation.x = -Math.PI / 2;
-  water.position.y = 0.7;
-  rod(well, new THREE.Vector3(0, 2.6, -2.0), new THREE.Vector3(0, 6.2, -2.0), 0.1, MAT.gate);
-  rod(well, new THREE.Vector3(0, 2.6, 2.0), new THREE.Vector3(0, 6.2, 2.0), 0.1, MAT.gate);
-  rod(well, new THREE.Vector3(0, 6.2, -2.05), new THREE.Vector3(0, 6.2, 2.05), 0.07, MAT.gate);
-  const pulley = mesh(new THREE.TorusGeometry(0.35, 0.06, 8, 20), MAT.steel, well);
-  pulley.position.set(0, 5.8, 0);
-  rod(well, new THREE.Vector3(0, 5.5, 0), new THREE.Vector3(0, 2.2, 0.25), 0.012, MAT.soil, 4);
-  site.add(well);
+  // septic tank: precast concrete rings, slab cover with a manhole, vent pipe
+  const septic = new THREE.Group();
+  septic.position.copy(W(3, 29.2, 0));
+  mesh(new THREE.CylinderGeometry(2.2, 2.25, 0.7, 40), MAT.concrete, septic).position.y = 0.35;
+  mesh(new THREE.CylinderGeometry(2.32, 2.32, 0.16, 40), MAT.concrete, septic).position.y = 0.78;
+  mesh(new THREE.BoxGeometry(1.4, 0.07, 1.4), MAT.stone, septic).position.y = 0.895;
+  const ringHandle = mesh(new THREE.TorusGeometry(0.16, 0.03, 6, 14), MAT.metal, septic);
+  ringHandle.rotation.x = -Math.PI / 2;
+  ringHandle.position.y = 0.95;
+  site.add(septic);
+  rod(site, W(1.15, 29.2, 0.86), W(1.15, 29.2, 7.4), 0.11, MAT.pvc);
+  rod(site, W(1.15, 28.85, 7.4), W(1.15, 29.55, 7.4), 0.14, MAT.pvc);
+  rod(site, W(2.5, 31.75, 0.45), W(2.5, 31.25, 0.45), 0.1, MAT.pvc);
   // outside toilet and bath
   k.pbox(0.375, 4.25, 31.75, 40.5, 0.08, 7.6, { def: 'ext', B: null });
   k.pbox(0.3, 4.55, 31.45, 40.8, 7.6, 7.95, { def: 'accent', T: 'slab' });
