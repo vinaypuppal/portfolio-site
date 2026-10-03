@@ -560,7 +560,7 @@
         </tfoot>
       </table>
     </div>
-    <p class="table-note">Outside the house: staircase to the terrace in the east front yard, outside toilet, wash area and septic tank on the north side, gas cylinders outside the kitchen, borewell hand pump at the north-east corner, and the car shed outside the north wall.</p>
+    <p class="table-note">Outside the house: staircase to the terrace in the east front yard, outside toilet, wash area and septic tank on the north side, gas cylinders against the kitchen’s south wall, borewell hand pump at the north-east corner, and the car shed outside the north wall.</p>
   </section>
 
   <section class="notes" aria-label="Notes on the plan">
@@ -579,10 +579,10 @@
       <h3>Added to the design</h3>
       <ul>
         <li>House name <span lang="te">పుప్పాల నిలయం</span> in raised stainless steel letters fixed to the front parapet above the main door, with a warm backlight at night.</li>
-        <li>Whole plot raised: the yard is earth-filled about 3′6″ above the road and the house floor sits 4′ above the road. The main door and north door have short slopes instead of steps. The steps move to the gates: four inside the main gate and four outside the north gate. The compound wall is a retaining wall up to yard level with 3′6″ of wall above.</li>
-        <li>Steel safety door in front of the wooden main door, with a grill top with flower stems, latch and padlock, and laser-cut rose and fern panels below. Main gate in silver laser-cut steel with a floral border, floral half circles meeting in the middle, and horizontal slots.</li>
-        <li>Car shed for two cars parked one behind the other on the strip outside the north wall, about 12′ × 34′, with steel columns and a colour-coated sheet roof. Cars drive in from the east road, and the north gate opens straight into it.</li>
-        <li>Gas cylinders in a ventilated steel cage outside the kitchen’s south-east corner, with a copper pipe through the wall to the stove.</li>
+        <li>Whole plot raised: the yard is earth-filled about 3′6″ above the road and the house floor sits 4′ above the road. The main door and north door have short slopes instead of steps. Both gates open at yard level, with four steps down to the road outside each one. The compound wall is a retaining wall up to yard level with 3′6″ of wall above.</li>
+        <li>Steel safety door in front of the wooden main door, with a grill top with flower stems, latch and padlock, and laser-cut rose and fern panels below. Main gate and north gate in silver laser-cut steel with a floral border, floral half circles meeting in the middle, and horizontal slots.</li>
+        <li>Car shed along the full length of the north boundary wall, about 12′ × 44′, with steel columns in the wall colour and a colour-coated sheet roof in the band colour, so it matches the house. Cars drive in from the east road and park one behind the other past the north gate, so the gate and its steps stay clear. Shown with a dual-tone red and black Brezza in front and a white Eeco behind, both to their published sizes.</li>
+        <li>Gas cylinders in a ventilated steel cage against the kitchen’s south wall, in the side passage, with a copper pipe through the wall to the stove.</li>
         <li>North side: flower pots along the wall, and a wash area for utensils and clothes with a tiled floor, washing stone, tap, steel tub and clothes line.</li>
         <li>A split AC in each bedroom. The indoor unit sits above the window, the outdoor unit stands on that window’s sunshade, and a sleeved hole carries the insulated copper pipes and drain.</li>
         <li>Column starters for a future first floor: all 12 columns rise 1′6″ above the terrace with bars left projecting, and the stair landing reaches past them.</li>
@@ -599,7 +599,7 @@
         <li><strong>Toilet access.</strong> The only indoor toilet opens from the master bedroom. Everyone else uses the outside toilet on the north side.</li>
         <li><strong>Puja room width.</strong> At 4′ wide with a platform on the east wall, the clear floor inside is about 3′6″ × 7′.</li>
         <li><strong>Septic tank and borewell distance.</strong> They are about 28′ (8.5 m) apart on this plan. Common guidance is to keep a septic tank or soak pit around 15 m (50′) from a drinking-water borewell, which this plot cannot fit. Ask about a fully sealed tank and where its outflow will soak away, and keep that away from the borewell.</li>
-        <li><strong>Car shed land.</strong> The shed stands on the strip outside your compound wall. Check that this strip belongs to your plot and is not road margin or panchayat land before building on it.</li>
+        <li><strong>Land outside the wall.</strong> The car shed stands on the strip outside the north wall, and the main gate steps take about 3′6″ of the east road edge. Check that both are allowed and that the strip belongs to your plot, not road margin or panchayat land.</li>
         <li><strong>Earth filling.</strong> Raising the yard 3′6″ takes roughly 4,800 cu ft (about 135 m³) of soil, compacted in layers. The compound wall then holds back the fill, so it needs a proper footing and weep holes.</li>
         <li><strong>First floor later.</strong> Tell the engineer now, so the foundations, columns and roof slab are designed to carry a second floor.</li>
         <li><strong>The coconut palm in your photos.</strong> I could not tell where it stands on the plot, so the palms here are placed at the corners. If it falls inside the footprint it will have to come down.</li>
@@ -851,11 +851,16 @@ TEX.sheet = pixelTex(256, (x, y, i, o) => {
   const v = 205 + 38 * Math.sin((x / 256) * Math.PI * 16) + (S1[i] - 0.5) * 10;
   o[0] = o[1] = o[2] = v;
 });
-TEX.gate = canvasTex(512, 1024, drawLaserGate, { repeat: false });
+TEX.gate = canvasTex(512, 832, drawLaserGate, { repeat: false });
 TEX.gateM = TEX.gate.clone();
 TEX.gateM.repeat.x = -1;
 TEX.gateM.offset.x = 1;
 TEX.gateM.needsUpdate = true;
+TEX.gateN = canvasTex(512, 936, drawLaserGate, { repeat: false });
+TEX.gateNM = TEX.gateN.clone();
+TEX.gateNM.repeat.x = -1;
+TEX.gateNM.offset.x = 1;
+TEX.gateNM.needsUpdate = true;
 TEX.safety = canvasTex(512, 1024, drawSafetyDoor, { repeat: false });
 TEX.kolam = canvasTex(512, 512, (g) => {
   g.translate(256, 256);
@@ -912,7 +917,8 @@ const MAT = {
   acPipe: std({ color: '#D9DAD6', roughness: 0.6 }),
   tire: std({ color: '#1B1B1B', roughness: 0.9 }),
   carGlass: std({ color: '#151C21', roughness: 0.07, metalness: 0.6 }),
-  shed: std({ map: TEX.sheet, color: '#8A3B2A', roughness: 0.45, metalness: 0.35, side: THREE.DoubleSide }),
+  shed: std({ map: TEX.sheet, roughness: 0.45, metalness: 0.35, side: THREE.DoubleSide }),
+  shedFrame: std({ roughness: 0.5, metalness: 0.3 }),
   pink: std({ color: '#E0559A', roughness: 0.7 }),
   lamp: std({ color: '#FFF4DE', emissive: '#FFC877', emissiveIntensity: 0.1, roughness: 0.3 }),
   bulb: std({ color: '#FFE3A3', emissive: '#FFB547', emissiveIntensity: 0.1, roughness: 0.4 }),
@@ -964,12 +970,12 @@ const UVS = {
 };
 
 const SCHEMES = [
-  { name: 'Lime wash & turmeric', wall: '#F1E6D0', accent: '#D69A2A', plinth: '#6D6961', gate: '#2F3A36', shed: '#8A3B2A' },
-  { name: 'Peach & brown', wall: '#F0CBAA', accent: '#6E3F22', plinth: '#5B4636', gate: '#2E2520', shed: '#6E3F22' },
-  { name: 'Ivory & terracotta', wall: '#EEE3CD', accent: '#B4532F', plinth: '#6A5547', gate: '#2F2A26', shed: '#9C4A2E' },
-  { name: 'Sandstone & maroon', wall: '#E7D0A7', accent: '#7C2E26', plinth: '#5B4A3E', gate: '#3A2A26', shed: '#7C2E26' },
-  { name: 'Off-white & teak', wall: '#F3EFE6', accent: '#7B4F2C', plinth: '#5A5048', gate: '#2B2622', shed: '#6B4A33' },
-  { name: 'Grey & charcoal', wall: '#D8D7D2', accent: '#3E4447', plinth: '#4A4E50', gate: '#1E2224', shed: '#3E4447' },
+  { name: 'Lime wash & turmeric', wall: '#F1E6D0', accent: '#D69A2A', plinth: '#6D6961', gate: '#2F3A36' },
+  { name: 'Peach & brown', wall: '#F0CBAA', accent: '#6E3F22', plinth: '#5B4636', gate: '#2E2520' },
+  { name: 'Ivory & terracotta', wall: '#EEE3CD', accent: '#B4532F', plinth: '#6A5547', gate: '#2F2A26' },
+  { name: 'Sandstone & maroon', wall: '#E7D0A7', accent: '#7C2E26', plinth: '#5B4A3E', gate: '#3A2A26' },
+  { name: 'Off-white & teak', wall: '#F3EFE6', accent: '#7B4F2C', plinth: '#5A5048', gate: '#2B2622' },
+  { name: 'Grey & charcoal', wall: '#D8D7D2', accent: '#3E4447', plinth: '#4A4E50', gate: '#1E2224' },
 ];
 
 // ---------------------------------------------------------------- geometry kit
@@ -1134,10 +1140,10 @@ const ROOMS = [
 const SITE_LABELS = [
   { name: 'Main door', u: 8.6, v: 6.2, y: 10.4 + DY },
   { name: 'Stairs to terrace', u: 19.2, v: 4, y: 16.4 + DY },
-  { name: 'Septic tank', u: 3, v: 30, y: 2.4 + LIFT },
-  { name: 'Car shed', u: -6.5, v: 16, y: 10.8 },
+  { name: 'Septic tank', u: 3, v: 30, y: 1.8 + LIFT },
+  { name: 'Car shed', u: -6.5, v: 22, y: 10.8 },
   { name: 'Wash area', u: 1.8, v: 23.2, y: 7.6 + LIFT },
-  { name: 'Gas cylinders', u: 31, v: 5.6, y: 3.8 + LIFT },
+  { name: 'Gas cylinders', u: 30.6, v: 13.6, y: 4.6 + LIFT },
   { name: 'Borewell', u: 2.3, v: 1.5, y: 6.2 + LIFT },
   { name: 'Outside toilet', u: 2.3, v: 37.5, y: 9.4 + LIFT },
   { name: 'Tulasi kota', u: 14.2, v: 3.6, y: 6.4 + LIFT },
@@ -1784,7 +1790,7 @@ function furnish(k) {
 function furnishExtras(group) {
   // parts that do not fit in boxes: cylinder, lamp, dome, fans, lights
   rod(group, W(28.75, 8.45, FFL + 2.95), W(26.6, 8.45, FFL + 2.95), 0.035, MAT.brass, 6);
-  rod(group, W(28.75, 7.9, FFL + 2.95), W(28.75, 8.45, FFL + 2.95), 0.035, MAT.brass, 6);
+  rod(group, W(28.75, 12.95, FFL + 2.95), W(28.75, 8.45, FFL + 2.95), 0.035, MAT.brass, 6);
   for (const u of [25.0, 26.1]) cyl(group, u, 9.4, FFL + 3.08, 0.05, 0.28, MAT.steel, 16);
   for (let i = 0; i < 5; i++) cyl(group, 28.5, 10.9 + i * 0.7, FFL + 5.12, 0.45 + (i % 2) * 0.2, 0.22, MAT.steel, 14);
   const dome = mesh(new THREE.SphereGeometry(0.62, 18, 10, 0, Math.PI * 2, 0, Math.PI / 2), MAT.wood, group);
@@ -1830,7 +1836,7 @@ function airConditioners(group) {
 }
 const interiorLights = [];
 const outdoorLights = [];
-for (const p of [W(-1.6, 5.1, LIFT + 3.2), W(8.25, -1.6, 6.9), W(8.65, 6.5, FFL + 5.8 + DY), W(4.6, 19.3, FFL + 5.8 + DY), W(-6.3, 16, 8.2)]) {
+for (const p of [W(-1.6, 5.1, LIFT + 3.2), W(8.25, -1.6, LIFT + 3.2), W(8.65, 6.5, FFL + 5.8 + DY), W(4.6, 19.3, FFL + 5.8 + DY), W(-6.3, 22, 8.2)]) {
   const pl = new THREE.PointLight('#FFC98A', 0, 15, 2);
   pl.position.copy(p);
   scene.add(pl);
@@ -1889,29 +1895,13 @@ function compound(k) {
   run('u', 43, 0.375, 31.375);
   // the retaining wall runs under the north gate, which opens at yard level
   seg(k, 'v', -0.495, 0.495, 2.75, 7.5, 0, LIFT, { def: 'plinth', T: 'stone', B: null });
+  seg(k, 'u', -0.495, 0.495, 5.5, 11, 0, LIFT, { def: 'plinth', T: 'stone', B: null });
   for (const [u, v] of [[0, 2.125], [0, 8.125], [4.875, 0], [11.625, 0]]) pier(u, v, 0.625, LIFT + 4.3);
   for (const [u, v] of [[0, 0], [0, 43], [31.75, 0], [31.75, 43]]) pier(u, v, 0.5, LIFT + 3.9);
   for (const v of [16, 25, 34]) pier(0, v, 0.45, LIFT + 3.8);
   for (const v of [12, 22, 32]) pier(31.75, v, 0.45, LIFT + 3.8);
   for (const u of [11, 21]) pier(u, 43, 0.45, LIFT + 3.8);
   for (const u of [22]) pier(u, 0, 0.45, LIFT + 3.8);
-}
-function gateLeaf(w, h) {
-  const g = new THREE.Group();
-  const bx = (sx, sy, sz, x, y) => { const b = new THREE.Mesh(new THREE.BoxGeometry(sx, sy, sz)); b.position.set(x, y, 0); g.add(b); };
-  bx(0.12, h, 0.12, 0.06, h / 2);
-  bx(0.12, h, 0.12, w - 0.06, h / 2);
-  bx(w, 0.12, 0.12, w / 2, 0.06);
-  bx(w, 0.12, 0.12, w / 2, h - 0.06);
-  bx(w, 0.85, 0.04, w / 2, 1.3);
-  bx(w, 0.08, 0.08, w / 2, 1.85);
-  for (let x = 0.3; x < w - 0.15; x += 0.3) {
-    bx(0.05, h - 0.2, 0.05, x, h / 2);
-    const c = new THREE.Mesh(new THREE.ConeGeometry(0.06, 0.25, 4));
-    c.position.set(x, h + 0.1, 0);
-    g.add(c);
-  }
-  return mergeGroup(g, MAT.gate);
 }
 function placeLeaf(site, obj, u, v, dir, y = 0.25) {
   obj.rotation.y = Math.atan2(-dir.z, dir.x);
@@ -1933,92 +1923,159 @@ function simpleHouse(k, u0, u1, v0, v1, h, mat, wins) {
     if (face === 'W') k.pbox(a, b, v1, v1 + 0.03, 3.2, 7.2, 'dark');
   }
 }
-const CAR_SUV = { L: 14.3, Wd: 5.9, roofH: 5.5, belt: 3.4, hood: 3.2, wheelR: 1.12, color: '#ECEEF0' };
-const CAR_HATCH = { L: 12.6, Wd: 5.6, roofH: 4.85, belt: 2.95, hood: 2.7, wheelR: 0.95, color: '#8C1C20' };
-function car(parent, c, u, vRear) {
-  const g = new THREE.Group();
-  const paint = std({ color: c.color, roughness: 0.22, metalness: 0.55 });
-  const { L, Wd } = c, ride = c.wheelR * 0.85;
-  const s = new THREE.Shape();
-  s.moveTo(0.35, ride);
-  s.lineTo(L - 0.35, ride);
-  s.lineTo(L, ride + 0.5);
-  s.lineTo(L, c.hood - 0.3);
-  s.lineTo(L - 0.55, c.hood);
-  s.lineTo(L * 0.66, c.belt);
-  s.lineTo(L * 0.16, c.belt);
-  s.lineTo(0.1, c.belt - 0.15);
-  s.lineTo(0, c.belt - 0.6);
-  s.lineTo(0, ride + 0.45);
-  const body = new THREE.ExtrudeGeometry(s, { depth: Wd - 0.3, bevelEnabled: true, bevelThickness: 0.15, bevelSize: 0.12, bevelSegments: 3, curveSegments: 4 });
-  body.translate(0, 0, -(Wd - 0.3) / 2);
-  mesh(body, paint, g);
-  const cs = new THREE.Shape();
-  cs.moveTo(L * 0.17, c.belt - 0.05);
-  cs.lineTo(L * 0.65, c.belt - 0.05);
-  cs.lineTo(L * 0.49, c.roofH);
-  cs.lineTo(L * 0.25, c.roofH);
-  const cab = new THREE.ExtrudeGeometry(cs, { depth: Wd - 0.8, bevelEnabled: true, bevelThickness: 0.1, bevelSize: 0.08, bevelSegments: 2 });
-  cab.translate(0, 0, -(Wd - 0.8) / 2);
-  mesh(cab, MAT.carGlass, g);
-  mesh(new THREE.BoxGeometry(L * 0.25, 0.12, Wd - 0.55), paint, g).position.set(L * 0.37, c.roofH + 0.08, 0);
-  const tire = new THREE.CylinderGeometry(c.wheelR, c.wheelR, 0.62, 22);
+// cars in feet, from the published specs: Brezza 3995 x 1790 x 1685 mm (wheelbase 2500),
+// Eeco 3675 x 1475 x 1825 mm (wheelbase 2350). Local +x points to the front of the car.
+const CARMAT = {};
+function carMats() {
+  if (CARMAT.red) return CARMAT;
+  CARMAT.red = std({ color: '#B0141B', roughness: 0.22, metalness: 0.55 });
+  CARMAT.white = std({ color: '#F2F3F1', roughness: 0.25, metalness: 0.35 });
+  CARMAT.gloss = std({ color: '#111214', roughness: 0.25, metalness: 0.4 });
+  CARMAT.clad = std({ color: '#1D1E20', roughness: 0.8 });
+  CARMAT.lens = std({ color: '#E9EEF2', roughness: 0.08, metalness: 0.6 });
+  CARMAT.silver = std({ color: '#C3C7CA', roughness: 0.3, metalness: 0.8 });
+  return CARMAT;
+}
+function cbox(g, x0, x1, y0, y1, w, mat, z = 0) {
+  const m = mesh(new THREE.BoxGeometry(x1 - x0, y1 - y0, w), mat, g);
+  m.position.set((x0 + x1) / 2, (y0 + y1) / 2, z);
+  return m;
+}
+function extrude(g, pts, w, mat, bevel = 0.12) {
+  const sh = new THREE.Shape();
+  pts.forEach(([x, y], i) => (i ? sh.lineTo(x, y) : sh.moveTo(x, y)));
+  const geo = new THREE.ExtrudeGeometry(sh, { depth: w - 2 * bevel, bevelEnabled: true, bevelThickness: bevel, bevelSize: bevel * 0.8, bevelSegments: 3, curveSegments: 4 });
+  geo.translate(0, 0, -(w - 2 * bevel) / 2);
+  return mesh(geo, mat, g);
+}
+function wheels(g, xs, r, w, half, alloy) {
+  const M = carMats();
+  const tire = new THREE.CylinderGeometry(r, r, w, 24);
   tire.rotateX(Math.PI / 2);
-  const hub = new THREE.CylinderGeometry(c.wheelR * 0.6, c.wheelR * 0.6, 0.64, 16);
-  hub.rotateX(Math.PI / 2);
-  for (const x of [L * 0.19, L * 0.8]) {
-    for (const z of [-(Wd / 2 - 0.3), Wd / 2 - 0.3]) {
-      mesh(tire, MAT.tire, g).position.set(x, c.wheelR, z);
-      mesh(hub, MAT.steel, g).position.set(x, c.wheelR, z);
+  const rim = new THREE.CylinderGeometry(r * 0.64, r * 0.64, w + 0.02, 20);
+  rim.rotateX(Math.PI / 2);
+  for (const x of xs) {
+    for (const sgn of [-1, 1]) {
+      const z = sgn * (half - w / 2);
+      mesh(tire, MAT.tire, g).position.set(x, r, z);
+      mesh(rim, alloy ? CARMAT.silver : MAT.steel, g).position.set(x, r, z);
+      if (alloy) {
+        for (let k = 0; k < 5; k++) {
+          const sp = cbox(g, -0.05, 0.05, 0, r * 0.5, 0.02, M.gloss, z + sgn * (w / 2 + 0.012));
+          sp.position.x = x;
+          sp.position.y = r;
+          sp.geometry.translate(0, r * 0.35 - r * 0.25, 0);
+          sp.rotation.z = (k * Math.PI * 2) / 5;
+        }
+      }
     }
   }
-  for (const z of [-(Wd / 2 - 0.6), Wd / 2 - 0.6]) {
-    mesh(new THREE.BoxGeometry(0.1, 0.3, 0.9), MAT.white, g).position.set(L + 0.1, c.hood - 0.55, z);
-    mesh(new THREE.BoxGeometry(0.1, 0.3, 0.8), MAT.red, g).position.set(-0.12, c.belt - 0.5, z);
+}
+function brezza(parent, u, vRear) {
+  // dual-tone Sizzling Red with a Midnight Black roof
+  const M = carMats(), g = new THREE.Group();
+  const L = 13.11, Wd = 5.87, belt = 3.55, roof = 5.2, r = 1.09;
+  extrude(g, [[0.3, 0.75], [L - 0.35, 0.75], [L, 1.3], [L - 0.05, 3.1], [L - 0.45, 3.32], [9.7, belt], [0.6, belt + 0.15], [0.1, belt], [0, 1.3]], Wd, M.red, 0.16);
+  extrude(g, [[0.35, belt], [9.75, belt], [8.35, roof], [0.8, roof]], Wd - 0.5, M.gloss, 0.1);
+  cbox(g, 0.6, 8.55, roof, roof + 0.13, Wd - 0.45, M.gloss);
+  cbox(g, 0.35, 1.2, roof - 0.2, roof + 0.1, Wd - 0.6, M.gloss);
+  for (const sgn of [-1, 1]) {
+    const z = sgn * (Wd / 2 - 0.5);
+    cbox(g, 1.0, 8.0, roof + 0.22, roof + 0.3, 0.12, M.silver, z);
+    for (const x of [1.2, 7.8]) cbox(g, x - 0.12, x + 0.12, roof + 0.1, roof + 0.25, 0.1, M.silver, z);
+    // black wheel arch flares and sill cladding
+    for (const x of [2.4, 10.6]) {
+      const arch = mesh(new THREE.TorusGeometry(r + 0.12, 0.17, 6, 18, Math.PI), M.clad, g);
+      arch.position.set(x, r, sgn * (Wd / 2 - 0.02));
+    }
+    cbox(g, 3.55, 9.45, 0.75, 1.35, 0.1, M.clad, sgn * (Wd / 2 + 0.01));
+    const mirror = cbox(g, 8.7, 9.25, 3.75, 4.15, 0.5, M.gloss, sgn * (Wd / 2 + 0.2));
+    mirror.castShadow = true;
   }
-  for (const x of [L + 0.13, -0.15]) mesh(new THREE.BoxGeometry(0.04, 0.38, 1.6), MAT.white, g).position.set(x, ride + 0.75, 0);
+  // bumpers, skid plates, grille, lamps
+  cbox(g, L - 0.6, L + 0.05, 0.75, 1.75, Wd - 0.1, M.clad);
+  cbox(g, L - 0.3, L + 0.08, 0.8, 1.05, Wd - 1.8, M.silver);
+  cbox(g, 0, 0.55, 0.75, 1.7, Wd - 0.1, M.clad);
+  cbox(g, -0.06, 0.2, 0.8, 1.05, Wd - 1.8, M.silver);
+  cbox(g, L - 0.12, L + 0.04, 2.3, 2.95, Wd - 1.5, M.gloss);
+  for (let i = 0; i < 2; i++) cbox(g, L - 0.06, L + 0.06, 2.5 + i * 0.25, 2.56 + i * 0.25, Wd - 1.7, M.silver);
+  for (const sgn of [-1, 1]) cbox(g, L - 0.2, L + 0.02, 2.75, 3.05, 1.05, M.lens, sgn * (Wd / 2 - 0.75));
+  cbox(g, -0.05, 0.12, 3.0, 3.25, Wd - 0.5, MAT.red);
+  cbox(g, -0.07, 0.1, 1.85, 2.25, 1.6, MAT.white);
+  cbox(g, L + 0.02, L + 0.08, 1.45, 1.85, 1.6, MAT.white);
+  wheels(g, [2.4, 10.6], r, 0.72, Wd / 2, true);
+  g.position.copy(W(u, vRear, 0.08));
+  parent.add(g);
+}
+function eeco(parent, u, vRear) {
+  // white Maruti Eeco van
+  const M = carMats(), g = new THREE.Group();
+  const L = 12.06, Wd = 4.84, top = 5.99, r = 0.87;
+  extrude(g, [[0.1, 0.65], [L - 0.25, 0.65], [L, 1.1], [L, 3.2], [L - 0.2, 3.35], [10.95, 3.75], [9.75, top - 0.05], [9.55, top], [0.25, top], [0, top - 0.2], [0, 0.9]], Wd, M.white, 0.14);
+  for (const sgn of [-1, 1]) {
+    // sliding door: dark outline, white panel below the window, then glass on top
+    cbox(g, 2.85, 5.75, 1.2, 5.6, 0.004, M.gloss, sgn * (Wd / 2 + 0.002));
+    cbox(g, 2.9, 5.7, 1.25, 3.8, 0.004, M.white, sgn * (Wd / 2 + 0.006));
+    const z = sgn * (Wd / 2 + 0.012);
+    for (const [x0, x1] of [[0.45, 2.6], [2.9, 5.7], [6.0, 9.0]]) cbox(g, x0, x1, 3.85, 5.55, 0.004, MAT.carGlass, z);
+    cbox(g, 9.0, 9.55, 3.85, 5.0, 0.004, MAT.carGlass, z);
+    cbox(g, 9.2, 9.6, 3.6, 3.95, 0.4, M.gloss, sgn * (Wd / 2 + 0.17));
+  }
+  // windscreen just outside the sloped body line, and the rear window
+  const ws = mesh(new THREE.BoxGeometry(2.45, 0.03, Wd - 0.55), MAT.carGlass, g);
+  ws.position.set(10.35 + 0.877 * 0.14, 4.845 + 0.48 * 0.14, 0);
+  ws.rotation.z = Math.atan2(3.75 - (top - 0.05), 10.95 - 9.75);
+  cbox(g, -0.13, -0.1, 3.95, 5.55, Wd - 0.9, MAT.carGlass);
+  // bumpers, lamps, grille
+  cbox(g, L - 0.45, L + 0.08, 0.65, 1.95, Wd + 0.04, M.clad);
+  cbox(g, -0.08, 0.35, 0.65, 1.45, Wd + 0.04, M.clad);
+  for (const sgn of [-1, 1]) {
+    cbox(g, L - 0.15, L + 0.03, 2.55, 3.15, 0.9, M.lens, sgn * (Wd / 2 - 0.6));
+    cbox(g, -0.05, 0.08, 2.0, 3.4, 0.35, MAT.red, sgn * (Wd / 2 - 0.25));
+  }
+  cbox(g, L - 0.1, L + 0.04, 2.35, 2.85, 1.6, M.gloss);
+  cbox(g, L + 0.05, L + 0.1, 1.25, 1.62, 1.5, MAT.white);
+  cbox(g, -0.12, -0.07, 1.55, 1.92, 1.5, MAT.white);
+  wheels(g, [2.45, 10.16], r, 0.55, Wd / 2, false);
   g.position.copy(W(u, vRear, 0.08));
   parent.add(g);
 }
 function carShed(k, roofGroup) {
   const yAt = (u) => 9.5 - ((-0.6 - u) / 11.8) * 0.88;
-  k.pbox(-12.4, -0.55, -1.5, 32.9, 0, 0.08, { def: 'paving', B: null });
-  for (const v of [-0.2, 10.6, 21.4, 32.2]) {
-    for (const u of [-0.95, -11.9]) k.pbox(u - 0.165, u + 0.165, v - 0.165, v + 0.165, 0.08, yAt(u) - 0.1, { def: 'gate', B: null });
-    rod(roofGroup, W(-0.6, v, yAt(-0.6)), W(-12.4, v, yAt(-12.4)), 0.11, MAT.gate, 6);
+  k.pbox(-12.4, -0.55, -1.5, 43.4, 0, 0.08, { def: 'paving', B: null });
+  for (const v of [-0.2, 10.65, 21.5, 32.35, 43.2]) {
+    for (const u of [-0.95, -11.9]) k.pbox(u - 0.165, u + 0.165, v - 0.165, v + 0.165, 0.08, yAt(u) - 0.1, { def: 'shedFrame', B: null });
+    rod(roofGroup, W(-0.6, v, yAt(-0.6)), W(-12.4, v, yAt(-12.4)), 0.11, MAT.shedFrame, 6);
   }
-  for (const u of [-1.5, -4.4, -7.3, -10.2]) rod(roofGroup, W(u, -0.9, yAt(u) + 0.08), W(u, 32.9, yAt(u) + 0.08), 0.07, MAT.gate, 5);
-  TEX.sheet.repeat.set(33.8 / 2.4, 1);
-  const sheet = mesh(new THREE.BoxGeometry(33.8, 0.05, 12.3), MAT.shed, roofGroup);
+  for (const u of [-1.5, -4.4, -7.3, -10.2]) rod(roofGroup, W(u, -0.9, yAt(u) + 0.08), W(u, 43.5, yAt(u) + 0.08), 0.07, MAT.shedFrame, 5);
+  TEX.sheet.repeat.set(44.4 / 2.4, 1);
+  const sheet = mesh(new THREE.BoxGeometry(44.4, 0.05, 12.3), MAT.shed, roofGroup);
   sheet.rotation.x = -Math.atan(0.88 / 11.8);
-  sheet.position.copy(W(-6.45, 16, yAt(-6.45) + 0.2));
-  rod(roofGroup, W(-6.3, 14.2, yAt(-6.3) - 0.25), W(-6.3, 17.8, yAt(-6.3) - 0.25), 0.07, MAT.tube, 8).castShadow = false;
-  // two cars parked one behind the other, entered from the east road
-  car(k.group, CAR_SUV, -8.3, 31.3);
-  car(k.group, CAR_HATCH, -8.3, 15.6);
+  sheet.position.copy(W(-6.45, 21.3, yAt(-6.45) + 0.2));
+  rod(roofGroup, W(-6.3, 20.2, yAt(-6.3) - 0.25), W(-6.3, 23.8, yAt(-6.3) - 0.25), 0.07, MAT.tube, 8).castShadow = false;
+  // two cars parked one behind the other past the north gate, entered from the east road
+  brezza(k.group, -8.3, 25.2);
+  eeco(k.group, -8.3, 40.2);
 }
 function buildSite(k, roofGroup) {
   const site = k.group;
-  // earth filling inside the compound, leaving a stairwell behind the main gate
-  const fill = { def: 'plinth', T: null, B: null };
-  k.pbox(0.375, 5.5, 0.375, 4.1, 0, LIFT, fill);
-  k.pbox(11, 31.375, 0.375, 4.1, 0, LIFT, fill);
-  k.pbox(0.375, 31.375, 4.1, 42.625, 0, LIFT, fill);
+  // earth filling inside the compound
+  k.pbox(0.375, 31.375, 0.375, 42.625, 0, LIFT, { def: 'plinth', T: null, B: null });
   const st = { def: 'plinth', T: 'stone', B: null };
-  k.pbox(5.5, 11, -1.5, 0.5, 0, 0.08, { def: 'concrete', B: null });
-  for (const [a, b, y] of [[0.5, 1.4, 0.7], [1.4, 2.3, 1.4], [2.3, 3.2, 2.1], [3.2, 4.1, 2.8]]) k.pbox(5.5, 11, a, b, 0, y, st);
+  // steps up from the east road outside the main gate
+  for (const [a, b, y] of [[-1.4, -0.495, 2.8], [-2.3, -1.4, 2.1], [-3.2, -2.3, 1.4], [-4.1, -3.2, 0.7]]) k.pbox(5.5, 11, a, b, 0, y, st);
   // steps down from the north gate into the car shed
   for (const [a, b, y] of [[-1.4, -0.495, 2.8], [-2.3, -1.4, 2.1], [-3.2, -2.3, 1.4], [-4.1, -3.2, 0.7]]) k.pbox(a, b, 2.75, 7.5, 0, y, st);
   // roads
   k.pbox(-15.5 - NGAP, -1.5 - NGAP, -420, 420, 0, 0.06, { def: null, T: 'roadX' });
   k.pbox(-420, 420, -15.5, -1.5, 0, 0.09, { def: null, T: 'road' });
   compound(k);
-  // main gate: laser-cut steel leaves at road level, floral halves meeting in the middle
-  placeLeaf(site, laserLeaf(2.65, 6.0, TEX.gateM), 5.55, 0, new THREE.Vector3(0, 0, 1), 0.15);
-  placeLeaf(site, laserLeaf(2.65, 6.0, TEX.gateM), 10.95, 0, new THREE.Vector3(0, 0, -1), 0.15);
-  // north gate opens at yard level
-  placeLeaf(site, gateLeaf(2.3, 3.6), 0, 2.8, new THREE.Vector3(-1, 0, 0), LIFT + 0.2);
-  placeLeaf(site, gateLeaf(2.3, 3.6), 0, 7.45, new THREE.Vector3(1, 0, 0), LIFT + 0.2);
+  // main gate: laser-cut steel leaves at yard level, floral halves meeting in the middle
+  placeLeaf(site, laserLeaf(2.65, 4.2, TEX.gateM), 5.55, 0, new THREE.Vector3(0, 0, 1), LIFT + 0.15);
+  placeLeaf(site, laserLeaf(2.65, 4.2, TEX.gateM), 10.95, 0, new THREE.Vector3(0, 0, -1), LIFT + 0.15);
+  // north gate: the same laser-cut design, also at yard level
+  placeLeaf(site, laserLeaf(2.3, 4.2, TEX.gateNM), 0, 2.8, new THREE.Vector3(-1, 0, 0), LIFT + 0.15);
+  placeLeaf(site, laserLeaf(2.3, 4.2, TEX.gateNM), 0, 7.45, new THREE.Vector3(1, 0, 0), LIFT + 0.15);
   // lanterns on the gate pillars
   const PT = LIFT + 4.5;
   for (const [u, v] of [[0, 2.125], [0, 8.125], [4.875, 0], [11.625, 0]]) {
@@ -2086,23 +2143,18 @@ function buildPlot(k) {
   // everything here sits on the filled yard; the group is raised by LIFT
   const g = k.group;
   const lawn = { def: null, T: 'lawn' };
-  k.pbox(0.375, 5.5, 0.375, 4.1, 0, 0.03, lawn);
-  k.pbox(11, 31.375, 0.375, 4.1, 0, 0.03, lawn);
-  k.pbox(0.375, 31.375, 4.1, 42.625, 0, 0.03, lawn);
-  const pv = { def: 'paving', B: null };
-  k.pbox(0.375, 5.5, 0.375, 4.1, 0, 0.08, pv);
-  k.pbox(11, 31.375, 0.375, 4.1, 0, 0.08, pv);
-  k.pbox(0.375, 31.375, 4.1, 7.625, 0, 0.08, pv);
+  k.pbox(0.375, 31.375, 0.375, 42.625, 0, 0.03, lawn);
+  k.pbox(0.375, 31.375, 0.375, 7.625, 0, 0.08, { def: 'paving', B: null });
   const ap = { def: 'concrete', B: null };
   k.pbox(3.125, 5.625, 7.625, 40.375, 0, 0.08, ap);
   k.pbox(29.625, 31.375, 7.625, 42.625, 0, 0.08, ap);
   k.pbox(0.375, 29.625, 40.375, 42.625, 0, 0.08, ap);
   // rangoli (muggu) on the landing in front of the main door
-  const kol = mesh(new THREE.PlaneGeometry(1.45, 1.45), new THREE.MeshStandardMaterial({
+  const kol = mesh(new THREE.PlaneGeometry(2.6, 2.6), new THREE.MeshStandardMaterial({
     map: TEX.kolam, transparent: true, depthWrite: false, roughness: 0.9, polygonOffset: true, polygonOffsetFactor: -2,
   }), g, { cast: false, noAO: true });
   kol.rotation.x = -Math.PI / 2;
-  kol.position.copy(W(8.65, 4.85, 0.085));
+  kol.position.copy(W(8.65, 3.1, 0.085));
   // tulasi kota
   k.pbox(13.1, 15.3, 2.5, 4.7, 0.08, 0.5, 'white');
   k.pbox(13.4, 15.0, 2.8, 4.4, 0.5, 2.9, 'white');
@@ -2118,19 +2170,18 @@ function buildPlot(k) {
   cyl(g, 2.35, 1.45, 2.84, 1.15, 0.27, MAT.pump, 16);
   rod(g, W(2.35, 1.45, 3.1), W(3.2, 1.45, 2.85), 0.08, MAT.pump);
   rod(g, W(2.35, 1.45, 4.0), W(2.35, 4.3, 5.1), 0.06, MAT.pump);
-  // septic tank: precast concrete rings, slab cover with a manhole, vent pipe
+  // septic tank: buried precast rings, slab cover about 4" above the yard, manhole and vent pipe
   const septic = new THREE.Group();
   septic.position.copy(W(3, 29.2, 0));
-  mesh(new THREE.CylinderGeometry(2.2, 2.25, 0.7, 40), MAT.concrete, septic).position.y = 0.35;
-  mesh(new THREE.CylinderGeometry(2.32, 2.32, 0.16, 40), MAT.concrete, septic).position.y = 0.78;
-  mesh(new THREE.BoxGeometry(1.4, 0.07, 1.4), MAT.stone, septic).position.y = 0.895;
+  mesh(new THREE.CylinderGeometry(2.2, 2.25, 0.25, 40), MAT.concrete, septic).position.y = 0.075;
+  mesh(new THREE.CylinderGeometry(2.32, 2.32, 0.16, 40), MAT.concrete, septic).position.y = 0.28;
+  mesh(new THREE.BoxGeometry(1.4, 0.07, 1.4), MAT.stone, septic).position.y = 0.395;
   const ringHandle = mesh(new THREE.TorusGeometry(0.16, 0.03, 6, 14), MAT.metal, septic);
   ringHandle.rotation.x = -Math.PI / 2;
-  ringHandle.position.y = 0.95;
+  ringHandle.position.y = 0.45;
   g.add(septic);
-  rod(g, W(1.15, 29.2, 0.86), W(1.15, 29.2, 7.4), 0.11, MAT.pvc);
+  rod(g, W(1.15, 29.2, 0.36), W(1.15, 29.2, 7.4), 0.11, MAT.pvc);
   rod(g, W(1.15, 28.85, 7.4), W(1.15, 29.55, 7.4), 0.14, MAT.pvc);
-  rod(g, W(2.5, 31.75, 0.45), W(2.5, 31.25, 0.45), 0.1, MAT.pvc);
   // outside toilet and bath
   k.pbox(0.375, 4.25, 31.75, 40.5, 0.08, 7.6, { def: 'ext', B: null });
   k.pbox(0.3, 4.55, 31.45, 40.8, 7.6, 7.95, { def: 'accent', T: 'slab' });
@@ -2164,24 +2215,24 @@ function buildPlot(k) {
     const cloth = mesh(new THREE.PlaneGeometry(w, h), std({ color: col, side: THREE.DoubleSide, roughness: 0.95 }), g);
     cloth.position.copy(W(0.55, v, 6.0 - h / 2));
   }
-  // gas cylinders in a ventilated steel cage outside the kitchen
-  k.pbox(28.7, 31.2, 5.35, 7.6, 0.08, 0.3, { def: 'concrete', B: null });
+  // gas cylinders in a ventilated steel cage against the kitchen's south wall
+  k.pbox(29.7, 31.25, 12.1, 15.1, 0.08, 0.3, { def: 'concrete', B: null });
   const c0 = 0.3, c1 = 3.6;
-  for (const [u, v] of [[28.75, 5.4], [31.15, 5.4], [28.75, 7.55], [31.15, 7.55]]) k.pbox(u - 0.05, u + 0.05, v - 0.05, v + 0.05, c0, c1, 'gate');
-  for (let v = 5.7; v < 7.5; v += 0.3) {
-    k.pbox(28.73, 28.77, v - 0.02, v + 0.02, c0, c1, 'gate');
-    k.pbox(31.13, 31.17, v - 0.02, v + 0.02, c0, c1, 'gate');
+  for (const [u, v] of [[29.75, 12.15], [31.2, 12.15], [29.75, 15.05], [31.2, 15.05]]) k.pbox(u - 0.05, u + 0.05, v - 0.05, v + 0.05, c0, c1, 'gate');
+  for (let v = 12.45; v < 15.0; v += 0.3) k.pbox(31.18, 31.22, v - 0.02, v + 0.02, c0, c1, 'gate');
+  for (let u = 30.05; u < 31.15; u += 0.3) {
+    k.pbox(u - 0.02, u + 0.02, 12.13, 12.17, c0, c1, 'gate');
+    k.pbox(u - 0.02, u + 0.02, 15.03, 15.07, c0, c1, 'gate');
   }
-  for (let u = 29.05; u < 31.1; u += 0.3) k.pbox(u - 0.02, u + 0.02, 5.38, 5.42, c0, c1, 'gate');
-  k.pbox(28.7, 31.2, 5.35, 7.6, c1, c1 + 0.06, 'gate');
-  k.pbox(28.55, 31.35, 5.2, 7.62, c1 + 0.06, c1 + 0.12, 'shed');
-  for (const u of [29.45, 30.45]) {
-    cyl(g, u, 6.55, 0.3, 1.95, 0.48, MAT.red, 20);
-    cyl(g, u, 6.55, 2.25, 0.2, 0.13, MAT.brass, 10);
+  k.pbox(29.7, 31.25, 12.1, 15.1, c1, c1 + 0.06, 'gate');
+  k.pbox(29.63, 31.35, 11.95, 15.25, c1 + 0.06, c1 + 0.12, 'shed');
+  for (const v of [12.95, 14.25]) {
+    cyl(g, 30.45, v, 0.3, 1.95, 0.48, MAT.red, 20);
+    cyl(g, 30.45, v, 2.25, 0.2, 0.13, MAT.brass, 10);
   }
-  rod(g, W(29.45, 6.55, 2.45), W(29.45, 7.25, 2.6), 0.035, MAT.brass, 6);
-  rod(g, W(29.45, 7.25, 2.6), W(28.75, 7.25, 3.35), 0.035, MAT.brass, 6);
-  rod(g, W(28.75, 7.25, 3.35), W(28.75, 7.63, 3.35), 0.035, MAT.brass, 6);
+  rod(g, W(30.45, 12.95, 2.45), W(29.8, 12.95, 2.6), 0.035, MAT.brass, 6);
+  rod(g, W(29.8, 12.95, 2.6), W(29.8, 12.95, 3.35), 0.035, MAT.brass, 6);
+  rod(g, W(29.8, 12.95, 3.35), W(29.6, 12.95, 3.35), 0.035, MAT.brass, 6);
 }
 
 // ---------------------------------------------------------------- trees
@@ -2613,7 +2664,8 @@ function applyScheme(i) {
   MAT.accent.color.set(s.accent);
   MAT.plinth.color.set(s.plinth);
   MAT.gate.color.set(s.gate);
-  MAT.shed.color.set(s.shed);
+  MAT.shed.color.set(s.accent);
+  MAT.shedFrame.color.set(s.wall);
   for (const b of document.querySelectorAll('.swatch')) b.setAttribute('aria-pressed', String(Number(b.dataset.i) === i));
   invalidate();
 }
