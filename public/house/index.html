@@ -424,7 +424,7 @@
     <p class="eyebrow">Village house · East facing corner plot</p>
     <h1>Puppala Nilayam</h1>
     <p class="te-name" lang="te">పుప్పాల నిలయం</p>
-    <p class="lede">Your hand-drawn plan built as a walkable model: two bedrooms, hall, dining, kitchen and puja room, with the outside staircase to the terrace. It sits on the plot from your photos, among the coconut palms and neem trees.</p>
+    <p class="lede">Your hand-drawn plan built as a walkable model: two bedrooms, hall, dining, kitchen and puja room, with the outside staircase to the terrace. It sits on the plot from your photos, with the coconut palms on and around the plot cleared.</p>
     <dl class="facts">
       <div><dt>Built-up</dt><dd>744 sq ft</dd></div>
       <div><dt>Footprint</dt><dd>23′3″ × 32′0″</dd></div>
@@ -490,7 +490,7 @@
     </div>
     <div class="renders">
       <figure class="wide">
-        <img src="renders/street.jpg" alt="The raised house from the road junction at the north-east corner in morning light, with the car shed, compound wall, gates and coconut palms." loading="lazy">
+        <img src="renders/street.jpg" alt="The raised house from the road junction at the north-east corner in morning light, with the car shed, compound wall and gates." loading="lazy">
         <figcaption><b>8:10 AM</b>From the road junction. Morning sun on the east front and main door.</figcaption>
       </figure>
       <figure>
@@ -602,7 +602,6 @@
         <li><strong>Land outside the wall.</strong> The car shed stands on the strip outside the north wall, and the main gate steps take about 3′6″ of the east road edge. Check that both are allowed and that the strip belongs to your plot, not road margin or panchayat land.</li>
         <li><strong>Earth filling.</strong> Raising the yard 3′6″ takes roughly 4,800 cu ft (about 135 m³) of soil, compacted in layers. The compound wall then holds back the fill, so it needs a proper footing and weep holes.</li>
         <li><strong>First floor later.</strong> Tell the engineer now, so the foundations, columns and roof slab are designed to carry a second floor.</li>
-        <li><strong>The coconut palm in your photos.</strong> I could not tell where it stands on the plot, so the palms here are placed at the corners. If it falls inside the footprint it will have to come down.</li>
       </ul>
     </div>
   </section>
@@ -2401,13 +2400,7 @@ function buildTrees() {
   const palms = [[], [], []];
   const uN = (u) => (u < -1 ? u - NGAP : u); // trees across the north road shift with it
   const onPlot = (u, v) => (u > 0 && u < PU && v > 0 && v < PV ? LIFT : 0);
-  const P = (u, v, k, rot, s = 1) => palms[k].push({ p: W(uN(u), v, onPlot(u, v)), rot, s });
-  P(30.4, 1.4, 0, 0.3);
-  P(1.4, 41.7, 1, 2.6);
-  P(-22, 52, 2, 1.2); P(-22, 34, 0, 2.2); P(-26, 44, 1, 0.4); P(36, -21, 2, -0.6); P(44, -30, 0, 3.0);
-  P(-34, -46, 1, 0.8); P(52, 12, 0, 1.4); P(12, 46.5, 2, 3.4); P(46, 36, 2, 1.0);
-  P(-30, -40, 0, 2.0); P(8, -40, 1, 0.2); P(60, 60, 2, 2.2);
-  P(44, 22, 1, 1.1); P(63, 6, 0, 2.7); P(71, 31, 2, 0.6); P(52, 40, 0, 1.9);
+  // the coconut palms on and around the plot have been cut; only distant ones remain below
   const broad = [[], []];
   const B = (u, v, k, rot, s = 1) => broad[k].push({ p: W(uN(u), v, onPlot(u, v)), rot, s });
   B(-42, 40, 0, 0.5, 1.05); B(64, 38, 1, 2.2, 1.1); B(10, 60, 0, 1.4, 0.85); B(-40, -44, 1, 0.3, 0.9); B(-38, 30, 1, 1.8);
